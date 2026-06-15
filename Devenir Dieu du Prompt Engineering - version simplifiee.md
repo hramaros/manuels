@@ -1,197 +1,201 @@
 # Devenir un dieu du Prompt Engineering
 
-J'ai commence a travailler en debut d'annee avec une confiance presque naive.
+### Édition enrichie
 
-Apres tout, j'utilisais les intelligences artificielles generatives depuis plusieurs annees. ChatGPT faisait deja partie de mon quotidien. Je pensais comprendre ces outils. Je pensais savoir comment leur parler. Je pensais etre pret.
+J'ai commencé à travailler en début d'année avec une confiance presque naïve.
 
-Puis un projet est arrive.
+Après tout, j'utilisais les intelligences artificielles génératives depuis plusieurs années. ChatGPT faisait déjà partie de mon quotidien. Je pensais comprendre ces outils. Je pensais savoir comment leur parler. Je pensais être prêt.
 
-Notre mission etait ambitieuse : transformer des images, des documents PDF et des pages web en donnees exploitables grace aux grands modeles de langage, aussi appeles LLM.
+Puis un projet est arrivé.
 
-Je rejoignais l'equipe comme architecte en automatisation. Deux collegues experimentes travaillaient deja sur le sujet. Mon role etait d'apporter un regard neuf, de proposer des ameliorations et de contribuer a la reussite du projet.
+Notre mission était ambitieuse : transformer des images, des documents PDF et des pages web en données exploitables grâce aux grands modèles de langage, aussi appelés LLM.
+
+Je rejoignais l'équipe comme architecte en automatisation. Deux collègues expérimentés travaillaient déjà sur le sujet. Mon rôle était d'apporter un regard neuf, de proposer des améliorations et de contribuer à la réussite du projet.
 
 Au lieu de cela, j'ai commis une erreur.
 
-Une erreur qui a coute 8 dollars a l'entreprise.
+Une erreur qui a coûté 8 dollars à l'entreprise.
 
 Pour beaucoup de personnes, 8 dollars, ce n'est pas grand-chose. Pour une entreprise, c'est presque invisible dans un tableau Excel.
 
 Mais pour moi, ces 8 dollars avaient une autre valeur.
 
-Ils representaient presque une semaine de ration lorsque je vivais encore avec un budget etudiant.
+Ils représentaient presque une semaine de ration lorsque je vivais encore avec un budget étudiant.
 
-Je me souviens du sentiment qui m'a traverse a cet instant. C'etait comme un enfant qui vient de casser une assiette preferee de sa mere. Ce n'est pas le prix de l'assiette qui fait mal. C'est la prise de conscience.
+Je me souviens du sentiment qui m'a traversé à cet instant. C'était comme un enfant qui vient de casser une assiette préférée de sa mère. Ce n'est pas le prix de l'assiette qui fait mal. C'est la prise de conscience.
 
-J'avais passe plus de trois ans a utiliser les IA generatives.
+J'avais passé plus de trois ans à utiliser les IA génératives.
 
 Et pourtant, je ne les comprenais pas vraiment.
 
-Je savais obtenir des reponses.
+Je savais obtenir des réponses.
 
-Je ne savais pas encore obtenir des resultats.
+Je ne savais pas encore obtenir des résultats.
 
-Cette difference a change ma facon de travailler.
+Cette différence a changé ma façon de travailler.
 
-A partir de ce jour, j'ai decide d'etudier serieusement ce qui se cache derriere un bon prompt. J'ai lu des documentations, analyse des recherches, teste des centaines d'experiences, compare des modeles, et remis en question ce que je croyais savoir.
+À partir de ce jour, j'ai décidé d'étudier sérieusement ce qui se cache derrière un bon prompt. J'ai lu des documentations, analysé des recherches, testé des centaines d'expériences, comparé des modèles, et remis en question ce que je croyais savoir.
 
-Tres vite, une idee simple s'est imposee :
+Très vite, une idée simple s'est imposée :
 
-La plupart des utilisateurs traitent les LLM comme des moteurs de recherche ameliores. Ils posent une question, croisent les doigts, puis esperent que le petit robot sorte une pepite au lieu d'une soupe tiede.
+La plupart des utilisateurs traitent les LLM comme des moteurs de recherche améliorés. Ils posent une question, croisent les doigts, puis espèrent que le petit robot sorte une pépite au lieu d'une soupe tiède.
 
-Les experts, eux, les traitent comme des collaborateurs numeriques. Ils leur donnent un contexte, un role, des contraintes, des objectifs et des criteres de reussite.
+Les experts, eux, les traitent comme des collaborateurs numériques. Ils leur donnent un contexte, un rôle, des contraintes, des objectifs et des critères de réussite.
 
-Voila pourquoi certaines personnes obtiennent des resultats mediocres apres cinq essais, pendant que d'autres obtiennent une reponse solide des la premiere tentative.
+Voilà pourquoi certaines personnes obtiennent des résultats médiocres après cinq essais, pendant que d'autres obtiennent une réponse solide dès la première tentative.
 
-Ce manuel est ne de cette decouverte.
+Ce manuel est né de cette découverte.
 
-Son objectif n'est pas de te donner trois formules magiques a copier-coller.
+Son objectif n'est pas de te donner trois formules magiques à copier-coller.
 
-Son objectif est de t'apprendre a penser comme un architecte de prompts.
+Son objectif est de t'apprendre à penser comme un architecte de prompts.
 
-A la fin de cette lecture, tu ne verras plus l'IA comme une boite magique qui repond a tout avec une voix tranquille, meme quand elle improvise en chaussettes.
+À la fin de cette lecture, tu ne verras plus l'IA comme une boîte magique qui répond à tout avec une voix tranquille, même quand elle improvise en chaussettes.
 
 Tu comprendras ses forces.
 
 Tu comprendras ses limites.
 
-Et surtout, tu sauras construire des instructions qui transforment une intelligence artificielle en veritable partenaire de travail.
+Et surtout, tu sauras construire des instructions qui transforment une intelligence artificielle en véritable partenaire de travail.
 
-Si ce manuel t'evite quelques erreurs, alors les 8 dollars que j'ai perdus auront peut-etre ete le meilleur investissement de ma carriere.
+Si ce manuel t'évite quelques erreurs, alors les 8 dollars que j'ai perdus auront peut-être été le meilleur investissement de ma carrière.
 
-Et si le meilleur moment pour apprendre le prompt engineering etait hier, le deuxieme meilleur moment, c'est maintenant.
+Et si le meilleur moment pour apprendre le prompt engineering était hier, le deuxième meilleur moment, c'est maintenant.
 
-## Table des matieres
+## Table des matières
 
-- Avant de commencer : parler clairement a l'IA
+- Avant de commencer : parler clairement à l'IA
 - 1. Pourquoi les prompts sont devenus importants
-- 2. Le probleme principal : l'ambiguite
-- 3. La methode CO-STAR : la recette du bon prompt
+- 2. Le problème principal : l'ambiguïté
+- 3. La méthode CO-STAR : la recette du bon prompt
 - 4. Exemple simple avec CO-STAR
-- 5. Autres petites formules utiles
-- 6. Faire raisonner l'IA pas a pas
-- 7. Eviter les hallucinations
-- 8. Demander des reponses bien rangees
-- 9. Les agents IA : travailler en equipe
-- 10. ReAct : reflechir, agir, observer
-- 11. Juger la qualite d'une reponse IA
-- 12. Ce que les entreprises font deja avec l'IA
-- 13. Programme d'entrainement simplifie
-- 14. Les modeles de prompts a garder
-- 15. Les erreurs frequentes a eviter
-- 16. La grande idee a retenir
+- 5. Autres formules utiles (RTF, CREATE, RACE...)
+- 6. Faire raisonner l'IA pas à pas
+- 7. Éviter les hallucinations
+- 8. Demander des réponses bien rangées
+- 9. Les agents IA : travailler en équipe
+- 10. ReAct : réfléchir, agir, observer
+- 11. Juger la qualité d'une réponse IA
+- 12. Ce que les entreprises font déjà avec l'IA
+- 13. Programme d'entraînement simplifié
+- 14. Les modèles de prompts à garder
+- 15. Les erreurs fréquentes à éviter
+- 16. La grande idée à retenir
+- 17. Boîte à outils avancée : pour aller plus loin
 - Conclusion
-- Quatrieme de couverture
+- Quatrième de couverture
 
-## Avant de commencer : parler clairement a l'IA
 
-Tu n'as pas besoin d'etre ingenieur, mathematicien ou expert en intelligence artificielle pour bien utiliser une IA.
+## Avant de commencer : parler clairement à l'IA
 
-Ce qu'il te faut surtout, c'est apprendre a parler clairement a la machine.
+Tu n'as pas besoin d'être ingénieur, mathématicien ou expert en intelligence artificielle pour bien utiliser une IA.
 
-Un prompt, c'est simplement une consigne donnee a une IA. C'est comme une commande passee a quelqu'un qui peut beaucoup t'aider, mais qui a besoin qu'on lui explique precisement ce qu'on attend.
+Ce qu'il te faut surtout, c'est apprendre à parler clairement à la machine.
 
-Imagine que tu demandes a quelqu'un :
+Un prompt, c'est simplement une consigne donnée à une IA. C'est comme une commande passée à quelqu'un qui peut beaucoup t'aider, mais qui a besoin qu'on lui explique précisément ce qu'on attend.
 
-> "Prepare-moi quelque chose a manger."
+Imagine que tu demandes à quelqu'un :
 
-La personne peut te faire une salade, un sandwich, une soupe ou un gateau. Elle ne sait pas vraiment ce que tu veux.
+> "Prépare-moi quelque chose à manger."
+
+La personne peut te faire une salade, un sandwich, une soupe ou un gâteau. Elle ne sait pas vraiment ce que tu veux.
 
 Maintenant imagine que tu dis :
 
-> "Prepare-moi un sandwich au poulet, simple, sans sauce piquante, pour un repas rapide ce midi."
+> "Prépare-moi un sandwich au poulet, simple, sans sauce piquante, pour un repas rapide ce midi."
 
-La, c'est beaucoup plus clair.
+Là, c'est beaucoup plus clair.
 
-Avec l'IA, c'est pareil. Plus ta demande est claire, plus la reponse a des chances d'etre utile.
+Avec l'IA, c'est pareil. Plus ta demande est claire, plus la réponse a des chances d'être utile.
 
-Le prompt engineering, c'est donc l'art de donner de bonnes consignes a une IA.
+Le prompt engineering, c'est donc l'art de donner de bonnes consignes à une IA.
 
 Pas pour faire joli.
 
-Mais pour obtenir une reponse claire, utile, fiable et adaptee a ton besoin.
+Mais pour obtenir une réponse claire, utile, fiable et adaptée à ton besoin.
 
-Petit clin d'oeil du robot : si tu lui donnes une consigne floue, il ne va pas lever la main en disant "je suis perdu". Il va souvent improviser avec beaucoup d'assurance. Et parfois, cette assurance a le gout d'un plat sans sel.
+Petit clin d'œil du robot : si tu lui donnes une consigne floue, il ne va pas lever la main en disant "je suis perdu". Il va souvent improviser avec beaucoup d'assurance. Et parfois, cette assurance a le goût d'un plat sans sel.
 
 
 ## 1. Pourquoi les prompts sont devenus importants
 
 Avant, beaucoup de gens utilisaient l'IA comme un jouet :
 
-> "Ecris-moi un poeme."
+> "Écris-moi un poème."
 
-> "Donne-moi une idee de business."
+> "Donne-moi une idée de business."
 
 > "Explique-moi ce sujet."
 
-Aujourd'hui, dans les entreprises, l'IA sert a faire des choses beaucoup plus serieuses :
+Aujourd'hui, dans les entreprises, l'IA sert à faire des choses beaucoup plus sérieuses :
 
 - aider un service client ;
-- resumer des contrats ;
-- analyser des donnees ;
-- ecrire du code ;
-- preparer des rapports ;
-- aider des medecins, juristes, commerciaux ou recruteurs.
+- résumer des contrats ;
+- analyser des données ;
+- écrire du code ;
+- préparer des rapports ;
+- aider des médecins, juristes, commerciaux ou recruteurs.
 
-Quand l'IA est utilisee dans ce genre de situation, une mauvaise reponse peut couter cher.
+Quand l'IA est utilisée dans ce genre de situation, une mauvaise réponse peut coûter cher.
 
 Elle peut faire perdre du temps.
 
 Elle peut donner une information fausse.
 
-Elle peut creer un document mal structure.
+Elle peut créer un document mal structuré.
 
-Elle peut dire quelque chose qui ne respecte pas les regles d'une entreprise.
+Elle peut dire quelque chose qui ne respecte pas les règles d'une entreprise.
 
-C'est pour cela qu'un bon prompt est important. Il sert de barriere de securite. Il aide l'IA a rester dans le bon chemin.
+C'est pour cela qu'un bon prompt est important. Il sert de barrière de sécurité. Il aide l'IA à rester dans le bon chemin.
 
 Tu peux voir le prompt comme un GPS.
 
-Si tu mets seulement "Paris", le GPS ne sait pas exactement ou aller.
+Si tu mets seulement "Paris", le GPS ne sait pas exactement où aller.
 
-Si tu mets une adresse precise, il peut te guider correctement.
+Si tu mets une adresse précise, il peut te guider correctement.
 
-Avec l'IA, une consigne vague donne souvent une reponse vague. Une consigne precise donne souvent une reponse plus solide.
+Avec l'IA, une consigne vague donne souvent une réponse vague. Une consigne précise donne souvent une réponse plus solide.
 
-C'est rassurant, au fond : tu n'as pas besoin de devenir une machine. Tu dois seulement apprendre a donner une meilleure adresse au GPS.
+C'est rassurant, au fond : tu n'as pas besoin de devenir une machine. Tu dois seulement apprendre à donner une meilleure adresse au GPS.
 
 
-## 2. Le probleme principal : l'ambiguite
+## 2. Le problème principal : l'ambiguïté
 
-L'ambiguite, c'est quand une phrase peut etre comprise de plusieurs manieres.
+L'ambiguïté, c'est quand une phrase peut être comprise de plusieurs manières.
 
 Par exemple :
 
 > "Fais-moi un rapport court."
 
-Mais "court", ca veut dire quoi ?
+Mais "court", ça veut dire quoi ?
 
 - 5 lignes ?
 - 1 page ?
 - 3 paragraphes ?
-- un resume en bullet points ?
+- un résumé en bullet points ?
 
-L'IA ne sait pas ce que tu as dans la tete. Elle devine.
+L'IA ne sait pas ce que tu as dans la tête. Elle devine.
 
 Et quand elle devine, elle peut se tromper.
 
-C'est ce que le document appelle la "taxe d'ambiguite". En langage simple, cela veut dire :
+C'est ce qu'on appelle parfois la « taxe d'ambiguïté ». En langage simple, cela veut dire :
 
 > Plus ta demande est floue, plus tu paies en temps perdu.
 
-Tu dois relancer l'IA, corriger, redemander, reformuler. C'est fatigant. Et surtout, ca casse ton elan.
+Tu dois relancer l'IA, corriger, redemander, reformuler. C'est fatigant. Et surtout, ça casse ton élan.
 
 La solution, c'est d'utiliser une structure simple.
 
-Et si tu t'es deja retrouve a ecrire "non, ce n'est pas ca..." trois fois de suite a une IA, bienvenue au club. C'est presque un rite de passage. La bonne nouvelle, c'est qu'on peut en sortir.
+Et si tu t'es déjà retrouvé à écrire "non, ce n'est pas ça..." trois fois de suite à une IA, bienvenue au club. C'est presque un rite de passage. La bonne nouvelle, c'est qu'on peut en sortir.
 
 
-## 3. La methode CO-STAR : la recette du bon prompt
+## 3. La méthode CO-STAR : la recette du bon prompt
 
-CO-STAR est une methode pour construire une demande claire.
+CO-STAR est une méthode pour construire une demande claire.
 
-C'est comme une recette de cuisine. Si tu oublies des ingredients, le resultat peut etre bizarre.
+C'est comme une recette de cuisine. Si tu oublies des ingrédients, le résultat peut être bizarre.
 
-Demander une bonne reponse sans contexte, c'est un peu comme demander un gateau sans dire s'il faut du chocolat, de la vanille ou juste sauver un anniversaire a 17 h 58.
+Demander une bonne réponse sans contexte, c'est un peu comme demander un gâteau sans dire s'il faut du chocolat, de la vanille ou juste sauver un anniversaire à 17 h 58.
 
 CO-STAR veut dire :
 
@@ -200,7 +204,7 @@ CO-STAR veut dire :
 - S : Style
 - T : Ton
 - A : Audience
-- R : Reponse attendue
+- R : Réponse attendue
 
 Voici chaque partie en langage simple.
 
@@ -208,15 +212,15 @@ Voici chaque partie en langage simple.
 
 Le contexte, c'est la situation.
 
-Tu expliques a l'IA ou elle se trouve, ce qu'elle doit savoir, et pourquoi tu lui demandes cela.
+Tu expliques à l'IA où elle se trouve, ce qu'elle doit savoir, et pourquoi tu lui demandes cela.
 
 Exemple :
 
-> Je prepare une formation pour des debutants qui ne connaissent pas l'intelligence artificielle.
+> Je prépare une formation pour des débutants qui ne connaissent pas l'intelligence artificielle.
 
-Sans contexte, l'IA repond dans le vide.
+Sans contexte, l'IA répond dans le vide.
 
-Avec le contexte, elle comprend mieux le decor.
+Avec le contexte, elle comprend mieux le décor.
 
 ### O comme Objectif
 
@@ -224,9 +228,9 @@ L'objectif, c'est ce que tu veux obtenir.
 
 Exemple :
 
-> Je veux un resume simple qui explique les 5 idees principales.
+> Je veux un résumé simple qui explique les 5 idées principales.
 
-L'objectif doit etre clair. L'IA doit pouvoir comprendre ce qu'elle doit faire.
+L'objectif doit être clair. L'IA doit pouvoir comprendre ce qu'elle doit faire.
 
 ### S comme Style
 
@@ -235,19 +239,19 @@ Le style, c'est la forme.
 Tu peux demander :
 
 - un guide pratique ;
-- une fiche de revision ;
-- une liste d'etapes ;
+- une fiche de révision ;
+- une liste d'étapes ;
 - un tableau ;
 - un message LinkedIn ;
-- un email ;
+- un e-mail ;
 - une histoire ;
-- une explication pour debutants.
+- une explication pour débutants.
 
-Le style donne une forme au resultat.
+Le style donne une forme au résultat.
 
 ### T comme Ton
 
-Le ton, c'est l'emotion du texte.
+Le ton, c'est l'émotion du texte.
 
 Tu peux demander un ton :
 
@@ -262,42 +266,42 @@ Tu peux demander un ton :
 
 Le ton change beaucoup la sensation de lecture.
 
-Un meme message peut sembler froid ou humain selon le ton demande.
+Un même message peut sembler froid ou humain selon le ton demandé.
 
 ### A comme Audience
 
 L'audience, c'est la personne qui va lire.
 
-Tu dois dire pour qui la reponse est faite :
+Tu dois dire pour qui la réponse est faite :
 
 - enfants ;
-- adultes debutants ;
+- adultes débutants ;
 - experts ;
 - clients ;
-- collegues ;
+- collègues ;
 - dirigeants ;
-- personnes pressees ;
+- personnes pressées ;
 - personnes qui ont peur de la technologie.
 
-Cela aide l'IA a choisir les bons mots.
+Cela aide l'IA à choisir les bons mots.
 
-On ne parle pas pareil a un expert informatique et a une personne qui decouvre l'IA pour la premiere fois.
+On ne parle pas pareil à un expert informatique et à une personne qui découvre l'IA pour la première fois.
 
-### R comme Reponse attendue
+### R comme Réponse attendue
 
 Ici, tu dis le format voulu.
 
 Exemples :
 
-- "Reponds en 5 points."
+- "Réponds en 5 points."
 - "Fais un tableau."
-- "Donne une version courte puis une version detaillee."
+- "Donne une version courte puis une version détaillée."
 - "Utilise du Markdown."
 - "Donne uniquement du JSON."
 
-Le format evite les surprises.
+Le format évite les surprises.
 
-C'est l'equivalent de dire : "range-moi ca dans cette boite, pas dans un sac de courses troue."
+C'est l'équivalent de dire : "range-moi ça dans cette boîte, pas dans un sac de courses troué."
 
 
 ## 4. Exemple simple avec CO-STAR
@@ -309,7 +313,7 @@ Demande vague :
 Demande avec CO-STAR :
 
 ```text
-Contexte : Je prepare un atelier pour des adultes debutants qui ont deja entendu parler de ChatGPT, mais ne savent pas bien l'utiliser.
+Contexte : Je prépare un atelier pour des adultes débutants qui ont déjà entendu parler de ChatGPT, mais ne savent pas bien l'utiliser.
 
 Objectif : Explique ce qu'est le prompt engineering et pourquoi c'est utile.
 
@@ -317,27 +321,27 @@ Style : Guide simple avec exemples concrets.
 
 Ton : Chaleureux, rassurant, motivant.
 
-Audience : Grand public, niveau debutant.
+Audience : Grand public, niveau débutant.
 
-Reponse : Fais 5 sections courtes avec une analogie dans chaque section.
+Réponse : Fais 5 sections courtes avec une analogie dans chaque section.
 ```
 
-La deuxieme demande est beaucoup plus forte.
+La deuxième demande est beaucoup plus forte.
 
-Elle donne une route a l'IA.
+Elle donne une route à l'IA.
 
 Elle ne lui dit pas seulement "avance". Elle lui donne une carte.
 
-Et crois-moi, une IA avec une carte fait beaucoup moins de tourisme sauvage dans ta reponse.
+Et crois-moi, une IA avec une carte fait beaucoup moins de tourisme sauvage dans ta réponse.
 
 
-## 5. Autres petites formules utiles
+## 5. Autres formules utiles (RTF, CREATE, RACE...)
 
-CO-STAR est tres complet. Mais parfois, tu n'as pas besoin d'une grande structure.
+CO-STAR est très complet. Mais parfois, tu n'as pas besoin d'une grande structure.
 
 Tu peux utiliser des formules plus courtes.
 
-### RTF : Role, Tache, Format
+### RTF : Rôle, Tâche, Format
 
 C'est la formule rapide.
 
@@ -345,69 +349,109 @@ Tu dis :
 
 1. Qui l'IA doit jouer.
 2. Ce qu'elle doit faire.
-3. Sous quelle forme elle doit repondre.
+3. Sous quelle forme elle doit répondre.
 
 Exemple :
 
 ```text
-Role : Tu es un professeur patient.
-Tache : Explique la blockchain a un debutant.
+Rôle : Tu es un professeur patient.
+Tâche : Explique la blockchain à un débutant.
 Format : Donne une explication en 3 paragraphes avec une analogie simple.
 ```
 
-C'est comme dire a quelqu'un :
+C'est comme dire à quelqu'un :
 
-> "Mets-toi dans la peau d'un professeur, explique-moi doucement, et donne-moi une reponse courte."
+> "Mets-toi dans la peau d'un professeur, explique-moi doucement, et donne-moi une réponse courte."
+
+RTF est parfait pour les demandes rapides et directes, comme générer du code, traduire un texte ou rédiger un court message.
 
 ### CREATE : pour les demandes plus riches
 
-CREATE aide quand tu veux une reponse plus precise, surtout en marketing, communication ou creation de contenu.
+CREATE aide quand tu veux une réponse plus précise, surtout en marketing, communication ou création de contenu.
 
-Tu peux penser a CREATE comme a une fiche de mission :
+Tu peux penser à CREATE comme à une fiche de mission :
 
 - qui parle ;
 - ce qu'il faut produire ;
-- les exemples a suivre ;
-- les details a ajouter ;
+- les exemples à suivre ;
+- les détails à ajouter ;
 - le type de sortie ;
 - les contraintes.
 
 Exemple :
 
 ```text
-Tu es un community manager experimente.
-Je veux une reponse a un client mecontent sur les reseaux sociaux.
+Tu es un community manager expérimenté.
+Je veux une réponse à un client mécontent sur les réseaux sociaux.
 Voici 2 exemples de ton que nous aimons.
-Ajoute une excuse sincere, une solution concrete, et une invitation a continuer en message prive.
-Format : moins de 600 caracteres.
-Evite les mots : probleme, faute, impossible.
+Ajoute une excuse sincère, une solution concrète, et une invitation à continuer en message privé.
+Format : moins de 600 caractères.
+Évite les mots : problème, faute, impossible.
 ```
 
-Cette methode est utile quand le ton compte beaucoup.
+Cette méthode est utile quand le ton compte beaucoup.
 
-Le ton, c'est parfois la difference entre "nous comprenons votre frustration" et "cher client, veuillez patienter dans le tunnel administratif". Meme message, sensation totalement differente.
+Le ton, c'est parfois la différence entre "nous comprenons votre frustration" et "cher client, veuillez patienter dans le tunnel administratif". Même message, sensation totalement différente.
 
+### RACE : pour piloter une action avec un résultat attendu
 
-## 6. Faire raisonner l'IA pas a pas
+RACE veut dire **Rôle, Action, Contexte, Évaluation attendue** (en anglais : Role, Action, Context, Expectation).
 
-Parfois, tu ne veux pas seulement une reponse rapide.
+C'est une cousine de RTF et CO-STAR, très utilisée dans les métiers du marketing et de la communication, quand on veut surtout insister sur **le résultat concret** attendu, pas seulement sur le format.
 
-Tu veux que l'IA reflechisse mieux.
+Tu dis :
 
-C'est comme en maths a l'ecole. Si quelqu'un donne seulement le resultat, tu ne sais pas s'il a compris. Mais s'il montre les etapes, tu peux voir ou il s'est trompe.
-
-Avec l'IA, il existe plusieurs facons de l'aider a raisonner.
-
-### Chain of Thought : penser etape par etape
-
-Le Chain of Thought veut dire "chaine de pensee".
-
-En simple, tu demandes a l'IA de traiter le probleme par etapes.
+1. **Rôle** : qui l'IA doit incarner.
+2. **Action** : ce qu'elle doit faire, très concrètement.
+3. **Contexte** : la situation dans laquelle elle agit.
+4. **Évaluation attendue** : à quoi ressemble un bon résultat, et comment on saura que c'est réussi.
 
 Exemple :
 
 ```text
-Analyse ce probleme et avance etape par etape.
+Rôle : Tu es chargé de communication pour une petite association locale.
+Action : Rédige un message d'invitation à un événement portes ouvertes.
+Contexte : L'événement a lieu samedi prochain, il s'adresse à des familles du quartier qui ne connaissent pas encore l'association.
+Évaluation attendue : Le message doit donner envie de venir, tenir en 5 phrases maximum, et inclure une phrase d'accroche chaleureuse.
+```
+
+La différence avec RTF, c'est ce dernier point : tu donnes un **critère de réussite**, pas juste un format. C'est un peu comme dire à quelqu'un non seulement "fais-moi ce gâteau", mais aussi "le but, c'est qu'il fasse sourire les enfants à la première bouchée".
+
+### Et si tu croises CARE, TRACE ou d'autres acronymes ?
+
+En lisant des articles ou des formations, tu tomberas peut-être un jour sur d'autres sigles : **CARE** (Contexte, Action, Résultat, Exemple) ou **TRACE** (Tâche, Requête, Action, Contexte, Exemple).
+
+Pas de panique. Ce ne sont pas de nouvelles inventions magiques. Ce sont presque toujours **les mêmes briques de base**, juste réorganisées et renommées :
+
+- qui parle ou quel rôle adopter (Rôle / Character) ;
+- dans quelle situation (Contexte) ;
+- quoi faire précisément (Action / Tâche / Objectif) ;
+- avec quel exemple à suivre (Exemple) ;
+- pour quel résultat ou format final (Évaluation / Format / Type de sortie).
+
+Une fois que tu maîtrises CO-STAR, RTF et CREATE, tu sauras reconnaître ces briques sous n'importe quel autre nom. C'est comme apprendre à cuisiner : une fois que tu sais ce que sont un féculent, une protéine et un légume, peu importe si la recette s'appelle "bowl", "assiette équilibrée" ou "plat unique".
+
+
+## 6. Faire raisonner l'IA pas à pas
+
+Parfois, tu ne veux pas seulement une réponse rapide.
+
+Tu veux que l'IA réfléchisse mieux.
+
+C'est comme en maths à l'école. Si quelqu'un donne seulement le résultat, tu ne sais pas s'il a compris. Mais s'il montre les étapes, tu peux voir où il s'est trompé.
+
+Avec l'IA, il existe plusieurs façons de l'aider à raisonner.
+
+### Chain of Thought : penser étape par étape
+
+Le Chain of Thought veut dire "chaîne de pensée".
+
+En simple, tu demandes à l'IA de traiter le problème par étapes.
+
+Exemple :
+
+```text
+Analyse ce problème et avance étape par étape.
 Commence par identifier les informations importantes.
 Ensuite, explique le raisonnement.
 Enfin, donne la conclusion.
@@ -417,83 +461,85 @@ C'est utile pour :
 
 - les calculs ;
 - les analyses ;
-- les decisions difficiles ;
-- les problemes avec plusieurs conditions.
+- les décisions difficiles ;
+- les problèmes avec plusieurs conditions.
 
 Analogie :
 
-> Monter un escalier marche par marche est plus sur que sauter directement tout en haut.
+> Monter un escalier marche par marche est plus sûr que sauter directement tout en haut.
 
-Si l'IA saute les marches, elle peut arriver vite. Mais elle peut aussi se retrouver au mauvais etage avec un grand sourire.
+Si l'IA saute les marches, elle peut arriver vite. Mais elle peut aussi se retrouver au mauvais étage avec un grand sourire.
+
+**Ce que disent les chercheurs :** sur des tests de mathématiques de niveau scolaire (comme le benchmark GSM8K), demander à un modèle de "réfléchir étape par étape" améliore presque toujours le taux de bonnes réponses, parfois de manière très significative. Le gain exact dépend du modèle et de la version testée, mais la tendance est solide : un raisonnement explicite réduit les erreurs de calcul et les conclusions trop rapides.
 
 ### Least-to-Most : commencer par le plus simple
 
-Cette methode consiste a couper un gros probleme en petits morceaux.
+Cette méthode consiste à couper un gros problème en petits morceaux.
 
-Tu demandes a l'IA de commencer par la partie la plus simple, puis de continuer progressivement.
+Tu demandes à l'IA de commencer par la partie la plus simple, puis de continuer progressivement.
 
 Exemple :
 
 ```text
-Decoupe ce probleme en petites questions simples.
-Reponds d'abord a la premiere.
-Utilise cette reponse pour traiter la deuxieme.
-Continue jusqu'a la conclusion finale.
+Découpe ce problème en petites questions simples.
+Réponds d'abord à la première.
+Utilise cette réponse pour traiter la deuxième.
+Continue jusqu'à la conclusion finale.
 ```
 
 Analogie :
 
-> Pour ranger une piece en bazar, tu ne ranges pas tout d'un coup. Tu fais d'abord le bureau, puis le sol, puis les vetements.
+> Pour ranger une pièce en bazar, tu ne ranges pas tout d'un coup. Tu fais d'abord le bureau, puis le sol, puis les vêtements.
 
 Le cerveau aime les petits morceaux. L'IA aussi. Et ton niveau de stress aussi, franchement.
 
 ### Tree of Thoughts : explorer plusieurs chemins
 
-Le Tree of Thoughts veut dire "arbre de pensees".
+Le Tree of Thoughts veut dire "arbre de pensées".
 
-Au lieu de suivre une seule idee, l'IA explore plusieurs pistes.
+Au lieu de suivre une seule idée, l'IA explore plusieurs pistes.
 
 Exemple :
 
 ```text
-Propose 3 solutions differentes.
-Pour chaque solution, donne les avantages, les risques et le cout.
+Propose 3 solutions différentes.
+Pour chaque solution, donne les avantages, les risques et le coût.
 Ensuite, choisis la meilleure solution et explique pourquoi.
 ```
 
 Analogie :
 
-> Tu es devant trois routes. Avant de choisir, tu regardes ou chaque route peut te mener.
+> Tu es devant trois routes. Avant de choisir, tu regardes où chaque route peut te mener.
 
-C'est tres utile pour :
+C'est très utile pour :
 
-- choisir une strategie ;
-- creer un produit ;
+- choisir une stratégie ;
+- créer un produit ;
 - comparer des options ;
-- resoudre un probleme complexe.
+- résoudre un problème complexe.
 
 ### Self-Consistency : demander plusieurs essais
 
-L'idee est simple :
+L'idée est simple :
 
-> Si l'IA donne plusieurs raisonnements et que la meme conclusion revient souvent, cette conclusion est probablement plus solide.
+> Si l'IA donne plusieurs raisonnements et que la même conclusion revient souvent, cette conclusion est probablement plus solide.
 
 Analogie :
 
-> Tu demandes un avis a plusieurs personnes. Si presque tout le monde arrive a la meme conclusion, tu as plus confiance.
+> Tu demandes un avis à plusieurs personnes. Si presque tout le monde arrive à la même conclusion, tu as plus confiance.
 
 Ce n'est pas magique, mais c'est utile. C'est comme demander plusieurs brouillons avant de choisir celui qui tient debout.
 
 
-## 7. Eviter les hallucinations
+## 7. Éviter les hallucinations
 
 Une hallucination, avec l'IA, ce n'est pas une image bizarre.
 
 C'est quand l'IA dit quelque chose de faux avec beaucoup d'assurance.
 
-Et c'est dangereux, parce que le texte peut sembler credible.
+Et c'est dangereux, parce que le texte peut sembler crédible.
 
-Le piege, c'est la voix calme. Une IA peut inventer une information avec le calme d'un serveur qui t'annonce que "tout va tres bien", alors que la cuisine brule derriere.
+Le piège, c'est la voix calme. Une IA peut inventer une information avec le calme d'un serveur qui t'annonce que "tout va très bien", alors que la cuisine brûle derrière.
 
 L'IA peut inventer :
 
@@ -505,65 +551,65 @@ L'IA peut inventer :
 - une citation ;
 - une conclusion.
 
-Il faut donc apprendre a lui demander de verifier.
+Il faut donc apprendre à lui demander de vérifier.
 
-### Chain of Verification : verifier avant de finaliser
+### Chain of Verification : vérifier avant de finaliser
 
-La Chain of Verification, ou chaine de verification, consiste a faire controler les affirmations importantes.
+La Chain of Verification, ou chaîne de vérification, consiste à faire contrôler les affirmations importantes.
 
 Tu peux utiliser ce prompt :
 
 ```text
-Avant de donner ta reponse finale :
+Avant de donner ta réponse finale :
 1. Liste les affirmations importantes que tu vas utiliser.
-2. Pour chaque affirmation, indique si elle vient du texte fourni ou si elle doit etre verifiee.
+2. Pour chaque affirmation, indique si elle vient du texte fourni ou si elle doit être vérifiée.
 3. Signale les points incertains.
-4. Donne ensuite une reponse finale prudente et corrigee.
+4. Donne ensuite une réponse finale prudente et corrigée.
 ```
 
 Analogie :
 
-> Avant d'envoyer un colis, tu verifies l'adresse, le contenu et le nom du destinataire. Sinon, le colis peut partir au mauvais endroit.
+> Avant d'envoyer un colis, tu vérifies l'adresse, le contenu et le nom du destinataire. Sinon, le colis peut partir au mauvais endroit.
 
-La verification, ce n'est pas de la paranoia. C'est mettre une ceinture de securite avant de demarrer.
+La vérification, ce n'est pas de la paranoïa. C'est mettre une ceinture de sécurité avant de démarrer.
 
 ### Self-Ask : laisser l'IA poser des questions
 
 Parfois, ta demande manque d'informations.
 
-Tu peux demander a l'IA de s'arreter et de poser les bonnes questions avant de repondre.
+Tu peux demander à l'IA de s'arrêter et de poser les bonnes questions avant de répondre.
 
 Exemple :
 
 ```text
-Si ma demande manque d'informations importantes, pose-moi d'abord jusqu'a 3 questions simples avant de repondre.
+Si ma demande manque d'informations importantes, pose-moi d'abord jusqu'à 3 questions simples avant de répondre.
 ```
 
 C'est utile quand le sujet est flou.
 
-### Rephrase and Respond : reformuler avant de repondre
+### Rephrase and Respond : reformuler avant de répondre
 
-Ici, tu demandes a l'IA de reformuler ta demande avec ses propres mots.
+Ici, tu demandes à l'IA de reformuler ta demande avec ses propres mots.
 
 Exemple :
 
 ```text
 Commence par reformuler ma demande en une phrase claire.
-Ensuite, reponds a cette demande reformulee.
+Ensuite, réponds à cette demande reformulée.
 ```
 
 Analogie :
 
-> C'est comme quand quelqu'un te dit : "Si j'ai bien compris, tu veux dire que..." Cela evite les malentendus.
+> C'est comme quand quelqu'un te dit : "Si j'ai bien compris, tu veux dire que..." Cela évite les malentendus.
 
 Et parfois, ce petit "si j'ai bien compris" sauve une heure de travail. Ce n'est pas glamour, mais c'est efficace.
 
 
-## 8. Demander des reponses bien rangees
+## 8. Demander des réponses bien rangées
 
-Dans une entreprise, une reponse en texte libre ne suffit pas toujours.
+Dans une entreprise, une réponse en texte libre ne suffit pas toujours.
 
-Parfois, il faut une reponse rangee dans un format precis.
+Parfois, il faut une réponse rangée dans un format précis.
 
 C'est comme remplir un formulaire.
 
@@ -574,13 +620,13 @@ Si le formulaire demande :
 - montant ;
 - statut.
 
-Tu ne dois pas repondre avec un grand paragraphe. Tu dois remplir les cases.
+Tu ne dois pas répondre avec un grand paragraphe. Tu dois remplir les cases.
 
 Avec l'IA, on peut demander ce genre de format.
 
 ### Exemple en JSON
 
-Le JSON est un format utilise par les logiciels pour ranger les informations.
+Le JSON est un format utilisé par les logiciels pour ranger les informations.
 
 Exemple :
 
@@ -599,7 +645,7 @@ Ce format est utile parce qu'un logiciel peut le lire facilement.
 
 ```text
 Extrais les informations importantes du texte ci-dessous.
-Reponds uniquement en JSON valide.
+Réponds uniquement en JSON valide.
 Utilise exactement ces champs :
 - nom_client
 - type_demande
@@ -612,200 +658,273 @@ N'ajoute aucun autre champ.
 
 Analogie :
 
-> Le JSON, c'est comme une boite a compartiments. Chaque information doit aller dans le bon compartiment.
+> Le JSON, c'est comme une boîte à compartiments. Chaque information doit aller dans le bon compartiment.
 
-Si les donnees sont mal rangees, le logiciel peut paniquer. Et un logiciel qui panique, c'est souvent toi qui finis par paniquer aussi.
+Si les données sont mal rangées, le logiciel peut paniquer. Et un logiciel qui panique, c'est souvent toi qui finis par paniquer aussi.
+
+### Pour aller plus loin : un JSON encore plus strict
+
+Le prompt simple ci-dessus fonctionne bien, mais dans une vraie entreprise, on pousse souvent la rigueur encore plus loin. Voici quatre idées que tu peux ajouter, une par une, sans complexifier ta vie :
+
+- **Donner un "contrat" exact des champs.** Au lieu de juste lister les noms de champs, tu peux préciser le type attendu pour chacun : un texte, un nombre, une vraie/fausse valeur, ou une liste fermée de choix possibles (par exemple `urgence` ne peut valoir que `"faible"`, `"moyenne"` ou `"elevee"`, jamais autre chose). C'est ce qu'on appelle un schéma, ou un "contrat de données".
+
+- **Interdire les champs surprises.** Tu peux ajouter une phrase comme : "N'ajoute strictement aucun champ qui ne soit pas dans cette liste." Cela évite qu'une IA bien intentionnée rajoute un commentaire ou un champ "remarque" que ton logiciel ne sait pas lire.
+
+- **Baisser la température (quand l'outil le permet).** Certaines interfaces permettent de régler un curseur appelé "température" : plus il est bas, plus l'IA répond de façon stable et prévisible ; plus il est élevé, plus elle "improvise". Pour des données destinées à un logiciel, on met ce curseur au plus bas possible.
+
+- **Prévoir une boucle de réparation.** Si la réponse n'est pas un JSON valide (une virgule oubliée, par exemple), au lieu d'abandonner, tu peux renvoyer l'erreur à l'IA avec un message du type : "Ce JSON est invalide, voici l'erreur : [...]. Corrige uniquement la structure, sans changer le contenu." C'est une "auto-guérison" : l'IA corrige sa propre erreur de formatage.
+
+Exemple de prompt qui combine ces idées :
+
+```text
+Extrais les informations du texte ci-dessous.
+Réponds uniquement en JSON valide, sans aucun texte autour.
+
+Schéma attendu :
+- nom_client : texte
+- type_demande : texte
+- urgence : une seule valeur parmi "faible", "moyenne", "elevee"
+- resume : texte de moins de 200 caractères
+
+N'ajoute aucun champ qui ne figure pas dans cette liste.
+Si une information manque, mets la valeur null.
+```
+
+Analogie :
+
+> Un prompt JSON simple, c'est une boîte à compartiments. Un prompt JSON "strict", c'est la même boîte, mais avec une étiquette sur chaque compartiment qui précise ce qu'on a le droit d'y mettre — et un protocole clair pour quand quelqu'un range mal.
 
 
-## 9. Les agents IA : travailler en equipe
+## 9. Les agents IA : travailler en équipe
 
-Un agent IA, c'est une IA qui ne fait pas seulement repondre.
+Un agent IA, c'est une IA qui ne fait pas seulement répondre.
 
-Elle peut aussi suivre une mission, utiliser des outils, chercher des informations, appeler une API, analyser un fichier, puis produire une reponse.
+Elle peut aussi suivre une mission, utiliser des outils, chercher des informations, appeler une API, analyser un fichier, puis produire une réponse.
 
-Quand plusieurs agents travaillent ensemble, on parle de systeme multi-agents.
+Quand plusieurs agents travaillent ensemble, on parle de système multi-agents.
 
-Imagine une equipe dans une entreprise :
+Imagine une équipe dans une entreprise :
 
 - une personne analyse les chiffres ;
 - une autre regarde les risques ;
-- une autre verifie la loi ;
-- une autre fait la synthese finale.
+- une autre vérifie la loi ;
+- une autre fait la synthèse finale.
 
-Avec les agents IA, on peut faire la meme chose.
+Avec les agents IA, on peut faire la même chose.
 
-Tu peux imaginer une petite equipe dans ton ordinateur. Pas des humains miniatures, malheureusement, mais des roles bien separes : chacun sa mission, chacun son tablier.
+Tu peux imaginer une petite équipe dans ton ordinateur. Pas des humains miniatures, malheureusement, mais des rôles bien séparés : chacun sa mission, chacun son tablier.
 
-### Systeme en ligne droite
+### Système en ligne droite
 
-Chaque agent travaille apres le precedent.
+Chaque agent travaille après le précédent.
 
 Exemple :
 
-1. Agent 1 : ecrit un brouillon.
-2. Agent 2 : verifie les erreurs.
-3. Agent 3 : ameliore le style.
+1. Agent 1 : écrit un brouillon.
+2. Agent 2 : vérifie les erreurs.
+3. Agent 3 : améliore le style.
 4. Agent 4 : donne la version finale.
 
 Analogie :
 
-> C'est comme une chaine de montage.
+> C'est comme une chaîne de montage.
 
-### Systeme en parallele
+### Système en parallèle
 
-Plusieurs agents travaillent en meme temps sur le meme sujet.
+Plusieurs agents travaillent en même temps sur le même sujet.
 
 Exemple :
 
 - un agent regarde les avantages ;
 - un agent regarde les risques ;
-- un agent regarde le cout ;
-- un agent fait la synthese.
+- un agent regarde le coût ;
+- un agent fait la synthèse.
 
 Analogie :
 
-> C'est comme demander a plusieurs specialistes de regarder le meme probleme avec leurs lunettes differentes.
+> C'est comme demander à plusieurs spécialistes de regarder le même problème avec leurs lunettes différentes.
 
-### Systeme chef de projet
+### Système chef de projet
 
-Un agent central joue le role de chef.
+Un agent central joue le rôle de chef.
 
-Il decoupe le travail, distribue les missions, recupere les resultats, puis fait la synthese.
+Il découpe le travail, distribue les missions, récupère les résultats, puis fait la synthèse.
 
 Analogie :
 
-> C'est comme un chef de cuisine qui dit a chacun quoi preparer, puis assemble l'assiette finale.
+> C'est comme un chef de cuisine qui dit à chacun quoi préparer, puis assemble l'assiette finale.
 
-Sans chef, tout le monde peut travailler fort et finir avec trois desserts, zero plat principal, et une reunion qui sent la confusion.
+Sans chef, tout le monde peut travailler fort et finir avec trois desserts, zéro plat principal, et une réunion qui sent la confusion.
+
+### Les filets de sécurité d'une équipe d'agents
+
+Quand une équipe d'agents IA tourne en continu dans une entreprise (et pas seulement pour un test ponctuel), il faut prévoir ce qui se passe **quand un agent plante, répond trop lentement, ou part dans le mur**. Trois filets de sécurité reviennent tout le temps :
+
+- **Le délai maximum (timeout).** On donne à chaque agent une limite de temps. S'il ne répond pas avant, on n'attend pas indéfiniment : on passe à un plan B. C'est comme donner 10 minutes à un collègue pour répondre à un mail urgent, plutôt que d'attendre toute la journée sans rien faire d'autre.
+
+- **Les nouvelles tentatives (retries).** Si un agent échoue une fois, ce n'est pas forcément grave : on lui redonne une chance, parfois en attendant un peu plus longtemps à chaque essai (par exemple 2 secondes, puis 4, puis 8). C'est comme rappeler quelqu'un qui n'a pas décroché, en laissant un peu plus de temps entre chaque appel.
+
+- **Le coupe-circuit (circuit breaker).** Si un agent échoue trop souvent de suite, on arrête complètement de l'utiliser pendant un moment, plutôt que de continuer à insister dans le vide. C'est comme arrêter d'appeler un service après plusieurs échecs, et essayer une autre solution en attendant que ça revienne à la normale.
+
+Tu n'as pas besoin de configurer toi-même ces mécanismes pour commencer. Mais si tu entends parler de "timeout", "retry" ou "circuit breaker" dans une équipe technique, tu sauras maintenant que ce sont simplement des règles de bon sens pour qu'une équipe d'agents reste fiable, même quand un de ses membres a une mauvaise journée.
 
 
-## 10. ReAct : reflechir, agir, observer
+## 10. ReAct : réfléchir, agir, observer
 
 ReAct veut dire que l'agent alterne entre :
 
-- reflechir ;
+- réfléchir ;
 - agir ;
-- observer le resultat ;
+- observer le résultat ;
 - corriger si besoin.
 
 Exemple simple :
 
-1. L'agent se dit : "Je dois trouver une information recente."
+1. L'agent se dit : "Je dois trouver une information récente."
 2. Il utilise un outil de recherche.
-3. Il lit le resultat.
-4. Il ajuste sa reponse.
+3. Il lit le résultat.
+4. Il ajuste sa réponse.
 
 Analogie :
 
-> Quand tu cuisines, tu ne suis pas seulement la recette. Tu gouttes, tu ajustes le sel, tu surveilles la cuisson.
+> Quand tu cuisines, tu ne suis pas seulement la recette. Tu goûtes, tu ajustes le sel, tu surveilles la cuisson.
 
 Un bon agent IA fait pareil : il avance, regarde ce qui se passe, puis corrige.
 
-C'est une bonne lecon pour nous aussi : on n'a pas besoin d'avoir tout juste du premier coup. On avance, on observe, on ajuste.
+C'est une bonne leçon pour nous aussi : on n'a pas besoin d'avoir tout juste du premier coup. On avance, on observe, on ajuste.
 
 
-## 11. Juger la qualite d'une reponse IA
+## 11. Juger la qualité d'une réponse IA
 
 Dans une entreprise, on ne peut pas se contenter de dire :
 
-> "Cette reponse me semble bonne."
+> "Cette réponse me semble bonne."
 
-Il faut des criteres.
+Il faut des critères.
 
-On peut demander a une IA de juger une autre reponse. C'est ce qu'on appelle parfois "LLM-as-a-Judge".
+On peut demander à une IA de juger une autre réponse. C'est ce qu'on appelle parfois "LLM-as-a-Judge".
 
 En simple :
 
-> Une IA joue le role de correcteur.
+> Une IA joue le rôle de correcteur.
 
 Mais il faut lui donner une grille claire.
 
 ### Exemple de grille simple
 
-Au lieu de noter de 1 a 10, on peut utiliser des categories :
+Au lieu de noter de 1 à 10, on peut utiliser des catégories :
 
-- Correct : la reponse est utile et respecte la demande.
-- A corriger : la reponse est partiellement bonne, mais il manque des choses.
-- Risquee : la reponse contient des erreurs ou des affirmations non verifiees.
-- Echec : la reponse ne repond pas a la demande.
+- Correct : la réponse est utile et respecte la demande.
+- À corriger : la réponse est partiellement bonne, mais il manque des choses.
+- Risquée : la réponse contient des erreurs ou des affirmations non vérifiées.
+- Échec : la réponse ne répond pas à la demande.
 
-Cette methode est plus claire qu'une note vague.
+Cette méthode est plus claire qu'une note vague. Les chiffres de 1 à 10 ont un défaut connu : les évaluateurs (humains ou IA) ont tendance à se regrouper autour de 6, 7 ou 8, presque par réflexe. Des catégories nommées forcent à trancher.
 
-### Les questions a poser pour juger
+### Les questions à poser pour juger
 
-Une bonne evaluation peut demander :
+Une bonne évaluation peut demander :
 
-- Est-ce que la reponse repond vraiment a la question ?
-- Est-ce qu'elle respecte le contexte donne ?
+- Est-ce que la réponse répond vraiment à la question ?
+- Est-ce qu'elle respecte le contexte donné ?
 - Est-ce qu'elle invente des faits ?
-- Est-ce qu'elle est complete ?
-- Est-ce que le format demande est respecte ?
+- Est-ce qu'elle est complète ?
+- Est-ce que le format demandé est respecté ?
 
 Analogie :
 
-> C'est comme corriger une copie avec une grille. Tu ne dis pas seulement "c'est bien" ou "c'est nul". Tu regardes des criteres precis.
+> C'est comme corriger une copie avec une grille. Tu ne dis pas seulement "c'est bien" ou "c'est nul". Tu regardes des critères précis.
 
-Sans grille, on juge au feeling. Et le feeling, c'est tres bien pour choisir une musique. Pour valider une reponse IA, c'est un peu leger.
+Sans grille, on juge au feeling. Et le feeling, c'est très bien pour choisir une musique. Pour valider une réponse IA, c'est un peu léger.
+
+### Le vocabulaire des pros de l'évaluation
+
+Si tu travailles un jour avec une équipe technique, tu entendras peut-être des noms plus précis pour ces mêmes questions. Voici le décodeur :
+
+| Question simple | Nom technique | Ce que ça vérifie |
+|---|---|---|
+| Est-ce qu'elle invente des faits ? | **Faithfulness** (fidélité) | La réponse ne dit que ce qui est soutenu par le contexte fourni, sans rien ajouter. |
+| Est-ce qu'elle répond vraiment à la question ? | **Answer Relevancy** (pertinence) | La réponse correspond bien à ce qui a été demandé, sans partir hors sujet. |
+| Est-ce que les documents retrouvés sont utiles ? | **Contextual Relevancy** | Pour les systèmes qui recherchent des documents avant de répondre (RAG) : les documents trouvés sont-ils les bons ? |
+| Est-ce que l'agent a bien utilisé ses outils ? | **Tool Correctness** | Pour les agents qui appellent des outils ou des API : les bons outils, avec les bons paramètres. |
+
+Ce ne sont pas des concepts différents de ceux que tu viens d'apprendre : juste les noms que tu retrouveras dans la documentation technique.
+
+### Et qui juge le juge ?
+
+Une dernière idée importante : un juge IA n'est pas infaillible. De temps en temps, il faut vérifier que ses verdicts ressemblent à ceux d'un humain qui ferait la même évaluation.
+
+En pratique, on prend un échantillon de réponses, on les fait évaluer à la fois par l'IA-juge et par une personne, puis on compare. Si les deux sont presque toujours d'accord, on peut faire confiance au juge IA pour le reste. S'ils sont souvent en désaccord, la grille de notation doit être revue.
+
+Analogie :
+
+> C'est comme former un nouveau correcteur de copies. Au début, on compare ses notes à celles d'un professeur expérimenté. S'ils tombent d'accord la plupart du temps, on peut lui laisser plus d'autonomie.
 
 
-## 12. Ce que les entreprises font deja avec l'IA
+## 12. Ce que les entreprises font déjà avec l'IA
 
-Le document donne plusieurs exemples d'entreprises qui utilisent l'IA pour gagner du temps.
-
-Voici l'idee, en version simple.
+Voici, en version simple, quelques exemples de ce que des entreprises font déjà avec des IA bien guidées.
 
 Le but ici n'est pas de te faire croire que l'IA est une baguette magique. Le but est de te montrer qu'avec de bonnes consignes, elle peut devenir un vrai levier de travail.
 
-### Finance et fiscalite
+### Finance et fiscalité
 
-Certains cabinets utilisent l'IA pour aider a preparer des conseils fiscaux.
+Certains grands cabinets d'audit et de conseil ont développé des agents IA internes pour la fiscalité. L'idée : l'agent reçoit un prompt très détaillé, parfois long de plusieurs dizaines de pages, qui décrit les codes fiscaux applicables et la façon de raisonner d'un expert. À partir de là, il peut produire un premier projet de conseil fiscal.
 
-Avant, une premiere version pouvait prendre des jours ou des semaines.
+Un travail qui prenait auparavant une à deux semaines peut, pour une première version, être ramené à une seule journée. L'expert humain garde ensuite la main pour relire, corriger et valider.
 
-Avec une IA bien guidee, certaines etapes peuvent etre faites beaucoup plus vite.
-
-Mais attention : l'humain doit encore verifier. L'IA aide, elle ne remplace pas la responsabilite.
+Mais attention : l'humain doit encore vérifier. L'IA aide, elle ne remplace pas la responsabilité.
 
 ### Service client
 
-Des entreprises utilisent des chatbots pour repondre aux clients.
+Des entreprises de services (énergie, télécoms, e-commerce...) utilisent des chatbots IA pour répondre à une grande partie des demandes clients courantes — parfois plusieurs dizaines de pourcents du volume total.
 
-Quand le prompt est bien construit, le chatbot peut repondre vite, clairement, et parfois avec plus de regularite qu'un humain fatigue ou presse.
+Quand le prompt est bien construit, le chatbot peut répondre vite, clairement, et parfois avec plus de régularité qu'un humain fatigué ou pressé. Certaines entreprises rapportent même un taux de satisfaction client sur les réponses de l'IA supérieur à celui des agents humains sur les mêmes types de demandes.
 
 Le secret n'est pas seulement la technologie.
 
-Le secret, c'est aussi la qualite des consignes donnees a l'IA.
+Le secret, c'est aussi la qualité des consignes données à l'IA, et le fait de garder un humain disponible pour les cas difficiles.
 
 ### Recrutement
 
-L'IA peut aider a rediger des messages pour inviter des candidats a postuler.
+Dans le recrutement, des plateformes d'offres d'emploi utilisent des messages générés ou optimisés par IA pour inviter des candidats à postuler à des offres qui leur correspondent.
 
 Un bon message peut donner envie.
 
 Un mauvais message peut faire fuir.
 
-La difference se joue souvent dans le ton, la clarte et la personnalisation.
+Des entreprises du secteur rapportent que des messages mieux ciblés et mieux rédigés augmentent à la fois le nombre de candidatures reçues et le nombre d'embauches qui en découlent. La différence se joue souvent dans le ton, la clarté et la personnalisation — exactement ce que CO-STAR et CREATE permettent de maîtriser.
 
 ### Magasins et support interne
 
-Dans certains magasins, les vendeurs peuvent utiliser une IA pour obtenir rapidement des conseils techniques.
+Dans certaines grandes enseignes de bricolage ou de retail, les vendeurs disposent d'une application avec une IA capable de répondre à des questions techniques en temps réel ("quelle vis pour fixer ceci sur ce mur ?"), dans des centaines, voire des milliers de magasins.
 
-Cela peut transformer un employe generaliste en conseiller plus competent.
+Cela peut transformer un employé généraliste en conseiller plus compétent face au client.
 
 Analogie :
 
 > C'est comme avoir un manuel vivant dans la poche.
 
+### Un mot sur ces chiffres
 
-## 13. Programme d'entrainement simplifie
+Tu l'auras peut-être remarqué : cette section contient des pourcentages, des durées, des nombres de magasins... et pourtant, aucune source précise n'est citée.
+
+C'est volontaire, et c'est même le meilleur exercice pratique de tout ce manuel.
+
+Ces exemples sont largement repris dans la presse spécialisée et les communications d'entreprises. Ils donnent un **ordre de grandeur réaliste** de ce que le prompt engineering permet aujourd'hui. Mais avant de les répéter dans une présentation ou un rapport professionnel, applique la leçon de la section 7 : retrouve la source d'origine, vérifie la date, et confirme le chiffre exact.
+
+Une IA — et un livre — peuvent paraître très sûrs d'eux en énonçant un chiffre. La vraie compétence, c'est de garder ce petit réflexe : "intéressant... et la source, c'est laquelle ?"
+
+
+## 13. Programme d'entraînement simplifié
 
 Pour devenir bon, il ne suffit pas de lire.
 
 Il faut pratiquer.
 
-Voici un parcours simple en 10 exercices.
+Voici un parcours simple en 10 exercices, plus 3 défis bonus pour celles et ceux qui veulent aller plus loin.
 
-Ne cherche pas a tout reussir du premier coup. Ici, se tromper fait partie de l'entrainement. Meme les bons prompt engineers ont deja ecrit des consignes tellement longues qu'on aurait pu les plier en quatre et les envoyer par colis.
+Ne cherche pas à tout réussir du premier coup. Ici, se tromper fait partie de l'entraînement. Même les bons prompt engineers ont déjà écrit des consignes tellement longues qu'on aurait pu les plier en quatre et les envoyer par colis.
 
 ### Exercice 1 : transformer une demande floue
 
@@ -813,7 +932,7 @@ Prends cette demande :
 
 > Analyse ce rapport de ventes.
 
-Reecris-la avec CO-STAR.
+Réécris-la avec CO-STAR.
 
 Ajoute :
 
@@ -824,58 +943,58 @@ Ajoute :
 - l'audience ;
 - le format attendu.
 
-But : apprendre a enlever le flou.
+But : apprendre à enlever le flou.
 
-Petit sourire de debutant : si ton premier prompt ressemble a "fais un truc bien", ce n'est pas grave. On commence tous quelque part.
+Petit sourire de débutant : si ton premier prompt ressemble à "fais un truc bien", ce n'est pas grave. On commence tous quelque part.
 
-### Exercice 2 : controler le ton
+### Exercice 2 : contrôler le ton
 
-Demande a l'IA d'ecrire une reponse a un client mecontent.
+Demande à l'IA d'écrire une réponse à un client mécontent.
 
 Ajoute :
 
-- le ton souhaite ;
+- le ton souhaité ;
 - les mots interdits ;
 - la longueur maximale ;
-- un exemple de bonne reponse.
+- un exemple de bonne réponse.
 
 But : comprendre que le style se pilote.
 
-Tu vas voir : changer le ton d'une reponse, c'est comme changer la lumiere dans une piece. Le contenu reste la, mais l'ambiance change completement.
+Tu vas voir : changer le ton d'une réponse, c'est comme changer la lumière dans une pièce. Le contenu reste là, mais l'ambiance change complètement.
 
-### Exercice 3 : faire raisonner etape par etape
+### Exercice 3 : faire raisonner étape par étape
 
-Donne a l'IA un probleme avec plusieurs informations.
+Donne à l'IA un problème avec plusieurs informations.
 
 Demande-lui de :
 
-1. reperer les donnees importantes ;
-2. expliquer les etapes ;
+1. repérer les données importantes ;
+2. expliquer les étapes ;
 3. donner la conclusion.
 
-But : eviter les reponses trop rapides.
+But : éviter les réponses trop rapides.
 
 ### Exercice 4 : comparer plusieurs solutions
 
-Choisis un probleme :
+Choisis un problème :
 
 > Comment lancer une petite formation en ligne ?
 
-Demande a l'IA 3 strategies differentes, avec avantages, risques et couts.
+Demande à l'IA 3 stratégies différentes, avec avantages, risques et coûts.
 
-But : apprendre a explorer plusieurs chemins.
+But : apprendre à explorer plusieurs chemins.
 
-### Exercice 5 : verifier les faits
+### Exercice 5 : vérifier les faits
 
-Donne un texte a resumer.
+Donne un texte à résumer.
 
-Demande a l'IA de lister les affirmations importantes, puis de dire lesquelles sont certaines et lesquelles sont incertaines.
+Demande à l'IA de lister les affirmations importantes, puis de dire lesquelles sont certaines et lesquelles sont incertaines.
 
-But : reduire les inventions.
+But : réduire les inventions.
 
 ### Exercice 6 : obtenir un format propre
 
-Donne un email client a l'IA.
+Donne un e-mail client à l'IA.
 
 Demande-lui d'extraire les informations en JSON :
 
@@ -884,17 +1003,17 @@ Demande-lui d'extraire les informations en JSON :
 - urgence ;
 - prochaine action.
 
-But : apprendre a produire des donnees utilisables.
+But : apprendre à produire des données utilisables.
 
-### Exercice 7 : creer une mini-equipe d'agents
+### Exercice 7 : créer une mini-équipe d'agents
 
-Demande a l'IA de jouer 3 roles :
+Demande à l'IA de jouer 3 rôles :
 
 - analyste ;
 - critique ;
-- redacteur final.
+- rédacteur final.
 
-Chaque role doit donner sa contribution.
+Chaque rôle doit donner sa contribution.
 
 But : comprendre la logique multi-agents.
 
@@ -902,43 +1021,73 @@ But : comprendre la logique multi-agents.
 
 Donne un long texte.
 
-Demande a l'IA de citer les sections utiles avant de faire la synthese.
+Demande à l'IA de citer les sections utiles avant de faire la synthèse.
 
-But : eviter qu'elle resume au hasard.
+But : éviter qu'elle résume au hasard.
 
-### Exercice 9 : creer un juge
+### Exercice 9 : créer un juge
 
-Demande a l'IA de corriger une reponse selon une grille :
+Demande à l'IA de corriger une réponse selon une grille :
 
 - correct ;
-- a corriger ;
-- risque ;
-- echec.
+- à corriger ;
+- risqué ;
+- échec.
 
-But : apprendre a evaluer une reponse.
+But : apprendre à évaluer une réponse.
 
 ### Exercice 10 : couper un prompt trop lourd
 
-Prends une consigne tres longue.
+Prends une consigne très longue.
 
 Divise-la en 3 prompts :
 
 1. comprendre la demande ;
 2. extraire les informations ;
-3. produire la reponse finale.
+3. produire la réponse finale.
 
-But : apprendre que parfois, plusieurs petites demandes valent mieux qu'une enorme consigne.
+But : apprendre que parfois, plusieurs petites demandes valent mieux qu'une énorme consigne.
 
 Quand un prompt devient un meuble IKEA sans notice, coupe-le en morceaux. Tout le monde respirera mieux, toi compris.
 
+### Bonus : 3 défis niveau expert
 
-## 14. Les modeles de prompts a garder
+Ces trois défis reprennent les exercices 7, 8 et 9, mais avec un scénario plus proche de ce qu'on trouve en entreprise. Prends ton temps : c'est normal si la première tentative est imparfaite.
 
-Voici des modeles simples que tu peux reutiliser.
+**Bonus A — Le comité d'investissement (suite de l'exercice 7)**
 
-Garde-les comme une petite trousse de secours. Le jour ou ton cerveau affiche "mise a jour en cours", ces modeles t'aideront a redemarrer.
+Demande à l'IA de jouer 4 rôles : un analyste "tendances générales", un analyste "chiffres de l'entreprise", un analyste "avis du public", et un responsable qui doit prendre une décision.
 
-### Modele CO-STAR
+Les trois premiers donnent chacun leur avis sur un même produit ou projet fictif, **même si leurs avis se contredisent**. Le responsable doit ensuite lire les trois avis, expliquer où ils sont en désaccord, et donner une recommandation finale avec un niveau de confiance (faible, moyen, élevé).
+
+But : apprendre à faire travailler des points de vue contradictoires ensemble, plutôt que de les lisser artificiellement.
+
+**Bonus B — La grande note (suite de l'exercice 8)**
+
+Donne à l'IA un texte assez long (plusieurs pages, ou plusieurs documents collés ensemble). Demande-lui de :
+
+1. marquer les passages utiles en les entourant d'une balise du type `<passage_utile>...</passage_utile>` ;
+2. ne faire la synthèse finale qu'à partir de ces passages marqués ;
+3. signaler si une information importante semble se trouver "au milieu" du texte plutôt qu'au début ou à la fin.
+
+But : vérifier que l'IA ne se contente pas de résumer le début et la fin d'un document — un piège fréquent sur les textes longs.
+
+**Bonus C — Le juge anti-biais (suite de l'exercice 9)**
+
+Demande à l'IA de jouer un "juge" chargé de relire des annonces de recrutement ou des réponses de chatbot, et de repérer si elles favorisent ou défavorisent injustement un groupe de personnes (âge, genre, origine, situation de handicap...).
+
+Donne-lui des exemples de réponses à classer "acceptable" et d'autres à classer "à corriger", puis demande-lui d'expliquer son verdict avant de le donner.
+
+But : comprendre qu'un "juge IA" peut aussi servir à surveiller l'équité, pas seulement la qualité rédactionnelle — et qu'il doit toujours justifier son verdict, jamais juste donner une note brute.
+
+
+## 14. Les modèles de prompts à garder
+
+Voici des modèles simples que tu peux réutiliser.
+
+Garde-les comme une petite trousse de secours. Le jour où ton cerveau affiche "mise à jour en cours", ces modèles t'aideront à redémarrer.
+
+### Modèle CO-STAR
 
 ```text
 Contexte :
@@ -948,77 +1097,108 @@ Objectif :
 [Dis exactement ce que tu veux obtenir.]
 
 Style :
-[Guide, tableau, liste, email, fiche, script, etc.]
+[Guide, tableau, liste, e-mail, fiche, script, etc.]
 
 Ton :
 [Simple, chaleureux, professionnel, direct, rassurant, etc.]
 
 Audience :
-[Dis pour qui la reponse est faite.]
+[Dis pour qui la réponse est faite.]
 
-Reponse attendue :
-[Precise le format, la longueur et les contraintes.]
+Réponse attendue :
+[Précise le format, la longueur et les contraintes.]
 ```
 
-### Modele pour simplifier un texte
+### Modèle RACE
+
+```text
+Rôle :
+[Qui l'IA doit incarner.]
+
+Action :
+[Ce qu'elle doit faire, très concrètement.]
+
+Contexte :
+[La situation dans laquelle elle agit.]
+
+Évaluation attendue :
+[À quoi ressemble un bon résultat, et comment on saura que c'est réussi.]
+```
+
+### Modèle pour simplifier un texte
 
 ```text
 Simplifie le texte ci-dessous pour un lecteur grand public.
 Utilise des phrases courtes.
-Evite le jargon.
+Évite le jargon.
 Explique les mots difficiles.
 Ajoute des analogies simples.
 Adresse-toi directement au lecteur avec un ton humain et rassurant.
-Garde les idees importantes sans ajouter de faits inventes.
+Garde les idées importantes sans ajouter de faits inventés.
 ```
 
-### Modele pour verifier une reponse
+### Modèle pour vérifier une réponse
 
 ```text
-Verifie cette reponse.
+Vérifie cette réponse.
 Dis :
 1. ce qui est correct ;
 2. ce qui est flou ;
-3. ce qui pourrait etre faux ;
+3. ce qui pourrait être faux ;
 4. ce qu'il faut corriger ;
 5. une version finale plus fiable.
 ```
 
-### Modele pour comparer des options
+### Modèle pour comparer des options
 
 ```text
-Propose 3 options differentes.
+Propose 3 options différentes.
 Pour chaque option, donne :
 - les avantages ;
 - les risques ;
-- le niveau de difficulte ;
-- le temps necessaire ;
+- le niveau de difficulté ;
+- le temps nécessaire ;
 - la meilleure situation pour l'utiliser.
 
-Puis recommande l'option la plus adaptee.
+Puis recommande l'option la plus adaptée.
 ```
 
-### Modele pour obtenir une reponse structuree
+### Modèle pour obtenir une réponse structurée
 
 ```text
-Reponds uniquement dans ce format :
+Réponds uniquement dans ce format :
 
 Titre :
-Resume en 3 lignes :
+Résumé en 3 lignes :
 Points importants :
-Actions conseillees :
+Actions conseillées :
 Risques :
 Conclusion :
 
 N'ajoute aucune autre section.
 ```
 
+### Modèle JSON strict (avec petit schéma)
 
-## 15. Les erreurs frequentes a eviter
+```text
+Extrais les informations du texte ci-dessous.
+Réponds uniquement en JSON valide, sans aucun texte autour.
 
-Cette section n'est pas la pour te gronder.
+Schéma attendu :
+- [champ_1] : texte
+- [champ_2] : nombre
+- [champ_3] : une seule valeur parmi "[valeur_a]", "[valeur_b]", "[valeur_c]"
 
-Elle est la pour te faire gagner du temps.
+N'ajoute aucun champ qui ne figure pas dans cette liste.
+Si une information manque, mets la valeur null.
+```
+
+
+## 15. Les erreurs fréquentes à éviter
+
+Cette section n'est pas là pour te gronder.
+
+Elle est là pour te faire gagner du temps.
 
 Si tu reconnais une de tes erreurs, souris un peu : cela veut dire que tu es exactement en train d'apprendre.
 
@@ -1030,15 +1210,15 @@ Mauvais :
 
 Meilleur :
 
-> Ecris un texte de 300 mots pour expliquer notre service a des debutants, avec un ton rassurant et 3 exemples concrets.
+> Écris un texte de 300 mots pour expliquer notre service à des débutants, avec un ton rassurant et 3 exemples concrets.
 
-La premiere version dit : "surprends-moi". La deuxieme dit : "aide-moi vraiment".
+La première version dit : "surprends-moi". La deuxième dit : "aide-moi vraiment".
 
 ### Erreur 2 : oublier le lecteur
 
-Un texte pour un expert n'est pas un texte pour un debutant.
+Un texte pour un expert n'est pas un texte pour un débutant.
 
-Dis toujours a l'IA qui va lire.
+Dis toujours à l'IA qui va lire.
 
 ### Erreur 3 : ne pas donner le format
 
@@ -1046,47 +1226,55 @@ Si tu veux un tableau, demande un tableau.
 
 Si tu veux une liste, demande une liste.
 
-Si tu veux une reponse courte, donne une limite.
+Si tu veux une réponse courte, donne une limite.
 
-### Erreur 4 : croire l'IA sans verifier
+### Erreur 4 : croire l'IA sans vérifier
 
 L'IA peut se tromper.
 
-Elle peut parler avec confiance meme quand elle invente.
+Elle peut parler avec confiance même quand elle invente.
 
-Pour les sujets importants, demande toujours une verification.
+Pour les sujets importants, demande toujours une vérification.
 
 ### Erreur 5 : tout mettre dans un seul prompt
 
 Quand une demande devient trop grande, coupe-la.
 
-Un gros sac difficile a porter devient plus simple quand tu le divises en plusieurs petits sacs.
+Un gros sac difficile à porter devient plus simple quand tu le divises en plusieurs petits sacs.
 
-Et oui, c'est moins impressionnant qu'un prompt geant. Mais souvent, c'est beaucoup plus efficace.
+Et oui, c'est moins impressionnant qu'un prompt géant. Mais souvent, c'est beaucoup plus efficace.
+
+### Erreur 6 : répéter un chiffre impressionnant sans vérifier sa source
+
+"L'IA fait le travail de 250 personnes", "+20 % de candidatures grâce à l'IA"... Ces chiffres circulent beaucoup, y compris dans ce manuel (section 12).
+
+Ils donnent une idée du potentiel, mais ce ne sont pas des vérités universelles gravées dans le marbre. Avant de les utiliser dans une présentation, un rapport ou une décision, prends deux minutes pour retrouver la source originale et vérifier qu'elle est encore valable.
+
+C'est la même règle que pour les hallucinations de l'IA (section 7) : une affirmation qui sonne bien et qui circule beaucoup n'est pas forcément vraie. Un bon prompt engineer garde ce réflexe, pour l'IA comme pour ses propres lectures.
 
 
-## 16. La grande idee a retenir
+## 16. La grande idée à retenir
 
 Le prompt engineering n'est pas de la magie.
 
-C'est une methode de communication.
+C'est une méthode de communication.
 
-Tu apprends a dire clairement :
+Tu apprends à dire clairement :
 
-- ou tu veux aller ;
+- où tu veux aller ;
 - ce que tu veux obtenir ;
-- pour qui la reponse est faite ;
+- pour qui la réponse est faite ;
 - dans quel style ;
 - avec quelles limites ;
 - sous quel format.
 
-Une IA peut etre tres puissante, mais elle a besoin d'un bon cadre.
+Une IA peut être très puissante, mais elle a besoin d'un bon cadre.
 
 Sans cadre, elle improvise.
 
 Avec un bon cadre, elle devient un vrai outil de travail.
 
-Tu peux voir l'IA comme un assistant tres rapide, mais pas toujours prudent.
+Tu peux voir l'IA comme un assistant très rapide, mais pas toujours prudent.
 
 Ton prompt, c'est la main sur le volant.
 
@@ -1095,65 +1283,103 @@ Plus tu conduis clairement, plus le trajet devient utile, calme et efficace.
 Et si tu rates un virage, ce n'est pas la fin du monde. Tu corriges, tu reformules, tu reprends la route.
 
 
+## 17. Boîte à outils avancée : pour aller plus loin
+
+Cette dernière section est un pense-bête. Tu peux y revenir chaque fois que tu croises un terme technique sans te souvenir d'où il vient.
+
+### Tableau récapitulatif des formules
+
+| Formule | Signification | Quand l'utiliser |
+|---|---|---|
+| **CO-STAR** | Contexte, Objectif, Style, Ton, Audience, Réponse attendue | Pour une demande complète, quand tu as le temps de bien cadrer |
+| **RTF** | Rôle, Tâche, Format | Pour une demande rapide et directe (code, traduction, message court) |
+| **CREATE** | Qui parle, demande, Exemples à suivre, détails à Ajouter, Type de sortie, contraintes (Extras) | Pour du contenu marketing ou communication, avec des exemples |
+| **RACE** | Rôle, Action, Contexte, Évaluation attendue | Quand le résultat concret compte plus que le format |
+| **CARE / TRACE** | Variantes qui recombinent Contexte, Action, Résultat ou Tâche, Exemple | Si tu les croises ailleurs : mêmes briques, autre étiquette |
+
+### Mini-glossaire des termes avancés
+
+| Terme | En une phrase |
+|---|---|
+| **Schéma / contrat de données** | La liste précise des champs attendus dans une réponse JSON, avec leur type et leurs valeurs possibles. |
+| **`additionalProperties: false`** | Une instruction qui dit à l'IA : "n'invente aucun champ qui ne soit pas dans la liste". |
+| **Température** | Un réglage qui contrôle si l'IA répond toujours pareil (température basse) ou varie davantage (température haute). |
+| **Repair loop (boucle de réparation)** | Renvoyer une erreur à l'IA pour qu'elle corrige elle-même le format de sa réponse. |
+| **Timeout** | La durée maximale qu'on accorde à un agent avant de passer à un plan B. |
+| **Retry** | Redonner une nouvelle chance à un agent qui a échoué, parfois en attendant un peu plus longtemps à chaque essai. |
+| **Circuit breaker (coupe-circuit)** | Arrêter complètement d'utiliser un agent qui échoue trop souvent, le temps que la situation se stabilise. |
+| **Faithfulness (fidélité)** | Est-ce que la réponse colle au contexte fourni, sans rien inventer ? |
+| **Answer Relevancy (pertinence)** | Est-ce que la réponse correspond vraiment à la question posée ? |
+| **Contextual Relevancy** | Pour les systèmes qui cherchent des documents : ces documents sont-ils les bons ? |
+| **Tool Correctness** | Pour les agents qui utilisent des outils : les ont-ils bien utilisés ? |
+| **Accord entre juges** | Une mesure de la fréquence à laquelle un juge IA et un humain tombent d'accord sur la même évaluation. |
+
+Tu n'as pas besoin de mémoriser ce tableau. Le simple fait de savoir qu'il existe, et de pouvoir y revenir, suffit pour ne plus être surpris par ce vocabulaire dans une réunion ou un article.
+
+
 ## Conclusion
 
-Si tu debutes, ne cherche pas a tout maitriser d'un coup.
+Si tu débutes, ne cherche pas à tout maîtriser d'un coup.
 
 Commence simplement :
 
 1. Donne le contexte.
 2. Dis l'objectif.
-3. Precise le lecteur.
+3. Précise le lecteur.
 4. Demande un format.
-5. Fais verifier les points importants.
+5. Fais vérifier les points importants.
 
-Rien qu'avec cela, tes resultats vont deja beaucoup s'ameliorer.
+Rien qu'avec cela, tes résultats vont déjà beaucoup s'améliorer.
 
 Et surtout, rappelle-toi ceci :
 
 > Tu n'as pas besoin de parler comme une machine pour utiliser une IA.
 
-Tu dois seulement apprendre a etre clair, precis et humain.
+Tu dois seulement apprendre à être clair, précis et humain.
 
 C'est la vraie force d'un bon prompt.
 
-Le meilleur moment pour maitriser ces outils etait peut-etre hier.
+Le meilleur moment pour maîtriser ces outils était peut-être hier.
 
-Le deuxieme meilleur moment, c'est maintenant.
+Le deuxième meilleur moment, c'est maintenant.
 
 Et cette fois, tu n'es pas seul face au petit robot.
 
 
-## Quatrieme de couverture
+## Quatrième de couverture
 
-Et si la difference entre une IA decevante et une IA vraiment utile ne venait pas de la machine, mais de ta facon de lui parler ?
+Et si la différence entre une IA décevante et une IA vraiment utile ne venait pas de la machine, mais de ta façon de lui parler ?
 
-Ce manuel t'apprend a construire des prompts clairs, humains et efficaces. Pas avec du jargon froid. Pas avec des formules mystiques reservees a quelques experts. Mais avec des explications simples, des analogies du quotidien, des exemples reutilisables et une methode progressive.
+Ce manuel t'apprend à construire des prompts clairs, humains et efficaces. Pas avec du jargon froid. Pas avec des formules mystiques réservées à quelques experts. Mais avec des explications simples, des analogies du quotidien, des exemples réutilisables et une méthode progressive.
 
-Tu vas apprendre a :
+Tu vas apprendre à :
 
-- donner un contexte clair a l'IA ;
-- formuler un objectif precis ;
+- donner un contexte clair à l'IA ;
+- formuler un objectif précis ;
 - choisir le bon ton pour ton lecteur ;
-- eviter les reponses floues ;
-- reduire les hallucinations ;
-- structurer les sorties en formats utiles ;
-- utiliser des modeles de prompts que tu peux adapter tout de suite.
+- éviter les réponses floues ;
+- réduire les hallucinations ;
+- structurer les sorties en formats utiles (y compris en JSON strict) ;
+- piloter une petite équipe d'agents IA, avec ses filets de sécurité ;
+- juger et faire juger une réponse avec de vrais critères ;
+- utiliser des modèles de prompts (CO-STAR, RTF, CREATE, RACE...) que tu peux adapter tout de suite.
 
-Ce livre est pense pour les debutants, les formateurs, les entrepreneurs, les professionnels curieux et toutes les personnes qui veulent enfin passer de "j'ai demande a l'IA" a "j'ai obtenu un vrai resultat".
+Ce livre est pensé pour les débutants, les formateurs, les entrepreneurs, les professionnels curieux et toutes les personnes qui veulent enfin passer de "j'ai demandé à l'IA" à "j'ai obtenu un vrai résultat".
 
-L'auteur, Ramarosandratana H. Nantenaina connu sous le nom de hramaros, est formateur IA et specialiste de l'automatisation par LLM.
+L'auteur, Ramarosandratana H. Nantenaina, connu sous le nom de hramaros, est formateur IA et spécialiste de l'automatisation par LLM.
 
-Passionne d'informatique et d'intelligence artificielle, il concoit des contenus pour rendre l'evolution numerique plus accessible.
+Passionné d'informatique et d'intelligence artificielle, il conçoit des contenus pour rendre l'évolution numérique plus accessible.
 
-Son parcours combine:
-- pedagogie A.D.D.I.E
-- prompt engineering avance
-- automatisation par IA
-- codage assiste par IA et pratique des modeles populaires comme Claude, OpenAI et Gemini.
+Son parcours combine :
+- pédagogie A.D.D.I.E ;
+- prompt engineering avancé ;
+- automatisation par IA ;
+- codage assisté par IA et pratique des modèles populaires comme Claude, OpenAI et Gemini.
 
-Au cours de sa carriere professionnelle et academique, il a participe au Hackathon DigitAgro a Marseille en 2025 ce qui marque son premier pas vers le monde de l'automatisation par IA, par ailleurs au cours de ses etudes a l'ecole 42 Antananarivo il eut l'occasion de mener des formations d'initiation a l'IA, a la cybersecurite et aux outils Google avec l'association BDE 42 Antananarivo, ce qui d'un autre cote debuta sa carriere en tant que Formateur IA.
+Au cours de sa carrière professionnelle et académique, il a participé au Hackathon DigitAgro à Marseille en 2025, ce qui marque son premier pas vers le monde de l'automatisation par IA. Par ailleurs, au cours de ses études à l'école 42 Antananarivo, il a eu l'occasion de mener des formations d'initiation à l'IA, à la cybersécurité et aux outils Google avec l'association BDE 42 Antananarivo, ce qui a marqué le début de sa carrière en tant que formateur IA.
 
-Son objectif est simple : aider chacun a comprendre l'IA sans pre-requis en informqtique, sans peur ni honte, et sans se perdre dans un labyrinthe de mots compliques.
+Son objectif est simple : aider chacun à comprendre l'IA sans prérequis en informatique, sans peur ni honte, et sans se perdre dans un labyrinthe de mots compliqués.
 
 Parce qu'une bonne consigne peut transformer une machine impressionnante en partenaire de travail.
+
+
