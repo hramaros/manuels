@@ -1,0 +1,1640 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Devenir Dieu du Prompt Engineering - version simplifiee</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="/tmp/livre/style.css" />
+</head>
+<body>
+<h1 id="devenir-un-dieu-du-prompt-engineering">Devenir un dieu du Prompt
+Engineering</h1>
+<h3 id="édition-enrichie">Édition enrichie</h3>
+<p>J’ai commencé à travailler en début d’année avec une confiance
+presque naïve. 🙂</p>
+<p>Après tout, j’utilisais les intelligences artificielles génératives
+depuis plusieurs années. ChatGPT faisait déjà partie de mon quotidien.
+Je pensais comprendre ces outils. Je pensais savoir comment leur parler.
+Je pensais être prêt.</p>
+<p>Puis un projet est arrivé.</p>
+<p>Notre mission était ambitieuse : transformer des images, des
+documents PDF et des pages web en données exploitables grâce aux grands
+modèles de langage, aussi appelés LLM.</p>
+<p>Je rejoignais l’équipe comme architecte en automatisation. Deux
+collègues expérimentés travaillaient déjà sur le sujet. Mon rôle était
+d’apporter un regard neuf, de proposer des améliorations et de
+contribuer à la réussite du projet.</p>
+<p>Au lieu de cela, j’ai commis une erreur.</p>
+<p>Une erreur qui a coûté 8 dollars à l’entreprise. 😳</p>
+<p>Pour beaucoup de personnes, 8 dollars, ce n’est pas grand-chose. Pour
+une entreprise, c’est presque invisible dans un tableau Excel.</p>
+<p>Mais pour moi, ces 8 dollars avaient une autre valeur.</p>
+<p>Ils représentaient presque une semaine de ration lorsque je vivais
+encore avec un budget étudiant.</p>
+<p>Je me souviens du sentiment qui m’a traversé à cet instant. C’était
+comme un enfant qui vient de casser une assiette préférée de sa mère. Ce
+n’est pas le prix de l’assiette qui fait mal. C’est la prise de
+conscience.</p>
+<p>J’avais passé plus de trois ans à utiliser les IA génératives.</p>
+<p>Et pourtant, je ne les comprenais pas vraiment.</p>
+<p>Je savais obtenir des réponses.</p>
+<p>Je ne savais pas encore obtenir des résultats. 😅</p>
+<p>Cette différence a changé ma façon de travailler.</p>
+<p>À partir de ce jour, j’ai décidé d’étudier sérieusement ce qui se
+cache derrière un bon prompt. J’ai lu des documentations, analysé des
+recherches, testé des centaines d’expériences, comparé des modèles, et
+remis en question ce que je croyais savoir.</p>
+<p>Très vite, une idée simple s’est imposée :</p>
+<p>La plupart des utilisateurs traitent les LLM comme des moteurs de
+recherche améliorés. Ils posent une question, croisent les doigts, puis
+espèrent que le petit robot sorte une pépite au lieu d’une soupe
+tiède.</p>
+<p>Les experts, eux, les traitent comme des collaborateurs numériques.
+Ils leur donnent un contexte, un rôle, des contraintes, des objectifs et
+des critères de réussite.</p>
+<p>Voilà pourquoi certaines personnes obtiennent des résultats médiocres
+après cinq essais, pendant que d’autres obtiennent une réponse solide
+dès la première tentative.</p>
+<p>Ce manuel est né de cette découverte.</p>
+<p>Son objectif n’est pas de te donner trois formules magiques à
+copier-coller.</p>
+<p>Son objectif est de t’apprendre à penser comme un architecte de
+prompts.</p>
+<p>À la fin de cette lecture, tu ne verras plus l’IA comme une boîte
+magique qui répond à tout avec une voix tranquille, même quand elle
+improvise en chaussettes.</p>
+<p>Tu comprendras ses forces et ses limites. Et tu sauras construire des
+instructions qui transforment une IA en véritable partenaire de
+travail.</p>
+<p>Si ce manuel t’évite quelques erreurs, alors les 8 dollars que j’ai
+perdus auront peut-être été le meilleur investissement de ma
+carrière.</p>
+<p>Et si le meilleur moment pour apprendre le prompt engineering était
+hier, le deuxième meilleur moment, c’est maintenant.</p>
+<h2 id="sommaire">Sommaire</h2>
+<div class="sommaire">
+<div class="som-ligne">
+<span class="som-titre">Avant de commencer : parler clairement à
+l’IA</span><span
+class="som-fill">………………………………………………………………………………………………………………………………</span><span
+class="som-page">4</span>
+</div>
+<div class="som-ligne">
+<span class="som-titre">1. Pourquoi les prompts sont devenus
+importants</span><span
+class="som-fill">………………………………………………………………………………………………………………………………</span><span
+class="som-page">5</span>
+</div>
+<div class="som-ligne">
+<span class="som-titre">2. Le problème principal :
+l’ambiguïté</span><span
+class="som-fill">………………………………………………………………………………………………………………………………</span><span
+class="som-page">6</span>
+</div>
+<div class="som-ligne">
+<span class="som-titre">3. La méthode CO-STAR : la recette du bon
+prompt</span><span
+class="som-fill">………………………………………………………………………………………………………………………………</span><span
+class="som-page">7</span>
+</div>
+<div class="som-ligne">
+<span class="som-titre">4. Exemple simple avec CO-STAR</span><span
+class="som-fill">………………………………………………………………………………………………………………………………</span><span
+class="som-page">9</span>
+</div>
+<div class="som-ligne">
+<span class="som-titre">5. Autres formules utiles (RTF, CREATE,
+RACE…)</span><span
+class="som-fill">………………………………………………………………………………………………………………………………</span><span
+class="som-page">10</span>
+</div>
+<div class="som-ligne">
+<span class="som-titre">6. Faire raisonner l’IA pas à pas</span><span
+class="som-fill">………………………………………………………………………………………………………………………………</span><span
+class="som-page">12</span>
+</div>
+<div class="som-ligne">
+<span class="som-titre">7. Éviter les hallucinations</span><span
+class="som-fill">………………………………………………………………………………………………………………………………</span><span
+class="som-page">14</span>
+</div>
+<div class="som-ligne">
+<span class="som-titre">8. Demander des réponses bien
+rangées</span><span
+class="som-fill">………………………………………………………………………………………………………………………………</span><span
+class="som-page">15</span>
+</div>
+<div class="som-ligne">
+<span class="som-titre">9. Les agents IA : travailler en
+équipe</span><span
+class="som-fill">………………………………………………………………………………………………………………………………</span><span
+class="som-page">17</span>
+</div>
+<div class="som-ligne">
+<span class="som-titre">10. ReAct : réfléchir, agir,
+observer</span><span
+class="som-fill">………………………………………………………………………………………………………………………………</span><span
+class="som-page">19</span>
+</div>
+<div class="som-ligne">
+<span class="som-titre">11. Juger la qualité d’une réponse
+IA</span><span
+class="som-fill">………………………………………………………………………………………………………………………………</span><span
+class="som-page">20</span>
+</div>
+<div class="som-ligne">
+<span class="som-titre">12. Ce que les entreprises font déjà avec
+l’IA</span><span
+class="som-fill">………………………………………………………………………………………………………………………………</span><span
+class="som-page">22</span>
+</div>
+<div class="som-ligne">
+<span class="som-titre">13. Programme d’entraînement
+simplifié</span><span
+class="som-fill">………………………………………………………………………………………………………………………………</span><span
+class="som-page">23</span>
+</div>
+<div class="som-ligne">
+<span class="som-titre">14. Les modèles de prompts à garder</span><span
+class="som-fill">………………………………………………………………………………………………………………………………</span><span
+class="som-page">26</span>
+</div>
+<div class="som-ligne">
+<span class="som-titre">15. Les erreurs fréquentes à éviter</span><span
+class="som-fill">………………………………………………………………………………………………………………………………</span><span
+class="som-page">28</span>
+</div>
+<div class="som-ligne">
+<span class="som-titre">16. La grande idée à retenir</span><span
+class="som-fill">………………………………………………………………………………………………………………………………</span><span
+class="som-page">29</span>
+</div>
+<div class="som-ligne">
+<span class="som-titre">17. Boîte à outils avancée : pour aller plus
+loin</span><span
+class="som-fill">………………………………………………………………………………………………………………………………</span><span
+class="som-page">30</span>
+</div>
+<div class="som-ligne som-conc">
+<span class="som-titre">Conclusion</span><span
+class="som-fill">………………………………………………………………………………………………………………………………</span><span
+class="som-page">31</span>
+</div>
+<div class="som-ligne som-conc">
+<span class="som-titre">Quatrième de couverture</span><span
+class="som-fill">………………………………………………………………………………………………………………………………</span><span
+class="som-page">32</span>
+</div>
+</div>
+<h2 id="avant-de-commencer-parler-clairement-à-lia">Avant de commencer :
+parler clairement à l’IA</h2>
+<p>Tu n’as pas besoin d’être ingénieur, mathématicien ou expert en
+intelligence artificielle pour bien utiliser une IA.</p>
+<p>Ce qu’il te faut surtout, c’est apprendre à parler clairement à la
+machine.</p>
+<p>Un prompt, c’est simplement une consigne donnée à une IA. C’est comme
+une commande passée à quelqu’un qui peut beaucoup t’aider, mais qui a
+besoin qu’on lui explique précisément ce qu’on attend.</p>
+<p>Imagine que tu demandes à quelqu’un :</p>
+<blockquote>
+<p>“Prépare-moi quelque chose à manger.”</p>
+</blockquote>
+<p>La personne peut te faire une salade, un sandwich, une soupe ou un
+gâteau. Elle ne sait pas vraiment ce que tu veux.</p>
+<p>Maintenant imagine que tu dis :</p>
+<blockquote>
+<p>“Prépare-moi un sandwich au poulet, simple, sans sauce piquante, pour
+un repas rapide ce midi.”</p>
+</blockquote>
+<p>Là, c’est beaucoup plus clair.</p>
+<p>Avec l’IA, c’est pareil. Plus ta demande est claire, plus la réponse
+a des chances d’être utile.</p>
+<p>Le prompt engineering, c’est donc l’art de donner de bonnes consignes
+à une IA.</p>
+<p>Pas pour faire joli.</p>
+<p>Mais pour obtenir une réponse claire, utile, fiable et adaptée à ton
+besoin.</p>
+<p>Petit clin d’œil du robot : si tu lui donnes une consigne floue, il
+ne va pas lever la main en disant “je suis perdu”. Il va souvent
+improviser avec beaucoup d’assurance. Et parfois, cette assurance a le
+goût d’un plat sans sel.</p>
+<h2 id="pourquoi-les-prompts-sont-devenus-importants">1. Pourquoi les
+prompts sont devenus importants</h2>
+<p>Avant, beaucoup de gens utilisaient l’IA comme un jouet :</p>
+<blockquote>
+<p>“Écris-moi un poème.”</p>
+</blockquote>
+<blockquote>
+<p>“Donne-moi une idée de business.”</p>
+</blockquote>
+<blockquote>
+<p>“Explique-moi ce sujet.”</p>
+</blockquote>
+<p>Aujourd’hui, dans les entreprises, l’IA sert à faire des choses
+beaucoup plus sérieuses :</p>
+<ul>
+<li>aider un service client ;</li>
+<li>résumer des contrats ;</li>
+<li>analyser des données ;</li>
+<li>écrire du code ;</li>
+<li>préparer des rapports ;</li>
+<li>aider des médecins, juristes, commerciaux ou recruteurs.</li>
+</ul>
+<p>Quand l’IA est utilisée dans ce genre de situation, une mauvaise
+réponse peut coûter cher.</p>
+<p>Elle peut faire perdre du temps, donner une information fausse,
+produire un document mal structuré, ou ne pas respecter les règles d’une
+entreprise.</p>
+<p>C’est pour cela qu’un bon prompt est important. Il sert de barrière
+de sécurité. Il aide l’IA à rester dans le bon chemin.</p>
+<p>Tu peux voir le prompt comme un GPS.</p>
+<p>Si tu mets seulement “Paris”, le GPS ne sait pas exactement où
+aller.</p>
+<p>Si tu mets une adresse précise, il peut te guider correctement.</p>
+<p>Avec l’IA, une consigne vague donne souvent une réponse vague. Une
+consigne précise donne souvent une réponse plus solide.</p>
+<p>C’est rassurant, au fond : tu n’as pas besoin de devenir une machine.
+Tu dois seulement apprendre à donner une meilleure adresse au GPS.
+🤔</p>
+<h2 id="le-problème-principal-lambiguïté">2. Le problème principal :
+l’ambiguïté</h2>
+<p>L’ambiguïté, c’est quand une phrase peut être comprise de plusieurs
+manières.</p>
+<p>Par exemple :</p>
+<blockquote>
+<p>“Fais-moi un rapport court.” 😬</p>
+</blockquote>
+<p>Mais “court”, ça veut dire quoi ?</p>
+<ul>
+<li>5 lignes ?</li>
+<li>1 page ?</li>
+<li>3 paragraphes ?</li>
+<li>un résumé en bullet points ?</li>
+</ul>
+<p>L’IA ne sait pas ce que tu as dans la tête. Elle devine.</p>
+<p>Et quand elle devine, elle peut se tromper.</p>
+<p>C’est ce qu’on appelle parfois la « taxe d’ambiguïté ». En langage
+simple, cela veut dire :</p>
+<blockquote>
+<p>Plus ta demande est floue, plus tu paies en temps perdu.</p>
+</blockquote>
+<p>Tu dois relancer l’IA, corriger, redemander, reformuler. C’est
+fatigant. Et surtout, ça casse ton élan.</p>
+<p>La solution, c’est d’utiliser une structure simple.</p>
+<p>Et si tu t’es déjà retrouvé à écrire “non, ce n’est pas ça…” trois
+fois de suite à une IA, bienvenue au club. C’est presque un rite de
+passage. La bonne nouvelle, c’est qu’on peut en sortir.</p>
+<h2 id="la-méthode-co-star-la-recette-du-bon-prompt">3. La méthode
+CO-STAR : la recette du bon prompt</h2>
+<p>CO-STAR est une méthode pour construire une demande claire.</p>
+<p>C’est comme une recette de cuisine. Si tu oublies des ingrédients, le
+résultat peut être bizarre. 😅</p>
+<p>Demander une bonne réponse sans contexte, c’est un peu comme demander
+un gâteau sans dire s’il faut du chocolat, de la vanille ou juste sauver
+un anniversaire à 17 h 58.</p>
+<p>CO-STAR veut dire :</p>
+<ul>
+<li>C : Contexte</li>
+<li>O : Objectif</li>
+<li>S : Style</li>
+<li>T : Ton</li>
+<li>A : Audience</li>
+<li>R : Réponse attendue</li>
+</ul>
+<p>Voici chaque partie en langage simple.</p>
+<h3 id="c-comme-contexte">C comme Contexte</h3>
+<p>Le contexte, c’est la situation.</p>
+<p>Tu expliques à l’IA où elle se trouve, ce qu’elle doit savoir, et
+pourquoi tu lui demandes cela.</p>
+<p>Exemple :</p>
+<blockquote>
+<p>Je prépare une formation pour des débutants qui ne connaissent pas
+l’intelligence artificielle.</p>
+</blockquote>
+<p>Sans contexte, l’IA répond dans le vide.</p>
+<p>Avec le contexte, elle comprend mieux le décor.</p>
+<h3 id="o-comme-objectif">O comme Objectif</h3>
+<p>L’objectif, c’est ce que tu veux obtenir.</p>
+<p>Exemple :</p>
+<blockquote>
+<p>Je veux un résumé simple qui explique les 5 idées principales.</p>
+</blockquote>
+<p>L’objectif doit être clair. L’IA doit pouvoir comprendre ce qu’elle
+doit faire.</p>
+<h3 id="s-comme-style">S comme Style</h3>
+<p>Le style, c’est la forme.</p>
+<p>Tu peux demander :</p>
+<ul>
+<li>un guide pratique ;</li>
+<li>une fiche de révision ;</li>
+<li>une liste d’étapes ;</li>
+<li>un tableau ;</li>
+<li>un message LinkedIn ;</li>
+<li>un e-mail ;</li>
+<li>une histoire ;</li>
+<li>une explication pour débutants.</li>
+</ul>
+<p>Le style donne une forme au résultat.</p>
+<h3 id="t-comme-ton">T comme Ton</h3>
+<p>Le ton, c’est l’émotion du texte.</p>
+<p>Tu peux demander un ton :</p>
+<ul>
+<li>rassurant ;</li>
+<li>professionnel ;</li>
+<li>chaleureux ;</li>
+<li>direct ;</li>
+<li>simple ;</li>
+<li>motivant ;</li>
+<li>calme ;</li>
+<li>enthousiaste.</li>
+</ul>
+<p>Le ton change beaucoup la sensation de lecture.</p>
+<p>Un même message peut sembler froid ou humain selon le ton
+demandé.</p>
+<h3 id="a-comme-audience">A comme Audience</h3>
+<p>L’audience, c’est la personne qui va lire.</p>
+<p>Tu dois dire pour qui la réponse est faite :</p>
+<ul>
+<li>enfants ;</li>
+<li>adultes débutants ;</li>
+<li>experts ;</li>
+<li>clients ;</li>
+<li>collègues ;</li>
+<li>dirigeants ;</li>
+<li>personnes pressées ;</li>
+<li>personnes qui ont peur de la technologie.</li>
+</ul>
+<p>Cela aide l’IA à choisir les bons mots.</p>
+<p>On ne parle pas pareil à un expert informatique et à une personne qui
+découvre l’IA pour la première fois.</p>
+<h3 id="r-comme-réponse-attendue">R comme Réponse attendue</h3>
+<p>Ici, tu dis le format voulu.</p>
+<p>Exemples :</p>
+<ul>
+<li>“Réponds en 5 points.”</li>
+<li>“Fais un tableau.”</li>
+<li>“Donne une version courte puis une version détaillée.”</li>
+<li>“Utilise du Markdown.”</li>
+<li>“Donne uniquement du JSON.”</li>
+</ul>
+<p>Le format évite les surprises.</p>
+<p>C’est l’équivalent de dire : “range-moi ça dans cette boîte, pas dans
+un sac de courses troué.”</p>
+<h2 id="exemple-simple-avec-co-star">4. Exemple simple avec CO-STAR</h2>
+<p>Demande vague :</p>
+<blockquote>
+<p>Explique le prompt engineering.</p>
+</blockquote>
+<p>Demande avec CO-STAR :</p>
+<pre class="text"><code>Contexte : Je prépare un atelier pour des adultes débutants qui ont déjà entendu parler de ChatGPT, mais ne savent pas bien l&#39;utiliser.
+
+Objectif : Explique ce qu&#39;est le prompt engineering et pourquoi c&#39;est utile.
+
+Style : Guide simple avec exemples concrets.
+
+Ton : Chaleureux, rassurant, motivant.
+
+Audience : Grand public, niveau débutant.
+
+Réponse : Fais 5 sections courtes avec une analogie dans chaque section.</code></pre>
+<p>La deuxième demande est beaucoup plus forte.</p>
+<p>Elle donne une route à l’IA.</p>
+<p>Elle ne lui dit pas seulement “avance”. Elle lui donne une carte.</p>
+<p>Et crois-moi, une IA avec une carte fait beaucoup moins de tourisme
+sauvage dans ta réponse.</p>
+<h2 id="autres-formules-utiles-rtf-create-race">5. Autres formules
+utiles (RTF, CREATE, RACE…)</h2>
+<p>CO-STAR est très complet. Mais parfois, tu n’as pas besoin d’une
+grande structure.</p>
+<p>Tu peux utiliser des formules plus courtes.</p>
+<h3 id="rtf-rôle-tâche-format">RTF : Rôle, Tâche, Format</h3>
+<p>C’est la formule rapide.</p>
+<p>Tu dis :</p>
+<ol type="1">
+<li>Qui l’IA doit jouer.</li>
+<li>Ce qu’elle doit faire.</li>
+<li>Sous quelle forme elle doit répondre.</li>
+</ol>
+<p>Exemple :</p>
+<pre class="text"><code>Rôle : Tu es un professeur patient.
+Tâche : Explique la blockchain à un débutant.
+Format : Donne une explication en 3 paragraphes avec une analogie simple.</code></pre>
+<p>C’est comme dire à quelqu’un :</p>
+<blockquote>
+<p>“Mets-toi dans la peau d’un professeur, explique-moi doucement, et
+donne-moi une réponse courte.”</p>
+</blockquote>
+<p>RTF est parfait pour les demandes rapides et directes, comme générer
+du code, traduire un texte ou rédiger un court message.</p>
+<h3 id="create-pour-les-demandes-plus-riches">CREATE : pour les demandes
+plus riches</h3>
+<p>CREATE aide quand tu veux une réponse plus précise, surtout en
+marketing, communication ou création de contenu.</p>
+<p>Tu peux penser à CREATE comme à une fiche de mission :</p>
+<ul>
+<li>qui parle ;</li>
+<li>ce qu’il faut produire ;</li>
+<li>les exemples à suivre ;</li>
+<li>les détails à ajouter ;</li>
+<li>le type de sortie ;</li>
+<li>les contraintes.</li>
+</ul>
+<p>Exemple :</p>
+<pre class="text"><code>Tu es un community manager expérimenté.
+Je veux une réponse à un client mécontent sur les réseaux sociaux.
+Voici 2 exemples de ton que nous aimons.
+Ajoute une excuse sincère, une solution concrète, et une invitation à continuer en message privé.
+Format : moins de 600 caractères.
+Évite les mots : problème, faute, impossible.</code></pre>
+<p>Cette méthode est utile quand le ton compte beaucoup.</p>
+<p>Le ton, c’est parfois la différence entre “nous comprenons votre
+frustration” et “cher client, veuillez patienter dans le tunnel
+administratif”. Même message, sensation totalement différente.</p>
+<h3 id="race-pour-piloter-une-action-avec-un-résultat-attendu">RACE :
+pour piloter une action avec un résultat attendu</h3>
+<p>RACE veut dire <strong>Rôle, Action, Contexte, Évaluation
+attendue</strong> (en anglais : Role, Action, Context, Expectation).</p>
+<p>C’est une cousine de RTF et CO-STAR, très utilisée dans les métiers
+du marketing et de la communication, quand on veut surtout insister sur
+<strong>le résultat concret</strong> attendu, pas seulement sur le
+format.</p>
+<p>Tu dis :</p>
+<ol type="1">
+<li><strong>Rôle</strong> : qui l’IA doit incarner.</li>
+<li><strong>Action</strong> : ce qu’elle doit faire, très
+concrètement.</li>
+<li><strong>Contexte</strong> : la situation dans laquelle elle
+agit.</li>
+<li><strong>Évaluation attendue</strong> : à quoi ressemble un bon
+résultat, et comment on saura que c’est réussi.</li>
+</ol>
+<p>Exemple :</p>
+<pre class="text"><code>Rôle : Tu es chargé de communication pour une petite association locale.
+Action : Rédige un message d&#39;invitation à un événement portes ouvertes.
+Contexte : L&#39;événement a lieu samedi prochain, il s&#39;adresse à des familles du quartier qui ne connaissent pas encore l&#39;association.
+Évaluation attendue : Le message doit donner envie de venir, tenir en 5 phrases maximum, et inclure une phrase d&#39;accroche chaleureuse.</code></pre>
+<p>La différence avec RTF, c’est ce dernier point : tu donnes un
+<strong>critère de réussite</strong>, pas juste un format. C’est un peu
+comme dire à quelqu’un non seulement “fais-moi ce gâteau”, mais aussi
+“le but, c’est qu’il fasse sourire les enfants à la première
+bouchée”.</p>
+<h3 id="et-si-tu-croises-care-trace-ou-dautres-acronymes">Et si tu
+croises CARE, TRACE ou d’autres acronymes ?</h3>
+<p>En lisant des articles ou des formations, tu tomberas peut-être un
+jour sur d’autres sigles : <strong>CARE</strong> (Contexte, Action,
+Résultat, Exemple) ou <strong>TRACE</strong> (Tâche, Requête, Action,
+Contexte, Exemple).</p>
+<p>Pas de panique. Ce ne sont pas de nouvelles inventions magiques. Ce
+sont presque toujours <strong>les mêmes briques de base</strong>, juste
+réorganisées et renommées :</p>
+<ul>
+<li>qui parle ou quel rôle adopter (Rôle / Character) ;</li>
+<li>dans quelle situation (Contexte) ;</li>
+<li>quoi faire précisément (Action / Tâche / Objectif) ;</li>
+<li>avec quel exemple à suivre (Exemple) ;</li>
+<li>pour quel résultat ou format final (Évaluation / Format / Type de
+sortie).</li>
+</ul>
+<p>Une fois que tu maîtrises CO-STAR, RTF et CREATE, tu sauras
+reconnaître ces briques sous n’importe quel autre nom. C’est comme
+apprendre à cuisiner : une fois que tu sais ce que sont un féculent, une
+protéine et un légume, peu importe si la recette s’appelle “bowl”,
+“assiette équilibrée” ou “plat unique”.</p>
+<h2 id="faire-raisonner-lia-pas-à-pas">6. Faire raisonner l’IA pas à
+pas</h2>
+<p>Parfois, tu ne veux pas seulement une réponse rapide.</p>
+<p>Tu veux que l’IA réfléchisse mieux.</p>
+<p>C’est comme en maths à l’école. Si quelqu’un donne seulement le
+résultat, tu ne sais pas s’il a compris. Mais s’il montre les étapes, tu
+peux voir où il s’est trompé.</p>
+<p>Avec l’IA, il existe plusieurs façons de l’aider à raisonner.</p>
+<h3 id="chain-of-thought-penser-étape-par-étape">Chain of Thought :
+penser étape par étape</h3>
+<p>Le Chain of Thought veut dire “chaîne de pensée”.</p>
+<p>En simple, tu demandes à l’IA de traiter le problème par étapes.</p>
+<p>Exemple :</p>
+<pre class="text"><code>Analyse ce problème et avance étape par étape.
+Commence par identifier les informations importantes.
+Ensuite, explique le raisonnement.
+Enfin, donne la conclusion.</code></pre>
+<p>C’est utile pour :</p>
+<ul>
+<li>les calculs ;</li>
+<li>les analyses ;</li>
+<li>les décisions difficiles ;</li>
+<li>les problèmes avec plusieurs conditions.</li>
+</ul>
+<p>Analogie :</p>
+<blockquote>
+<p>Monter un escalier marche par marche est plus sûr que sauter
+directement tout en haut.</p>
+</blockquote>
+<p>Si l’IA saute les marches, elle peut arriver vite. Mais elle peut
+aussi se retrouver au mauvais étage avec un grand sourire.</p>
+<p><strong>Ce que disent les chercheurs :</strong> sur des tests de
+mathématiques de niveau scolaire (comme le benchmark GSM8K), demander à
+un modèle de “réfléchir étape par étape” améliore presque toujours le
+taux de bonnes réponses, parfois de manière très significative. Le gain
+exact dépend du modèle et de la version testée, mais la tendance est
+solide : un raisonnement explicite réduit les erreurs de calcul et les
+conclusions trop rapides.</p>
+<h3 id="least-to-most-commencer-par-le-plus-simple">Least-to-Most :
+commencer par le plus simple</h3>
+<p>Cette méthode consiste à couper un gros problème en petits
+morceaux.</p>
+<p>Tu demandes à l’IA de commencer par la partie la plus simple, puis de
+continuer progressivement.</p>
+<p>Exemple :</p>
+<pre class="text"><code>Découpe ce problème en petites questions simples.
+Réponds d&#39;abord à la première.
+Utilise cette réponse pour traiter la deuxième.
+Continue jusqu&#39;à la conclusion finale.</code></pre>
+<p>Analogie :</p>
+<blockquote>
+<p>Pour ranger une pièce en bazar, tu ne ranges pas tout d’un coup. Tu
+fais d’abord le bureau, puis le sol, puis les vêtements.</p>
+</blockquote>
+<p>Le cerveau aime les petits morceaux. L’IA aussi. Et ton niveau de
+stress aussi, franchement.</p>
+<h3 id="tree-of-thoughts-explorer-plusieurs-chemins">Tree of Thoughts :
+explorer plusieurs chemins</h3>
+<p>Le Tree of Thoughts veut dire “arbre de pensées”.</p>
+<p>Au lieu de suivre une seule idée, l’IA explore plusieurs pistes.</p>
+<p>Exemple :</p>
+<pre class="text"><code>Propose 3 solutions différentes.
+Pour chaque solution, donne les avantages, les risques et le coût.
+Ensuite, choisis la meilleure solution et explique pourquoi.</code></pre>
+<p>Analogie :</p>
+<blockquote>
+<p>Tu es devant trois routes. Avant de choisir, tu regardes où chaque
+route peut te mener.</p>
+</blockquote>
+<p>C’est très utile pour :</p>
+<ul>
+<li>choisir une stratégie ;</li>
+<li>créer un produit ;</li>
+<li>comparer des options ;</li>
+<li>résoudre un problème complexe.</li>
+</ul>
+<h3 id="self-consistency-demander-plusieurs-essais">Self-Consistency :
+demander plusieurs essais</h3>
+<p>L’idée est simple :</p>
+<blockquote>
+<p>Si l’IA donne plusieurs raisonnements et que la même conclusion
+revient souvent, cette conclusion est probablement plus solide.</p>
+</blockquote>
+<p>Analogie :</p>
+<blockquote>
+<p>Tu demandes un avis à plusieurs personnes. Si presque tout le monde
+arrive à la même conclusion, tu as plus confiance.</p>
+</blockquote>
+<p>Ce n’est pas magique, mais c’est utile. C’est comme demander
+plusieurs brouillons avant de choisir celui qui tient debout.</p>
+<h2 id="éviter-les-hallucinations">7. Éviter les hallucinations</h2>
+<p>Une hallucination, avec l’IA, ce n’est pas une image bizarre.</p>
+<p>C’est quand l’IA dit quelque chose de faux avec beaucoup
+d’assurance.</p>
+<p>Et c’est dangereux, parce que le texte peut sembler crédible.</p>
+<p>Le piège, c’est la voix calme. Une IA peut inventer une information
+avec le calme d’un serveur qui t’annonce que “tout va très bien”, alors
+que la cuisine brûle derrière. 😮</p>
+<p>L’IA peut inventer :</p>
+<ul>
+<li>une source ;</li>
+<li>une date ;</li>
+<li>un chiffre ;</li>
+<li>une loi ;</li>
+<li>un nom ;</li>
+<li>une citation ;</li>
+<li>une conclusion.</li>
+</ul>
+<p>Il faut donc apprendre à lui demander de vérifier.</p>
+<h3 id="chain-of-verification-vérifier-avant-de-finaliser">Chain of
+Verification : vérifier avant de finaliser</h3>
+<p>La Chain of Verification, ou chaîne de vérification, consiste à faire
+contrôler les affirmations importantes.</p>
+<p>Tu peux utiliser ce prompt :</p>
+<pre class="text"><code>Avant de donner ta réponse finale :
+1. Liste les affirmations importantes que tu vas utiliser.
+2. Pour chaque affirmation, indique si elle vient du texte fourni ou si elle doit être vérifiée.
+3. Signale les points incertains.
+4. Donne ensuite une réponse finale prudente et corrigée.</code></pre>
+<p>Analogie :</p>
+<blockquote>
+<p>Avant d’envoyer un colis, tu vérifies l’adresse, le contenu et le nom
+du destinataire. Sinon, le colis peut partir au mauvais endroit.</p>
+</blockquote>
+<p>La vérification, ce n’est pas de la paranoïa. C’est mettre une
+ceinture de sécurité avant de démarrer.</p>
+<h3 id="self-ask-laisser-lia-poser-des-questions">Self-Ask : laisser
+l’IA poser des questions</h3>
+<p>Parfois, ta demande manque d’informations.</p>
+<p>Tu peux demander à l’IA de s’arrêter et de poser les bonnes questions
+avant de répondre.</p>
+<p>Exemple :</p>
+<pre class="text"><code>Si ma demande manque d&#39;informations importantes, pose-moi d&#39;abord jusqu&#39;à 3 questions simples avant de répondre.</code></pre>
+<p>C’est utile quand le sujet est flou.</p>
+<h3 id="rephrase-and-respond-reformuler-avant-de-répondre">Rephrase and
+Respond : reformuler avant de répondre</h3>
+<p>Ici, tu demandes à l’IA de reformuler ta demande avec ses propres
+mots.</p>
+<p>Exemple :</p>
+<pre class="text"><code>Commence par reformuler ma demande en une phrase claire.
+Ensuite, réponds à cette demande reformulée.</code></pre>
+<p>Analogie :</p>
+<blockquote>
+<p>C’est comme quand quelqu’un te dit : “Si j’ai bien compris, tu veux
+dire que…” Cela évite les malentendus.</p>
+</blockquote>
+<p>Et parfois, ce petit “si j’ai bien compris” sauve une heure de
+travail. Ce n’est pas glamour, mais c’est efficace.</p>
+<h2 id="demander-des-réponses-bien-rangées">8. Demander des réponses
+bien rangées</h2>
+<p>Dans une entreprise, une réponse en texte libre ne suffit pas
+toujours.</p>
+<p>Parfois, il faut une réponse rangée dans un format précis.</p>
+<p>C’est comme remplir un formulaire.</p>
+<p>Si le formulaire demande :</p>
+<ul>
+<li>nom ;</li>
+<li>date ;</li>
+<li>montant ;</li>
+<li>statut.</li>
+</ul>
+<p>Tu ne dois pas répondre avec un grand paragraphe. Tu dois remplir les
+cases.</p>
+<p>Avec l’IA, on peut demander ce genre de format.</p>
+<h3 id="exemple-en-json">Exemple en JSON</h3>
+<p>Le JSON est un format utilisé par les logiciels pour ranger les
+informations.</p>
+<p>Exemple :</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;nom_client&quot;</span><span class="fu">:</span> <span class="st">&quot;Marie Dupont&quot;</span><span class="fu">,</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;type_demande&quot;</span><span class="fu">:</span> <span class="st">&quot;remboursement&quot;</span><span class="fu">,</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;urgence&quot;</span><span class="fu">:</span> <span class="st">&quot;elevee&quot;</span><span class="fu">,</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;resume&quot;</span><span class="fu">:</span> <span class="st">&quot;La cliente demande un remboursement pour une commande non recue.&quot;</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+<p>Ce format est utile parce qu’un logiciel peut le lire facilement.
+😊</p>
+<h3 id="prompt-simple-pour-obtenir-du-json">Prompt simple pour obtenir
+du JSON</h3>
+<pre class="text"><code>Extrais les informations importantes du texte ci-dessous.
+Réponds uniquement en JSON valide.
+Utilise exactement ces champs :
+- nom_client
+- type_demande
+- urgence
+- resume
+
+Si une information manque, mets null.
+N&#39;ajoute aucun autre champ.</code></pre>
+<p>Analogie :</p>
+<blockquote>
+<p>Le JSON, c’est comme une boîte à compartiments. Chaque information
+doit aller dans le bon compartiment.</p>
+</blockquote>
+<p>Si les données sont mal rangées, le logiciel peut paniquer. Et un
+logiciel qui panique, c’est souvent toi qui finis par paniquer
+aussi.</p>
+<h3 id="pour-aller-plus-loin-un-json-encore-plus-strict">Pour aller plus
+loin : un JSON encore plus strict</h3>
+<p>Le prompt simple ci-dessus fonctionne bien, mais dans une vraie
+entreprise, on pousse souvent la rigueur encore plus loin. Voici quatre
+idées que tu peux ajouter, une par une, sans complexifier ta vie :</p>
+<ul>
+<li><p><strong>Donner un “contrat” exact des champs.</strong> Au lieu de
+juste lister les noms de champs, tu peux préciser le type attendu pour
+chacun : un texte, un nombre, une vraie/fausse valeur, ou une liste
+fermée de choix possibles (par exemple <code>urgence</code> ne peut
+valoir que <code>"faible"</code>, <code>"moyenne"</code> ou
+<code>"elevee"</code>, jamais autre chose). C’est ce qu’on appelle un
+schéma, ou un “contrat de données”.</p></li>
+<li><p><strong>Interdire les champs surprises.</strong> Tu peux ajouter
+une phrase comme : “N’ajoute strictement aucun champ qui ne soit pas
+dans cette liste.” Cela évite qu’une IA bien intentionnée rajoute un
+commentaire ou un champ “remarque” que ton logiciel ne sait pas
+lire.</p></li>
+<li><p><strong>Baisser la température (quand l’outil le
+permet).</strong> Certaines interfaces permettent de régler un curseur
+appelé “température” : plus il est bas, plus l’IA répond de façon stable
+et prévisible ; plus il est élevé, plus elle “improvise”. Pour des
+données destinées à un logiciel, on met ce curseur au plus bas
+possible.</p></li>
+<li><p><strong>Prévoir une boucle de réparation.</strong> Si la réponse
+n’est pas un JSON valide (une virgule oubliée, par exemple), au lieu
+d’abandonner, tu peux renvoyer l’erreur à l’IA avec un message du type :
+“Ce JSON est invalide, voici l’erreur : […]. Corrige uniquement la
+structure, sans changer le contenu.” C’est une “auto-guérison” : l’IA
+corrige sa propre erreur de formatage.</p></li>
+</ul>
+<p>Exemple de prompt qui combine ces idées :</p>
+<pre class="text"><code>Extrais les informations du texte ci-dessous.
+Réponds uniquement en JSON valide, sans aucun texte autour.
+
+Schéma attendu :
+- nom_client : texte
+- type_demande : texte
+- urgence : une seule valeur parmi &quot;faible&quot;, &quot;moyenne&quot;, &quot;elevee&quot;
+- resume : texte de moins de 200 caractères
+
+N&#39;ajoute aucun champ qui ne figure pas dans cette liste.
+Si une information manque, mets la valeur null.</code></pre>
+<p>Analogie :</p>
+<blockquote>
+<p>Un prompt JSON simple, c’est une boîte à compartiments. Un prompt
+JSON “strict”, c’est la même boîte, mais avec une étiquette sur chaque
+compartiment qui précise ce qu’on a le droit d’y mettre — et un
+protocole clair pour quand quelqu’un range mal.</p>
+</blockquote>
+<h2 id="les-agents-ia-travailler-en-équipe">9. Les agents IA :
+travailler en équipe</h2>
+<p>Un agent IA, c’est une IA qui ne fait pas seulement répondre.</p>
+<p>Elle peut aussi suivre une mission, utiliser des outils, chercher des
+informations, appeler une API, analyser un fichier, puis produire une
+réponse.</p>
+<p>Quand plusieurs agents travaillent ensemble, on parle de système
+multi-agents.</p>
+<p>Imagine une équipe dans une entreprise :</p>
+<ul>
+<li>une personne analyse les chiffres ;</li>
+<li>une autre regarde les risques ;</li>
+<li>une autre vérifie la loi ;</li>
+<li>une autre fait la synthèse finale.</li>
+</ul>
+<p>Avec les agents IA, on peut faire la même chose.</p>
+<p>Tu peux imaginer une petite équipe dans ton ordinateur. Pas des
+humains miniatures, malheureusement, mais des rôles bien séparés :
+chacun sa mission, chacun son tablier. 😄</p>
+<h3 id="système-en-ligne-droite">Système en ligne droite</h3>
+<p>Chaque agent travaille après le précédent.</p>
+<p>Exemple :</p>
+<ol type="1">
+<li>Agent 1 : écrit un brouillon.</li>
+<li>Agent 2 : vérifie les erreurs.</li>
+<li>Agent 3 : améliore le style.</li>
+<li>Agent 4 : donne la version finale.</li>
+</ol>
+<p>Analogie :</p>
+<blockquote>
+<p>C’est comme une chaîne de montage.</p>
+</blockquote>
+<h3 id="système-en-parallèle">Système en parallèle</h3>
+<p>Plusieurs agents travaillent en même temps sur le même sujet.</p>
+<p>Exemple :</p>
+<ul>
+<li>un agent regarde les avantages ;</li>
+<li>un agent regarde les risques ;</li>
+<li>un agent regarde le coût ;</li>
+<li>un agent fait la synthèse.</li>
+</ul>
+<p>Analogie :</p>
+<blockquote>
+<p>C’est comme demander à plusieurs spécialistes de regarder le même
+problème avec leurs lunettes différentes.</p>
+</blockquote>
+<h3 id="système-chef-de-projet">Système chef de projet</h3>
+<p>Un agent central joue le rôle de chef.</p>
+<p>Il découpe le travail, distribue les missions, récupère les
+résultats, puis fait la synthèse.</p>
+<p>Analogie :</p>
+<blockquote>
+<p>C’est comme un chef de cuisine qui dit à chacun quoi préparer, puis
+assemble l’assiette finale.</p>
+</blockquote>
+<p>Sans chef, tout le monde peut travailler fort et finir avec trois
+desserts, zéro plat principal, et une réunion qui sent la confusion.</p>
+<h3 id="les-filets-de-sécurité-dune-équipe-dagents">Les filets de
+sécurité d’une équipe d’agents</h3>
+<p>Quand une équipe d’agents IA tourne en continu dans une entreprise
+(et pas seulement pour un test ponctuel), il faut prévoir ce qui se
+passe <strong>quand un agent plante, répond trop lentement, ou part dans
+le mur</strong>. Trois filets de sécurité reviennent tout le temps :</p>
+<ul>
+<li><p><strong>Le délai maximum (timeout).</strong> On donne à chaque
+agent une limite de temps. S’il ne répond pas avant, on n’attend pas
+indéfiniment : on passe à un plan B. C’est comme donner 10 minutes à un
+collègue pour répondre à un mail urgent, plutôt que d’attendre toute la
+journée sans rien faire d’autre.</p></li>
+<li><p><strong>Les nouvelles tentatives (retries).</strong> Si un agent
+échoue une fois, ce n’est pas forcément grave : on lui redonne une
+chance, parfois en attendant un peu plus longtemps à chaque essai (par
+exemple 2 secondes, puis 4, puis 8). C’est comme rappeler quelqu’un qui
+n’a pas décroché, en laissant un peu plus de temps entre chaque
+appel.</p></li>
+<li><p><strong>Le coupe-circuit (circuit breaker).</strong> Si un agent
+échoue trop souvent de suite, on arrête complètement de l’utiliser
+pendant un moment, plutôt que de continuer à insister dans le vide.
+C’est comme arrêter d’appeler un service après plusieurs échecs, et
+essayer une autre solution en attendant que ça revienne à la
+normale.</p></li>
+</ul>
+<p>Tu n’as pas besoin de configurer toi-même ces mécanismes pour
+commencer. Mais si tu entends parler de “timeout”, “retry” ou “circuit
+breaker” dans une équipe technique, tu sauras maintenant que ce sont
+simplement des règles de bon sens pour qu’une équipe d’agents reste
+fiable, même quand un de ses membres a une mauvaise journée. 😅</p>
+<h2 id="react-réfléchir-agir-observer">10. ReAct : réfléchir, agir,
+observer</h2>
+<p>ReAct veut dire que l’agent alterne entre :</p>
+<ul>
+<li>réfléchir ;</li>
+<li>agir ;</li>
+<li>observer le résultat ;</li>
+<li>corriger si besoin.</li>
+</ul>
+<p>Exemple simple :</p>
+<ol type="1">
+<li>L’agent se dit : “Je dois trouver une information récente.”</li>
+<li>Il utilise un outil de recherche.</li>
+<li>Il lit le résultat.</li>
+<li>Il ajuste sa réponse.</li>
+</ol>
+<p>Analogie :</p>
+<blockquote>
+<p>Quand tu cuisines, tu ne suis pas seulement la recette. Tu goûtes, tu
+ajustes le sel, tu surveilles la cuisson.</p>
+</blockquote>
+<p>Un bon agent IA fait pareil : il avance, regarde ce qui se passe,
+puis corrige.</p>
+<p>C’est une bonne leçon pour nous aussi : on n’a pas besoin d’avoir
+tout juste du premier coup. On avance, on observe, on ajuste.</p>
+<h2 id="juger-la-qualité-dune-réponse-ia">11. Juger la qualité d’une
+réponse IA</h2>
+<p>Dans une entreprise, on ne peut pas se contenter de dire :</p>
+<blockquote>
+<p>“Cette réponse me semble bonne.”</p>
+</blockquote>
+<p>Il faut des critères.</p>
+<p>On peut demander à une IA de juger une autre réponse. C’est ce qu’on
+appelle parfois “LLM-as-a-Judge”. 🤔</p>
+<p>En simple :</p>
+<blockquote>
+<p>Une IA joue le rôle de correcteur.</p>
+</blockquote>
+<p>Mais il faut lui donner une grille claire.</p>
+<h3 id="exemple-de-grille-simple">Exemple de grille simple</h3>
+<p>Au lieu de noter de 1 à 10, on peut utiliser des catégories :</p>
+<ul>
+<li>Correct : la réponse est utile et respecte la demande.</li>
+<li>À corriger : la réponse est partiellement bonne, mais il manque des
+choses.</li>
+<li>Risquée : la réponse contient des erreurs ou des affirmations non
+vérifiées.</li>
+<li>Échec : la réponse ne répond pas à la demande.</li>
+</ul>
+<p>Cette méthode est plus claire qu’une note vague. Les chiffres de 1 à
+10 ont un défaut connu : les évaluateurs (humains ou IA) ont tendance à
+se regrouper autour de 6, 7 ou 8, presque par réflexe. Des catégories
+nommées forcent à trancher.</p>
+<h3 id="les-questions-à-poser-pour-juger">Les questions à poser pour
+juger</h3>
+<p>Une bonne évaluation peut demander :</p>
+<ul>
+<li>Est-ce que la réponse répond vraiment à la question ?</li>
+<li>Est-ce qu’elle respecte le contexte donné ?</li>
+<li>Est-ce qu’elle invente des faits ?</li>
+<li>Est-ce qu’elle est complète ?</li>
+<li>Est-ce que le format demandé est respecté ?</li>
+</ul>
+<p>Analogie :</p>
+<blockquote>
+<p>C’est comme corriger une copie avec une grille. Tu ne dis pas
+seulement “c’est bien” ou “c’est nul”. Tu regardes des critères
+précis.</p>
+</blockquote>
+<p>Sans grille, on juge au feeling. Et le feeling, c’est très bien pour
+choisir une musique. 😂 Pour valider une réponse IA, c’est un peu
+léger.</p>
+<h3 id="le-vocabulaire-des-pros-de-lévaluation">Le vocabulaire des pros
+de l’évaluation</h3>
+<p>Si tu travailles un jour avec une équipe technique, tu entendras
+peut-être des noms plus précis pour ces mêmes questions. Voici le
+décodeur :</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Question simple</th>
+<th>Nom technique</th>
+<th>Ce que ça vérifie</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Est-ce qu’elle invente des faits ?</td>
+<td><strong>Faithfulness</strong> (fidélité)</td>
+<td>La réponse ne dit que ce qui est soutenu par le contexte fourni,
+sans rien ajouter.</td>
+</tr>
+<tr class="even">
+<td>Est-ce qu’elle répond vraiment à la question ?</td>
+<td><strong>Answer Relevancy</strong> (pertinence)</td>
+<td>La réponse correspond bien à ce qui a été demandé, sans partir hors
+sujet.</td>
+</tr>
+<tr class="odd">
+<td>Est-ce que les documents retrouvés sont utiles ?</td>
+<td><strong>Contextual Relevancy</strong></td>
+<td>Pour les systèmes qui recherchent des documents avant de répondre
+(RAG) : les documents trouvés sont-ils les bons ?</td>
+</tr>
+<tr class="even">
+<td>Est-ce que l’agent a bien utilisé ses outils ?</td>
+<td><strong>Tool Correctness</strong></td>
+<td>Pour les agents qui appellent des outils ou des API : les bons
+outils, avec les bons paramètres.</td>
+</tr>
+</tbody>
+</table>
+<p>Ce ne sont pas des concepts différents de ceux que tu viens
+d’apprendre : juste les noms que tu retrouveras dans la documentation
+technique.</p>
+<h3 id="et-qui-juge-le-juge">Et qui juge le juge ?</h3>
+<p>Une dernière idée importante : un juge IA n’est pas infaillible. De
+temps en temps, il faut vérifier que ses verdicts ressemblent à ceux
+d’un humain qui ferait la même évaluation.</p>
+<p>En pratique, on prend un échantillon de réponses, on les fait évaluer
+à la fois par l’IA-juge et par une personne, puis on compare. Si les
+deux sont presque toujours d’accord, on peut faire confiance au juge IA
+pour le reste. S’ils sont souvent en désaccord, la grille de notation
+doit être revue.</p>
+<p>Analogie :</p>
+<blockquote>
+<p>C’est comme former un nouveau correcteur de copies. Au début, on
+compare ses notes à celles d’un professeur expérimenté. S’ils tombent
+d’accord la plupart du temps, on peut lui laisser plus d’autonomie.</p>
+</blockquote>
+<h2 id="ce-que-les-entreprises-font-déjà-avec-lia">12. Ce que les
+entreprises font déjà avec l’IA</h2>
+<p>Voici, en version simple, quelques exemples de ce que des entreprises
+font déjà avec des IA bien guidées. 😮</p>
+<p>Le but ici n’est pas de te faire croire que l’IA est une baguette
+magique. Le but est de te montrer qu’avec de bonnes consignes, elle peut
+devenir un vrai levier de travail.</p>
+<h3 id="finance-et-fiscalité">Finance et fiscalité</h3>
+<p>Certains grands cabinets d’audit et de conseil ont développé des
+agents IA internes pour la fiscalité. L’idée : l’agent reçoit un prompt
+très détaillé, parfois long de plusieurs dizaines de pages, qui décrit
+les codes fiscaux applicables et la façon de raisonner d’un expert. À
+partir de là, il peut produire un premier projet de conseil fiscal.</p>
+<p>Un travail qui prenait auparavant une à deux semaines peut, pour une
+première version, être ramené à une seule journée. L’expert humain garde
+ensuite la main pour relire, corriger et valider.</p>
+<p>Mais attention : l’humain doit encore vérifier. L’IA aide, elle ne
+remplace pas la responsabilité.</p>
+<h3 id="service-client">Service client</h3>
+<p>Des entreprises de services (énergie, télécoms, e-commerce…)
+utilisent des chatbots IA pour répondre à une grande partie des demandes
+clients courantes — parfois plusieurs dizaines de pourcents du volume
+total.</p>
+<p>Quand le prompt est bien construit, le chatbot peut répondre vite,
+clairement, et parfois avec plus de régularité qu’un humain fatigué ou
+pressé. Certaines entreprises rapportent même un taux de satisfaction
+client sur les réponses de l’IA supérieur à celui des agents humains sur
+les mêmes types de demandes.</p>
+<p>Le secret n’est pas seulement la technologie.</p>
+<p>Le secret, c’est aussi la qualité des consignes données à l’IA, et le
+fait de garder un humain disponible pour les cas difficiles.</p>
+<h3 id="recrutement">Recrutement</h3>
+<p>Dans le recrutement, des plateformes d’offres d’emploi utilisent des
+messages générés ou optimisés par IA pour inviter des candidats à
+postuler à des offres qui leur correspondent.</p>
+<p>Un bon message peut donner envie.</p>
+<p>Un mauvais message peut faire fuir.</p>
+<p>Des entreprises du secteur rapportent que des messages mieux ciblés
+et mieux rédigés augmentent à la fois le nombre de candidatures reçues
+et le nombre d’embauches qui en découlent. La différence se joue souvent
+dans le ton, la clarté et la personnalisation — exactement ce que
+CO-STAR et CREATE permettent de maîtriser.</p>
+<h3 id="magasins-et-support-interne">Magasins et support interne</h3>
+<p>Dans certaines grandes enseignes de bricolage ou de retail, les
+vendeurs disposent d’une application avec une IA capable de répondre à
+des questions techniques en temps réel (“quelle vis pour fixer ceci sur
+ce mur ?”), dans des centaines, voire des milliers de magasins.</p>
+<p>Cela peut transformer un employé généraliste en conseiller plus
+compétent face au client.</p>
+<p>Analogie :</p>
+<blockquote>
+<p>C’est comme avoir un manuel vivant dans la poche.</p>
+</blockquote>
+<h3 id="un-mot-sur-ces-chiffres">Un mot sur ces chiffres</h3>
+<p>Tu l’auras peut-être remarqué : cette section contient des
+pourcentages, des durées, des nombres de magasins… et pourtant, aucune
+source précise n’est citée.</p>
+<p>C’est volontaire, et c’est même le meilleur exercice pratique de tout
+ce manuel.</p>
+<p>Ces exemples sont largement repris dans la presse spécialisée et les
+communications d’entreprises. Ils donnent un ordre de grandeur réaliste
+de ce que le prompt engineering permet aujourd’hui. Mais avant de les
+répéter dans une présentation ou un rapport professionnel, applique la
+leçon de la section 7 : retrouve la source d’origine, vérifie la date,
+et confirme le chiffre exact.</p>
+<p>Une IA — et un livre — peuvent paraître très sûrs d’eux en énonçant
+un chiffre. La vraie compétence, c’est de garder ce petit réflexe :
+“intéressant… et la source, c’est laquelle ?” 🤔</p>
+<h2 id="programme-dentraînement-simplifié">13. Programme d’entraînement
+simplifié</h2>
+<p>Pour devenir bon, il ne suffit pas de lire.</p>
+<p>Il faut pratiquer.</p>
+<p>Voici un parcours simple en 10 exercices, plus 3 défis bonus pour
+celles et ceux qui veulent aller plus loin.</p>
+<p>Ne cherche pas à tout réussir du premier coup. Ici, se tromper fait
+partie de l’entraînement. Même les bons prompt engineers ont déjà écrit
+des consignes tellement longues qu’on aurait pu les plier en quatre et
+les envoyer par colis.</p>
+<h3 id="exercice-1-transformer-une-demande-floue">Exercice 1 :
+transformer une demande floue</h3>
+<p>Prends cette demande :</p>
+<blockquote>
+<p>Analyse ce rapport de ventes.</p>
+</blockquote>
+<p>Réécris-la avec CO-STAR.</p>
+<p>Ajoute :</p>
+<ul>
+<li>le contexte ;</li>
+<li>l’objectif ;</li>
+<li>le style ;</li>
+<li>le ton ;</li>
+<li>l’audience ;</li>
+<li>le format attendu.</li>
+</ul>
+<p>But : apprendre à enlever le flou.</p>
+<p>Petit sourire de débutant : si ton premier prompt ressemble à “fais
+un truc bien”, ce n’est pas grave. On commence tous quelque part.</p>
+<h3 id="exercice-2-contrôler-le-ton">Exercice 2 : contrôler le ton</h3>
+<p>Demande à l’IA d’écrire une réponse à un client mécontent.</p>
+<p>Ajoute :</p>
+<ul>
+<li>le ton souhaité ;</li>
+<li>les mots interdits ;</li>
+<li>la longueur maximale ;</li>
+<li>un exemple de bonne réponse.</li>
+</ul>
+<p>But : comprendre que le style se pilote.</p>
+<p>Tu vas voir : changer le ton d’une réponse, c’est comme changer la
+lumière dans une pièce. Le contenu reste là, mais l’ambiance change
+complètement.</p>
+<h3 id="exercice-3-faire-raisonner-étape-par-étape">Exercice 3 : faire
+raisonner étape par étape</h3>
+<p>Donne à l’IA un problème avec plusieurs informations.</p>
+<p>Demande-lui de :</p>
+<ol type="1">
+<li>repérer les données importantes ;</li>
+<li>expliquer les étapes ;</li>
+<li>donner la conclusion.</li>
+</ol>
+<p>But : éviter les réponses trop rapides.</p>
+<h3 id="exercice-4-comparer-plusieurs-solutions">Exercice 4 : comparer
+plusieurs solutions</h3>
+<p>Choisis un problème :</p>
+<blockquote>
+<p>Comment lancer une petite formation en ligne ?</p>
+</blockquote>
+<p>Demande à l’IA 3 stratégies différentes, avec avantages, risques et
+coûts.</p>
+<p>But : apprendre à explorer plusieurs chemins.</p>
+<h3 id="exercice-5-vérifier-les-faits">Exercice 5 : vérifier les
+faits</h3>
+<p>Donne un texte à résumer.</p>
+<p>Demande à l’IA de lister les affirmations importantes, puis de dire
+lesquelles sont certaines et lesquelles sont incertaines.</p>
+<p>But : réduire les inventions.</p>
+<h3 id="exercice-6-obtenir-un-format-propre">Exercice 6 : obtenir un
+format propre</h3>
+<p>Donne un e-mail client à l’IA.</p>
+<p>Demande-lui d’extraire les informations en JSON :</p>
+<ul>
+<li>nom ;</li>
+<li>besoin ;</li>
+<li>urgence ;</li>
+<li>prochaine action.</li>
+</ul>
+<p>But : apprendre à produire des données utilisables.</p>
+<h3 id="exercice-7-créer-une-mini-équipe-dagents">Exercice 7 : créer une
+mini-équipe d’agents</h3>
+<p>Demande à l’IA de jouer 3 rôles :</p>
+<ul>
+<li>analyste ;</li>
+<li>critique ;</li>
+<li>rédacteur final.</li>
+</ul>
+<p>Chaque rôle doit donner sa contribution.</p>
+<p>But : comprendre la logique multi-agents.</p>
+<h3 id="exercice-8-retrouver-les-passages-importants">Exercice 8 :
+retrouver les passages importants</h3>
+<p>Donne un long texte.</p>
+<p>Demande à l’IA de citer les sections utiles avant de faire la
+synthèse.</p>
+<p>But : éviter qu’elle résume au hasard.</p>
+<h3 id="exercice-9-créer-un-juge">Exercice 9 : créer un juge</h3>
+<p>Demande à l’IA de corriger une réponse selon une grille :</p>
+<ul>
+<li>correct ;</li>
+<li>à corriger ;</li>
+<li>risqué ;</li>
+<li>échec.</li>
+</ul>
+<p>But : apprendre à évaluer une réponse.</p>
+<h3 id="exercice-10-couper-un-prompt-trop-lourd">Exercice 10 : couper un
+prompt trop lourd</h3>
+<p>Prends une consigne très longue.</p>
+<p>Divise-la en 3 prompts :</p>
+<ol type="1">
+<li>comprendre la demande ;</li>
+<li>extraire les informations ;</li>
+<li>produire la réponse finale.</li>
+</ol>
+<p>But : apprendre que parfois, plusieurs petites demandes valent mieux
+qu’une énorme consigne.</p>
+<p>Quand un prompt devient un meuble IKEA sans notice, coupe-le en
+morceaux. Tout le monde respirera mieux, toi compris.</p>
+<h3 id="bonus-3-défis-niveau-expert">Bonus : 3 défis niveau expert</h3>
+<p>Ces trois défis reprennent les exercices 7, 8 et 9, mais avec un
+scénario plus proche de ce qu’on trouve en entreprise. 😎 Prends ton
+temps : c’est normal si la première tentative est imparfaite.</p>
+<p><strong>Bonus A — Le comité d’investissement (suite de l’exercice
+7)</strong></p>
+<p>Demande à l’IA de jouer 4 rôles : un analyste “tendances générales”,
+un analyste “chiffres de l’entreprise”, un analyste “avis du public”, et
+un responsable qui doit prendre une décision.</p>
+<p>Les trois premiers donnent chacun leur avis sur un même produit ou
+projet fictif, <strong>même si leurs avis se contredisent</strong>. Le
+responsable doit ensuite lire les trois avis, expliquer où ils sont en
+désaccord, et donner une recommandation finale avec un niveau de
+confiance (faible, moyen, élevé).</p>
+<p>But : apprendre à faire travailler des points de vue contradictoires
+ensemble, plutôt que de les lisser artificiellement.</p>
+<p><strong>Bonus B — La grande note (suite de l’exercice 8)</strong></p>
+<p>Donne à l’IA un texte assez long (plusieurs pages, ou plusieurs
+documents collés ensemble). Demande-lui de :</p>
+<ol type="1">
+<li>marquer les passages utiles en les entourant d’une balise du type
+<code>&lt;passage_utile&gt;...&lt;/passage_utile&gt;</code> ;</li>
+<li>ne faire la synthèse finale qu’à partir de ces passages marqués
+;</li>
+<li>signaler si une information importante semble se trouver “au milieu”
+du texte plutôt qu’au début ou à la fin.</li>
+</ol>
+<p>But : vérifier que l’IA ne se contente pas de résumer le début et la
+fin d’un document — un piège fréquent sur les textes longs.</p>
+<p><strong>Bonus C — Le juge anti-biais (suite de l’exercice
+9)</strong></p>
+<p>Demande à l’IA de jouer un “juge” chargé de relire des annonces de
+recrutement ou des réponses de chatbot, et de repérer si elles
+favorisent ou défavorisent injustement un groupe de personnes (âge,
+genre, origine, situation de handicap…).</p>
+<p>Donne-lui des exemples de réponses à classer “acceptable” et d’autres
+à classer “à corriger”, puis demande-lui d’expliquer son verdict avant
+de le donner.</p>
+<p>But : comprendre qu’un “juge IA” peut aussi servir à surveiller
+l’équité, pas seulement la qualité rédactionnelle — et qu’il doit
+toujours justifier son verdict, jamais juste donner une note brute.</p>
+<h2 id="les-modèles-de-prompts-à-garder">14. Les modèles de prompts à
+garder</h2>
+<p>Voici des modèles simples que tu peux réutiliser.</p>
+<p>Garde-les comme une petite trousse de secours. Le jour où ton cerveau
+affiche “mise à jour en cours”, ces modèles t’aideront à redémarrer.</p>
+<h3 id="modèle-co-star">Modèle CO-STAR</h3>
+<pre class="text"><code>Contexte :
+[Explique la situation.]
+
+Objectif :
+[Dis exactement ce que tu veux obtenir.]
+
+Style :
+[Guide, tableau, liste, e-mail, fiche, script, etc.]
+
+Ton :
+[Simple, chaleureux, professionnel, direct, rassurant, etc.]
+
+Audience :
+[Dis pour qui la réponse est faite.]
+
+Réponse attendue :
+[Précise le format, la longueur et les contraintes.]</code></pre>
+<h3 id="modèle-race">Modèle RACE</h3>
+<pre class="text"><code>Rôle :
+[Qui l&#39;IA doit incarner.]
+
+Action :
+[Ce qu&#39;elle doit faire, très concrètement.]
+
+Contexte :
+[La situation dans laquelle elle agit.]
+
+Évaluation attendue :
+[À quoi ressemble un bon résultat, et comment on saura que c&#39;est réussi.]</code></pre>
+<h3 id="modèle-pour-simplifier-un-texte">Modèle pour simplifier un
+texte</h3>
+<pre class="text"><code>Simplifie le texte ci-dessous pour un lecteur grand public.
+Utilise des phrases courtes.
+Évite le jargon.
+Explique les mots difficiles.
+Ajoute des analogies simples.
+Adresse-toi directement au lecteur avec un ton humain et rassurant.
+Garde les idées importantes sans ajouter de faits inventés.</code></pre>
+<h3 id="modèle-pour-vérifier-une-réponse">Modèle pour vérifier une
+réponse</h3>
+<pre class="text"><code>Vérifie cette réponse.
+Dis :
+1. ce qui est correct ;
+2. ce qui est flou ;
+3. ce qui pourrait être faux ;
+4. ce qu&#39;il faut corriger ;
+5. une version finale plus fiable.</code></pre>
+<h3 id="modèle-pour-comparer-des-options">Modèle pour comparer des
+options</h3>
+<pre class="text"><code>Propose 3 options différentes.
+Pour chaque option, donne :
+- les avantages ;
+- les risques ;
+- le niveau de difficulté ;
+- le temps nécessaire ;
+- la meilleure situation pour l&#39;utiliser.
+
+Puis recommande l&#39;option la plus adaptée.</code></pre>
+<h3 id="modèle-pour-obtenir-une-réponse-structurée">Modèle pour obtenir
+une réponse structurée</h3>
+<pre class="text"><code>Réponds uniquement dans ce format :
+
+Titre :
+Résumé en 3 lignes :
+Points importants :
+Actions conseillées :
+Risques :
+Conclusion :
+
+N&#39;ajoute aucune autre section.</code></pre>
+<h3 id="modèle-json-strict-avec-petit-schéma">Modèle JSON strict (avec
+petit schéma)</h3>
+<pre class="text"><code>Extrais les informations du texte ci-dessous.
+Réponds uniquement en JSON valide, sans aucun texte autour.
+
+Schéma attendu :
+- [champ_1] : texte
+- [champ_2] : nombre
+- [champ_3] : une seule valeur parmi &quot;[valeur_a]&quot;, &quot;[valeur_b]&quot;, &quot;[valeur_c]&quot;
+
+N&#39;ajoute aucun champ qui ne figure pas dans cette liste.
+Si une information manque, mets la valeur null.</code></pre>
+<h2 id="les-erreurs-fréquentes-à-éviter">15. Les erreurs fréquentes à
+éviter</h2>
+<p>Cette section n’est pas là pour te gronder.</p>
+<p>Elle est là pour te faire gagner du temps.</p>
+<p>Si tu reconnais une de tes erreurs, souris un peu : cela veut dire
+que tu es exactement en train d’apprendre. 🙂</p>
+<h3 id="erreur-1-demander-quelque-chose-de-trop-vague">Erreur 1 :
+demander quelque chose de trop vague</h3>
+<p>Mauvais :</p>
+<blockquote>
+<p>Fais-moi un bon texte.</p>
+</blockquote>
+<p>Meilleur :</p>
+<blockquote>
+<p>Écris un texte de 300 mots pour expliquer notre service à des
+débutants, avec un ton rassurant et 3 exemples concrets.</p>
+</blockquote>
+<p>La première version dit : “surprends-moi”. La deuxième dit :
+“aide-moi vraiment”. 😊</p>
+<h3 id="erreur-2-oublier-le-lecteur">Erreur 2 : oublier le lecteur</h3>
+<p>Un texte pour un expert n’est pas un texte pour un débutant.</p>
+<p>Dis toujours à l’IA qui va lire.</p>
+<h3 id="erreur-3-ne-pas-donner-le-format">Erreur 3 : ne pas donner le
+format</h3>
+<p>Si tu veux un tableau, demande un tableau.</p>
+<p>Si tu veux une liste, demande une liste.</p>
+<p>Si tu veux une réponse courte, donne une limite.</p>
+<h3 id="erreur-4-croire-lia-sans-vérifier">Erreur 4 : croire l’IA sans
+vérifier</h3>
+<p>L’IA peut se tromper.</p>
+<p>Elle peut parler avec confiance même quand elle invente.</p>
+<p>Pour les sujets importants, demande toujours une vérification. 🤔</p>
+<h3 id="erreur-5-tout-mettre-dans-un-seul-prompt">Erreur 5 : tout mettre
+dans un seul prompt</h3>
+<p>Quand une demande devient trop grande, coupe-la.</p>
+<p>Un gros sac difficile à porter devient plus simple quand tu le
+divises en plusieurs petits sacs.</p>
+<p>Et oui, c’est moins impressionnant qu’un prompt géant. Mais souvent,
+c’est beaucoup plus efficace.</p>
+<h3
+id="erreur-6-répéter-un-chiffre-impressionnant-sans-vérifier-sa-source">Erreur
+6 : répéter un chiffre impressionnant sans vérifier sa source</h3>
+<p>“L’IA fait le travail de 250 personnes”, “+20 % de candidatures grâce
+à l’IA”… Ces chiffres circulent beaucoup, y compris dans ce manuel
+(section 12).</p>
+<p>Ils donnent une idée du potentiel, mais ce ne sont pas des vérités
+universelles gravées dans le marbre. Avant de les utiliser dans une
+présentation, un rapport ou une décision, prends deux minutes pour
+retrouver la source originale et vérifier qu’elle est encore
+valable.</p>
+<p>C’est la même règle que pour les hallucinations de l’IA (section 7) :
+une affirmation qui sonne bien et qui circule beaucoup n’est pas
+forcément vraie. Un bon prompt engineer garde ce réflexe, pour l’IA
+comme pour ses propres lectures.</p>
+<h2 id="la-grande-idée-à-retenir">16. La grande idée à retenir</h2>
+<p>Le prompt engineering n’est pas de la magie.</p>
+<p>C’est une méthode de communication.</p>
+<p>Tu apprends à dire clairement :</p>
+<ul>
+<li>où tu veux aller ;</li>
+<li>ce que tu veux obtenir ;</li>
+<li>pour qui la réponse est faite ;</li>
+<li>dans quel style ;</li>
+<li>avec quelles limites ;</li>
+<li>sous quel format.</li>
+</ul>
+<p>Une IA peut être très puissante, mais elle a besoin d’un bon
+cadre.</p>
+<p>Sans cadre, elle improvise.</p>
+<p>Avec un bon cadre, elle devient un vrai outil de travail.</p>
+<p>Tu peux voir l’IA comme un assistant très rapide, mais pas toujours
+prudent.</p>
+<p>Ton prompt, c’est la main sur le volant. 😊</p>
+<p>Plus tu conduis clairement, plus le trajet devient utile, calme et
+efficace.</p>
+<p>Et si tu rates un virage, ce n’est pas la fin du monde. Tu corriges,
+tu reformules, tu reprends la route.</p>
+<h2 id="boîte-à-outils-avancée-pour-aller-plus-loin">17. Boîte à outils
+avancée : pour aller plus loin</h2>
+<p>Cette dernière section est un pense-bête. Tu peux y revenir chaque
+fois que tu croises un terme technique sans te souvenir d’où il
+vient.</p>
+<h3 id="tableau-récapitulatif-des-formules">Tableau récapitulatif des
+formules</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Formule</th>
+<th>Signification</th>
+<th>Quand l’utiliser</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>CO-STAR</strong></td>
+<td>Contexte, Objectif, Style, Ton, Audience, Réponse attendue</td>
+<td>Pour une demande complète, quand tu as le temps de bien cadrer</td>
+</tr>
+<tr class="even">
+<td><strong>RTF</strong></td>
+<td>Rôle, Tâche, Format</td>
+<td>Pour une demande rapide et directe (code, traduction, message
+court)</td>
+</tr>
+<tr class="odd">
+<td><strong>CREATE</strong></td>
+<td>Qui parle, demande, Exemples à suivre, détails à Ajouter, Type de
+sortie, contraintes (Extras)</td>
+<td>Pour du contenu marketing ou communication, avec des exemples</td>
+</tr>
+<tr class="even">
+<td><strong>RACE</strong></td>
+<td>Rôle, Action, Contexte, Évaluation attendue</td>
+<td>Quand le résultat concret compte plus que le format</td>
+</tr>
+<tr class="odd">
+<td><strong>CARE / TRACE</strong></td>
+<td>Variantes qui recombinent Contexte, Action, Résultat ou Tâche,
+Exemple</td>
+<td>Si tu les croises ailleurs : mêmes briques, autre étiquette</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mini-glossaire-des-termes-avancés">Mini-glossaire des termes
+avancés</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Terme</th>
+<th>En une phrase</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Schéma / contrat de données</strong></td>
+<td>La liste précise des champs attendus dans une réponse JSON, avec
+leur type et leurs valeurs possibles.</td>
+</tr>
+<tr class="even">
+<td><strong><code>additionalProperties: false</code></strong></td>
+<td>Une instruction qui dit à l’IA : “n’invente aucun champ qui ne soit
+pas dans la liste”.</td>
+</tr>
+<tr class="odd">
+<td><strong>Température</strong></td>
+<td>Un réglage qui contrôle si l’IA répond toujours pareil (température
+basse) ou varie davantage (température haute).</td>
+</tr>
+<tr class="even">
+<td><strong>Repair loop (boucle de réparation)</strong></td>
+<td>Renvoyer une erreur à l’IA pour qu’elle corrige elle-même le format
+de sa réponse.</td>
+</tr>
+<tr class="odd">
+<td><strong>Timeout</strong></td>
+<td>La durée maximale qu’on accorde à un agent avant de passer à un plan
+B.</td>
+</tr>
+<tr class="even">
+<td><strong>Retry</strong></td>
+<td>Redonner une nouvelle chance à un agent qui a échoué, parfois en
+attendant un peu plus longtemps à chaque essai.</td>
+</tr>
+<tr class="odd">
+<td><strong>Circuit breaker (coupe-circuit)</strong></td>
+<td>Arrêter complètement d’utiliser un agent qui échoue trop souvent, le
+temps que la situation se stabilise.</td>
+</tr>
+<tr class="even">
+<td><strong>Faithfulness (fidélité)</strong></td>
+<td>Est-ce que la réponse colle au contexte fourni, sans rien inventer
+?</td>
+</tr>
+<tr class="odd">
+<td><strong>Answer Relevancy (pertinence)</strong></td>
+<td>Est-ce que la réponse correspond vraiment à la question posée ?</td>
+</tr>
+<tr class="even">
+<td><strong>Contextual Relevancy</strong></td>
+<td>Pour les systèmes qui cherchent des documents : ces documents
+sont-ils les bons ?</td>
+</tr>
+<tr class="odd">
+<td><strong>Tool Correctness</strong></td>
+<td>Pour les agents qui utilisent des outils : les ont-ils bien utilisés
+?</td>
+</tr>
+<tr class="even">
+<td><strong>Accord entre juges</strong></td>
+<td>Une mesure de la fréquence à laquelle un juge IA et un humain
+tombent d’accord sur la même évaluation.</td>
+</tr>
+</tbody>
+</table>
+<p>Tu n’as pas besoin de mémoriser ce tableau. Le simple fait de savoir
+qu’il existe, et de pouvoir y revenir, suffit pour ne plus être surpris
+par ce vocabulaire dans une réunion ou un article.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Si tu débutes, ne cherche pas à tout maîtriser d’un coup.</p>
+<p>Commence simplement :</p>
+<ol type="1">
+<li>Donne le contexte.</li>
+<li>Dis l’objectif.</li>
+<li>Précise le lecteur.</li>
+<li>Demande un format.</li>
+<li>Fais vérifier les points importants.</li>
+</ol>
+<p>Rien qu’avec cela, tes résultats vont déjà beaucoup s’améliorer.</p>
+<p>Et surtout, rappelle-toi ceci :</p>
+<blockquote>
+<p>Tu n’as pas besoin de parler comme une machine pour utiliser une
+IA.</p>
+</blockquote>
+<p>Tu dois seulement apprendre à être clair, précis et humain. 😊</p>
+<p>C’est la vraie force d’un bon prompt.</p>
+<p>Le meilleur moment pour maîtriser ces outils était peut-être
+hier.</p>
+<p>Le deuxième meilleur moment, c’est maintenant.</p>
+<p>Et cette fois, tu n’es pas seul face au petit robot. 🙂</p>
+<h2 id="quatrième-de-couverture">Quatrième de couverture</h2>
+<p>Et si la différence entre une IA décevante et une IA vraiment utile
+ne venait pas de la machine, mais de ta façon de lui parler ?</p>
+<p>Ce manuel t’apprend à construire des prompts clairs, humains et
+efficaces. Pas avec du jargon froid. Pas avec des formules mystiques
+réservées à quelques experts. Mais avec des explications simples, des
+analogies du quotidien, des exemples réutilisables et une méthode
+progressive.</p>
+<p>Tu vas apprendre à :</p>
+<ul>
+<li>donner un contexte clair à l’IA ;</li>
+<li>formuler un objectif précis ;</li>
+<li>choisir le bon ton pour ton lecteur ;</li>
+<li>éviter les réponses floues ;</li>
+<li>réduire les hallucinations ;</li>
+<li>structurer les sorties en formats utiles (y compris en JSON strict)
+;</li>
+<li>piloter une petite équipe d’agents IA, avec ses filets de sécurité
+;</li>
+<li>juger et faire juger une réponse avec de vrais critères ;</li>
+<li>utiliser des modèles de prompts (CO-STAR, RTF, CREATE, RACE…) que tu
+peux adapter tout de suite.</li>
+</ul>
+<p>Ce livre est pensé pour les débutants, les formateurs, les
+entrepreneurs, les professionnels curieux et toutes les personnes qui
+veulent enfin passer de “j’ai demandé à l’IA” à “j’ai obtenu un vrai
+résultat”.</p>
+<p>L’auteur, Ramarosandratana H. Nantenaina, connu sous le nom de
+hramaros, est formateur IA et spécialiste de l’automatisation par
+LLM.</p>
+<p>Passionné d’informatique et d’intelligence artificielle, il conçoit
+des contenus pour rendre l’évolution numérique plus accessible.</p>
+<p>Son parcours combine : - pédagogie A.D.D.I.E ; - prompt engineering
+avancé ; - automatisation par IA ; - codage assisté par IA et pratique
+des modèles populaires comme Claude, OpenAI et Gemini.</p>
+<p>Il a participé au Hackathon DigitAgro à Marseille en 2025 et, lors de
+ses études à l’école 42 Antananarivo, a mené des formations d’initiation
+à l’IA, à la cybersécurité et aux outils Google avec l’association BDE
+42 Antananarivo.</p>
+<p>Son objectif est simple : aider chacun à comprendre l’IA sans
+prérequis en informatique, sans peur ni honte, et sans se perdre dans un
+labyrinthe de mots compliqués.</p>
+<p>Parce qu’une bonne consigne peut transformer une machine
+impressionnante en partenaire de travail.</p>
+</body>
+</html>
