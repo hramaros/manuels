@@ -1,0 +1,204 @@
+@page {
+  margin: 22mm 20mm 25mm 20mm;
+}
+
+@page :first {
+  margin-bottom: 25mm;
+}
+
+body {
+  font-family: "DejaVu Serif", Georgia, serif;
+  font-size: 11.5pt;
+  line-height: 1.45;
+  color: #222;
+}
+
+p {
+  orphans: 3;
+  widows: 3;
+}
+
+h1, h2, h3, h4 {
+  font-family: "DejaVu Sans", Arial, sans-serif;
+  color: #5c3d00;
+  page-break-after: avoid;
+}
+
+h1 {
+  font-size: 26pt;
+  border-bottom: 3px solid #c8880a;
+  padding-bottom: 10px;
+  margin-top: 0;
+}
+
+h1 + h3 {
+  color: #c8880a;
+  font-style: italic;
+  font-weight: normal;
+  margin-top: -8px;
+}
+
+h2 {
+  font-size: 17pt;
+  margin-top: 28px;
+  border-bottom: 1px solid #e0b85a;
+  padding-bottom: 4px;
+  page-break-before: always;
+}
+
+/* sommaire starts its own page; first content chapter avoids double break */
+
+h3 {
+  font-size: 13pt;
+  color: #c8880a;
+  margin-top: 18px;
+  page-break-inside: avoid;
+}
+
+h3 + p, h3 + ul, h3 + ol, h3 + pre, h3 + blockquote,
+h2 + p, h2 + ul, h2 + ol, h2 + pre, h2 + blockquote,
+h2 + div {
+  page-break-before: avoid;
+}
+
+p + pre, p + blockquote {
+  page-break-before: avoid;
+}
+
+blockquote {
+  border-left: 4px solid #c8880a;
+  margin: 10px 0;
+  padding: 5px 16px;
+  color: #444;
+  background: #fdf7ee;
+  font-style: italic;
+  page-break-inside: avoid;
+}
+
+code, pre {
+  font-family: "DejaVu Sans Mono", monospace;
+  font-size: 9.5pt;
+}
+
+pre {
+  background: #f9f5ee;
+  border: 1px solid #e0c882;
+  border-radius: 4px;
+  padding: 10px 12px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  page-break-inside: avoid;
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 14px 0;
+  font-size: 10pt;
+  page-break-inside: auto;
+}
+
+thead {
+  display: table-header-group;
+}
+
+tr {
+  page-break-inside: avoid;
+}
+
+th, td {
+  border: 1px solid #bbb;
+  padding: 6px 8px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: #7a5200;
+  color: #fff;
+}
+
+tr:nth-child(even) td {
+  background: #fdf7ee;
+}
+
+ul, ol {
+  margin: 6px 0;
+  padding-left: 24px;
+}
+
+li {
+  page-break-inside: avoid;
+}
+
+p + ul, p + ol {
+  page-break-before: avoid;
+}
+
+a {
+  color: #a06800;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #e0c882;
+  margin: 24px 0;
+}
+
+/* ── Saut de page manuel [[PAGE - X]] ── */
+.saut-page {
+  display: block;
+  page-break-before: always;
+}
+
+/* ── Sommaire (table of contents) ── */
+.sommaire {
+  display: table;
+  width: 100%;
+  border-spacing: 0 4px;
+  margin: 12px 0 20px 0;
+}
+
+.som-ligne {
+  display: table-row;
+  font-size: 10.5pt;
+  color: #222;
+}
+
+.som-titre {
+  display: table-cell;
+  white-space: nowrap;
+  padding-right: 4px;
+  vertical-align: bottom;
+  font-family: "DejaVu Serif", serif;
+}
+
+.som-fill {
+  display: table-cell;
+  width: 100%;
+  vertical-align: bottom;
+  padding-bottom: 2px;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 9pt;
+  color: #c8a85a;
+  letter-spacing: 1px;
+}
+
+.som-page {
+  display: table-cell;
+  white-space: nowrap;
+  padding-left: 4px;
+  vertical-align: bottom;
+  font-family: "DejaVu Serif", serif;
+  font-weight: bold;
+  color: #c8880a;
+  text-align: right;
+}
+
+.som-conc .som-titre {
+  font-style: italic;
+}
