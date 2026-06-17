@@ -153,6 +153,8 @@ C'est rassurant, au fond : tu n'as pas besoin de devenir une machine. Tu dois se
 
 ## 2. Le problème principal : l'ambiguïté
 
+Un soir, dix minutes avant une réunion, j'ai demandé à une IA de "résumer rapidement" un rapport de trente pages. Elle m'a renvoyé deux lignes. Techniquement, c'était bien un résumé, et rapide en plus. Mais ce n'était pas ce que je voulais : il me fallait l'essentiel en une demi-page, pas un titre déguisé en synthèse. J'ai dû tout reformuler en plein stress, cette fois en précisant la longueur exacte. Rien de dramatique, mais une réunion qui commence avec dix minutes de retard parce qu'on a oublié de préciser "demi-page", ça pique un peu.
+
 L'ambiguïté, c'est quand une phrase peut être comprise de plusieurs manières.
 
 Par exemple :
@@ -918,6 +920,19 @@ Voici un parcours simple en 10 exercices, plus 3 défis bonus pour celles et ceu
 
 Ne cherche pas à tout réussir du premier coup. Ici, se tromper fait partie de l'entraînement. Même les bons prompt engineers ont déjà écrit des consignes tellement longues qu'on aurait pu les plier en quatre et les envoyer par colis.
 
+### Comment répartir ces exercices dans le temps
+
+Tu pourrais faire les 10 exercices d'affilée en une heure. Mais la recherche sur la mémorisation montre qu'un apprentissage espacé sur plusieurs jours s'ancre beaucoup mieux qu'une session unique, même plus longue.
+
+Voici un rythme simple à suivre :
+
+- **Jour 1** : exercices 1, 2 et 3.
+- **Jour 3** : exercices 4, 5 et 6 — puis refais l'exercice 1 sans regarder ta première version. Compare les deux.
+- **Jour 7** : exercices 7, 8, 9 et 10.
+- **Jour 10** : reprends un exercice au hasard parmi les dix, de mémoire. Si tu galères, ce n'est pas grave : c'est justement le signal que cette notion a besoin d'un peu plus de pratique.
+
+Le fait de te re-tester sans relire la correction (plutôt que de simplement relire tes notes) s'appelle la pratique de récupération. C'est inconfortable sur le moment, mais c'est ce qui fait tenir l'apprentissage dans la durée.
+
 ### Exercice 1 : transformer une demande floue
 
 Prends cette demande :
@@ -1192,57 +1207,59 @@ Cette section n'est pas là pour te gronder.
 
 Elle est là pour te faire gagner du temps.
 
+Pour chaque cas, fais l'exercice avant de lire la réponse : lis le prompt fautif, devine ce qui va mal se passer, et essaie de le corriger toi-même dans ta tête. Puis compare avec l'explication.
+
 Si tu reconnais une de tes erreurs, souris un peu : cela veut dire que tu es exactement en train d'apprendre. 🙂
 
-### Erreur 1 : demander quelque chose de trop vague
-
-Mauvais :
+### Repère l'erreur 1
 
 > Fais-moi un bon texte.
 
-Meilleur :
+Qu'est-ce qui cloche avant même que l'IA réponde ?
+
+Réponse : "bon" ne veut rien dire de précis. Cette consigne dit "surprends-moi" plutôt que "aide-moi vraiment". Une version corrigée donnerait une longueur, une audience et un ton :
 
 > Écris un texte de 300 mots pour expliquer notre service à des débutants, avec un ton rassurant et 3 exemples concrets.
 
-La première version dit : "surprends-moi". La deuxième dit : "aide-moi vraiment". 😊
+### Repère l'erreur 2
 
-### Erreur 2 : oublier le lecteur
+> Résume cet article pour notre site.
 
-Un texte pour un expert n'est pas un texte pour un débutant.
+Qu'est-ce qui manque ici, alors que le format JSON et la longueur sont presque secondaires ?
 
-Dis toujours à l'IA qui va lire.
+Réponse : on ne sait pas qui va lire le résumé. Un texte pour un expert n'est pas un texte pour un débutant, et l'IA ne peut pas deviner ton audience. Dis toujours à l'IA qui va lire.
 
-### Erreur 3 : ne pas donner le format
+### Repère l'erreur 3
 
-Si tu veux un tableau, demande un tableau.
+> Explique-moi les avantages et les inconvénients de cette option.
 
-Si tu veux une liste, demande une liste.
+La réponse risque d'arriver en un long paragraphe continu, difficile à relire en réunion. Pourquoi ?
 
-Si tu veux une réponse courte, donne une limite.
+Réponse : la consigne ne précise aucun format. Si tu veux un tableau, demande un tableau. Si tu veux une liste, demande une liste. Si tu veux une réponse courte, donne une limite.
 
-### Erreur 4 : croire l'IA sans vérifier
+### Repère l'erreur 4
 
-L'IA peut se tromper.
+Un collègue copie-colle directement une statistique donnée par l'IA dans un rapport officiel, sans la relire.
 
-Elle peut parler avec confiance même quand elle invente.
+Quel est le risque, même si la phrase semblait sûre d'elle ?
 
-Pour les sujets importants, demande toujours une vérification. 🤔
+Réponse : l'IA peut se tromper et parler avec confiance même quand elle invente. Pour les sujets importants, demande toujours une vérification avant de réutiliser un chiffre ou un fait. 🤔
 
-### Erreur 5 : tout mettre dans un seul prompt
+### Repère l'erreur 5
 
-Quand une demande devient trop grande, coupe-la.
+> Analyse ce contrat de 40 pages, résume les risques juridiques, rédige une réponse au client, puis génère un plan d'action en 10 étapes — tout ça dans le même message.
 
-Un gros sac difficile à porter devient plus simple quand tu le divises en plusieurs petits sacs.
+Ce prompt a de bonnes chances de produire une réponse bâclée sur au moins une des quatre tâches. Pourquoi ?
 
-Et oui, c'est moins impressionnant qu'un prompt géant. Mais souvent, c'est beaucoup plus efficace.
+Réponse : il mélange quatre missions différentes dans une seule consigne. Un gros sac difficile à porter devient plus simple quand tu le divises en plusieurs petits sacs. Découpe-le en 4 prompts successifs, un par tâche.
 
-### Erreur 6 : répéter un chiffre impressionnant sans vérifier sa source
+### Repère l'erreur 6
 
-"L'IA fait le travail de 250 personnes", "+20 % de candidatures grâce à l'IA"... Ces chiffres circulent beaucoup, y compris dans ce manuel (section 12).
+> "L'IA fait le travail de 250 personnes" — phrase reprise telle quelle dans une présentation, sans vérification.
 
-Ils donnent une idée du potentiel, mais ce ne sont pas des vérités universelles gravées dans le marbre. Avant de les utiliser dans une présentation, un rapport ou une décision, prends deux minutes pour retrouver la source originale et vérifier qu'elle est encore valable.
+Cette phrase circule beaucoup, y compris dans ce manuel (section 12). Quel est le piège ?
 
-C'est la même règle que pour les hallucinations de l'IA (section 7) : une affirmation qui sonne bien et qui circule beaucoup n'est pas forcément vraie. Un bon prompt engineer garde ce réflexe, pour l'IA comme pour ses propres lectures.
+Réponse : un chiffre qui sonne bien et qui circule beaucoup n'est pas forcément exact ni à jour. C'est la même règle que pour les hallucinations de l'IA (section 7). Avant de réutiliser un chiffre dans une présentation, un rapport ou une décision, prends deux minutes pour retrouver la source originale et vérifier qu'elle est encore valable.
 
 
 ## 16. La grande idée à retenir
