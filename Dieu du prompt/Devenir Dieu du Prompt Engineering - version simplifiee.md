@@ -153,6 +153,8 @@ C'est rassurant, au fond : tu n'as pas besoin de devenir une machine. Tu dois se
 
 ## 2. Le problème principal : l'ambiguïté
 
+Un soir, dix minutes avant une réunion, j'ai demandé à une IA de "résumer rapidement" un rapport de trente pages. Elle m'a renvoyé deux lignes. Techniquement, c'était bien un résumé, et rapide en plus. Mais ce n'était pas ce que je voulais : il me fallait l'essentiel en une demi-page, pas un titre déguisé en synthèse. J'ai dû tout reformuler en plein stress, cette fois en précisant la longueur exacte. Rien de dramatique, mais une réunion qui commence avec dix minutes de retard parce qu'on a oublié de préciser "demi-page", ça pique un peu.
+
 L'ambiguïté, c'est quand une phrase peut être comprise de plusieurs manières.
 
 Par exemple :
