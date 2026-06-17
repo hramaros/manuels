@@ -52,11 +52,7 @@ Son objectif est de t'apprendre à penser comme un architecte de prompts.
 
 À la fin de cette lecture, tu ne verras plus l'IA comme une boîte magique qui répond à tout avec une voix tranquille, même quand elle improvise en chaussettes.
 
-Tu comprendras ses forces.
-
-Tu comprendras ses limites.
-
-Et surtout, tu sauras construire des instructions qui transforment une intelligence artificielle en véritable partenaire de travail.
+Tu comprendras ses forces et ses limites. Et tu sauras construire des instructions qui transforment une IA en véritable partenaire de travail.
 
 Si ce manuel t'évite quelques erreurs, alors les 8 dollars que j'ai perdus auront peut-être été le meilleur investissement de ma carrière.
 
@@ -140,13 +136,7 @@ Aujourd'hui, dans les entreprises, l'IA sert à faire des choses beaucoup plus s
 
 Quand l'IA est utilisée dans ce genre de situation, une mauvaise réponse peut coûter cher.
 
-Elle peut faire perdre du temps.
-
-Elle peut donner une information fausse.
-
-Elle peut créer un document mal structuré.
-
-Elle peut dire quelque chose qui ne respecte pas les règles d'une entreprise.
+Elle peut faire perdre du temps, donner une information fausse, produire un document mal structuré, ou ne pas respecter les règles d'une entreprise.
 
 C'est pour cela qu'un bon prompt est important. Il sert de barrière de sécurité. Il aide l'IA à rester dans le bon chemin.
 
@@ -913,7 +903,7 @@ Tu l'auras peut-être remarqué : cette section contient des pourcentages, des d
 
 C'est volontaire, et c'est même le meilleur exercice pratique de tout ce manuel.
 
-Ces exemples sont largement repris dans la presse spécialisée et les communications d'entreprises. Ils donnent un **ordre de grandeur réaliste** de ce que le prompt engineering permet aujourd'hui. Mais avant de les répéter dans une présentation ou un rapport professionnel, applique la leçon de la section 7 : retrouve la source d'origine, vérifie la date, et confirme le chiffre exact.
+Ces exemples sont largement repris dans la presse spécialisée et les communications d'entreprises. Ils donnent un ordre de grandeur réaliste de ce que le prompt engineering permet aujourd'hui. Mais avant de les répéter dans une présentation ou un rapport professionnel, applique la leçon de la section 7 : retrouve la source d'origine, vérifie la date, et confirme le chiffre exact.
 
 Une IA — et un livre — peuvent paraître très sûrs d'eux en énonçant un chiffre. La vraie compétence, c'est de garder ce petit réflexe : "intéressant... et la source, c'est laquelle ?" 🤔
 
@@ -1378,7 +1368,7 @@ Son parcours combine :
 - automatisation par IA ;
 - codage assisté par IA et pratique des modèles populaires comme Claude, OpenAI et Gemini.
 
-Au cours de sa carrière professionnelle et académique, il a participé au Hackathon DigitAgro à Marseille en 2025, ce qui marque son premier pas vers le monde de l'automatisation par IA. Par ailleurs, au cours de ses études à l'école 42 Antananarivo, il a eu l'occasion de mener des formations d'initiation à l'IA, à la cybersécurité et aux outils Google avec l'association BDE 42 Antananarivo, ce qui a marqué le début de sa carrière en tant que formateur IA.
+Il a participé au Hackathon DigitAgro à Marseille en 2025 et, lors de ses études à l'école 42 Antananarivo, a mené des formations d'initiation à l'IA, à la cybersécurité et aux outils Google avec l'association BDE 42 Antananarivo.
 
 Son objectif est simple : aider chacun à comprendre l'IA sans prérequis en informatique, sans peur ni honte, et sans se perdre dans un labyrinthe de mots compliqués.
 
