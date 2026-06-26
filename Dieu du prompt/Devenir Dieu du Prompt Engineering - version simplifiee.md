@@ -77,10 +77,10 @@ Et si le meilleur moment pour apprendre le prompt engineering était hier, le de
   <div class="som-ligne"><span class="som-titre">13. Programme d'entraînement simplifié</span><span class="som-fill">................................................................................................................................................</span><span class="som-page">23</span></div>
   <div class="som-ligne"><span class="som-titre">14. Les modèles de prompts à garder</span><span class="som-fill">................................................................................................................................................</span><span class="som-page">26</span></div>
   <div class="som-ligne"><span class="som-titre">15. Les erreurs fréquentes à éviter</span><span class="som-fill">................................................................................................................................................</span><span class="som-page">28</span></div>
-  <div class="som-ligne"><span class="som-titre">16. La grande idée à retenir</span><span class="som-fill">................................................................................................................................................</span><span class="som-page">29</span></div>
-  <div class="som-ligne"><span class="som-titre">17. Boîte à outils avancée : pour aller plus loin</span><span class="som-fill">................................................................................................................................................</span><span class="som-page">30</span></div>
-  <div class="som-ligne som-conc"><span class="som-titre">Conclusion</span><span class="som-fill">................................................................................................................................................</span><span class="som-page">31</span></div>
-  <div class="som-ligne som-conc"><span class="som-titre">Quatrième de couverture</span><span class="som-fill">................................................................................................................................................</span><span class="som-page">32</span></div>
+  <div class="som-ligne"><span class="som-titre">16. La grande idée à retenir</span><span class="som-fill">................................................................................................................................................</span><span class="som-page">30</span></div>
+  <div class="som-ligne"><span class="som-titre">17. Boîte à outils avancée : pour aller plus loin</span><span class="som-fill">................................................................................................................................................</span><span class="som-page">31</span></div>
+  <div class="som-ligne som-conc"><span class="som-titre">Conclusion</span><span class="som-fill">................................................................................................................................................</span><span class="som-page">32</span></div>
+  <div class="som-ligne som-conc"><span class="som-titre">Quatrième de couverture</span><span class="som-fill">................................................................................................................................................</span><span class="som-page">33</span></div>
 </div>
 
 
@@ -117,6 +117,8 @@ Petit clin d'œil du robot : si tu lui donnes une consigne floue, il ne va pas l
 
 ## 1. Pourquoi les prompts sont devenus importants
 
+Pendant longtemps, j'ai utilisé l'IA comme un enfant utilise une télécommande : j'appuyais sur des boutons pour voir ce qui clignote. « Écris-moi un poème sur mon chat. » « Trouve-moi une excuse pour annuler un dîner. » C'était amusant. Inutile, mais amusant. Et je n'étais pas le seul.
+
 Avant, beaucoup de gens utilisaient l'IA comme un jouet :
 
 > "Écris-moi un poème."
@@ -149,6 +151,8 @@ Si tu mets une adresse précise, il peut te guider correctement.
 Avec l'IA, une consigne vague donne souvent une réponse vague. Une consigne précise donne souvent une réponse plus solide.
 
 C'est rassurant, au fond : tu n'as pas besoin de devenir une machine. Tu dois seulement apprendre à donner une meilleure adresse au GPS. 🤔
+
+Sauf qu'avant même de parler d'adresse précise, il faut comprendre pourquoi nos demandes partent si souvent dans le décor. Le coupable a un nom, et il est plus discret qu'on ne croit.
 
 
 ## 2. Le problème principal : l'ambiguïté
@@ -184,6 +188,8 @@ Et si tu t'es déjà retrouvé à écrire "non, ce n'est pas ça..." trois fois 
 
 
 ## 3. La méthode CO-STAR : la recette du bon prompt
+
+Après ma mésaventure à 8 dollars, j'ai fait comme beaucoup : j'ai cherché « le prompt parfait » sur internet. Je suis tombé sur des dizaines de formules aux noms d'agences secrètes. La plupart m'ont surtout embrouillé. Une seule est restée, parce qu'elle me rappelait quelque chose de familier : une recette de cuisine. Elle s'appelle CO-STAR.
 
 CO-STAR est une méthode pour construire une demande claire.
 
@@ -290,12 +296,14 @@ Exemples :
 - "Réponds en 5 points."
 - "Fais un tableau."
 - "Donne une version courte puis une version détaillée."
-- "Utilise du Markdown."
+- "Utilise du Markdown" (une mise en forme légère du texte : titres, listes, gras).
 - "Donne uniquement du JSON."
 
 Le format évite les surprises.
 
 C'est l'équivalent de dire : "range-moi ça dans cette boîte, pas dans un sac de courses troué."
+
+La première fois que j'ai rempli ces six cases pour de vrai, je me suis dit que c'était bien long pour pas grand-chose. Puis j'ai comparé le résultat avec celui de ma demande bâclée d'avant. J'ai arrêté de râler tout de suite. Le plus simple, c'est que tu voies la différence toi-même.
 
 
 ## 4. Exemple simple avec CO-STAR
@@ -327,6 +335,8 @@ Elle donne une route à l'IA.
 Elle ne lui dit pas seulement "avance". Elle lui donne une carte.
 
 Et crois-moi, une IA avec une carte fait beaucoup moins de tourisme sauvage dans ta réponse.
+
+Cela dit, sortir CO-STAR en entier à chaque fois, c'est comme prendre un caddie géant pour acheter une seule baguette. Parfois, une formule plus courte fait très bien le travail.
 
 
 ## 5. Autres formules utiles (RTF, CREATE, RACE...)
@@ -425,8 +435,12 @@ Pas de panique. Ce ne sont pas de nouvelles inventions magiques. Ce sont presque
 
 Une fois que tu maîtrises CO-STAR, RTF et CREATE, tu sauras reconnaître ces briques sous n'importe quel autre nom. C'est comme apprendre à cuisiner : une fois que tu sais ce que sont un féculent, une protéine et un légume, peu importe si la recette s'appelle "bowl", "assiette équilibrée" ou "plat unique".
 
+Ces formules t'aident à demander clairement. Mais une demande bien formulée ne garantit pas un bon raisonnement : c'est comme un élève qui a parfaitement lu l'énoncé, puis fonce écrire la réponse sans poser les étapes. La question était claire ; c'est sa tête qui est allée trop vite. Ça aussi, je l'ai appris à mes dépens.
+
 
 ## 6. Faire raisonner l'IA pas à pas
+
+Je me souviens d'une réponse qui m'a eu justement parce qu'elle avait l'air parfaite. J'avais demandé à une IA de répartir un budget entre trois projets. Elle m'a renvoyé des chiffres nets, bien alignés, sûrs d'eux. Le détail gênant : le total ne tombait pas juste. Elle avait sauté une étape en chemin, sans jamais le signaler.
 
 Parfois, tu ne veux pas seulement une réponse rapide.
 
@@ -483,7 +497,7 @@ Continue jusqu'à la conclusion finale.
 
 Analogie :
 
-> Pour ranger une pièce en bazar, tu ne ranges pas tout d'un coup. Tu fais d'abord le bureau, puis le sol, puis les vêtements.
+> C'est comme empiler des blocs pour faire une tour : tu commences par celui du bas, et chaque nouveau bloc s'appuie sur ceux d'en dessous. Impossible de poser celui du sommet en premier.
 
 Le cerveau aime les petits morceaux. L'IA aussi. Et ton niveau de stress aussi, franchement.
 
@@ -520,9 +534,11 @@ L'idée est simple :
 
 Analogie :
 
-> Tu demandes un avis à plusieurs personnes. Si presque tout le monde arrive à la même conclusion, tu as plus confiance.
+> C'est comme refaire un calcul compliqué trois fois, à tête reposée, sans regarder tes essais précédents. Si tu tombes deux ou trois fois sur le même résultat, tu peux y croire. Si les trois réponses sont différentes, c'est le signal qu'il faut vérifier.
 
 Ce n'est pas magique, mais c'est utile. C'est comme demander plusieurs brouillons avant de choisir celui qui tient debout.
+
+Faire raisonner l'IA étape par étape réduit beaucoup ce genre d'erreur de calcul. Mais il reste un piège plus sournois, que les étapes ne suffisent pas toujours à éviter : parfois, l'IA n'est pas seulement trop pressée. Elle invente, et elle te le dit avec le même ton tranquille qu'une vraie information : comme un ami très sûr de lui qui t'envoie à la mauvaise adresse sans hésiter. Tu pars confiant, et tu te retrouves devant une porte fermée.
 
 
 ## 7. Éviter les hallucinations
@@ -600,6 +616,8 @@ Et parfois, ce petit "si j'ai bien compris" sauve une heure de travail. Ce n'est
 
 
 ## 8. Demander des réponses bien rangées
+
+Revenons à mon fameux projet, celui qui m'a coûté 8 dollars. L'objectif tenait en une phrase : transformer des documents en données propres, prêtes à être avalées par un logiciel. Et un logiciel, ça ne lit pas un beau paragraphe. Ça veut des cases. Toujours les mêmes, toujours au même endroit. Le jour où j'ai saisi ça, j'ai cessé de demander à l'IA de « bien présenter », et j'ai commencé à exiger un format.
 
 Dans une entreprise, une réponse en texte libre ne suffit pas toujours.
 
@@ -688,12 +706,14 @@ Analogie :
 
 > Un prompt JSON simple, c'est une boîte à compartiments. Un prompt JSON "strict", c'est la même boîte, mais avec une étiquette sur chaque compartiment qui précise ce qu'on a le droit d'y mettre — et un protocole clair pour quand quelqu'un range mal.
 
+Ranger les réponses dans des cases, c'était déjà un grand pas pour moi. Mais une idée me trottait dans la tête : et si, au lieu d'une seule IA qui fait tout, j'en faisais travailler plusieurs, chacune sur sa part du boulot ?
+
 
 ## 9. Les agents IA : travailler en équipe
 
 Un agent IA, c'est une IA qui ne fait pas seulement répondre.
 
-Elle peut aussi suivre une mission, utiliser des outils, chercher des informations, appeler une API, analyser un fichier, puis produire une réponse.
+Elle peut aussi suivre une mission, utiliser des outils, chercher des informations, appeler une API (en clair : demander une information à un autre logiciel, comme une appli qui va chercher la météo du jour), analyser un fichier, puis produire une réponse.
 
 Quand plusieurs agents travaillent ensemble, on parle de système multi-agents.
 
@@ -762,6 +782,8 @@ Quand une équipe d'agents IA tourne en continu dans une entreprise (et pas seul
 
 Tu n'as pas besoin de configurer toi-même ces mécanismes pour commencer. Mais si tu entends parler de "timeout", "retry" ou "circuit breaker" dans une équipe technique, tu sauras maintenant que ce sont simplement des règles de bon sens pour qu'une équipe d'agents reste fiable, même quand un de ses membres a une mauvaise journée. 😅
 
+Reste une question toute bête : comment chaque agent décide-t-il quoi faire, concrètement ? Souvent, en suivant une petite routine que tu appliques déjà sans y penser. Pense à quelqu'un qui cherche ses clés : il regarde sur la table, ne les voit pas, alors il fouille la poche de son manteau, puis le tiroir de l'entrée. Agir, regarder le résultat, corriger le tir.
+
 
 ## 10. ReAct : réfléchir, agir, observer
 
@@ -786,6 +808,8 @@ Analogie :
 Un bon agent IA fait pareil : il avance, regarde ce qui se passe, puis corrige.
 
 C'est une bonne leçon pour nous aussi : on n'a pas besoin d'avoir tout juste du premier coup. On avance, on observe, on ajuste.
+
+Avancer, observer, ajuster : d'accord. Mais ajuster vers quoi ? Encore faut-il savoir reconnaître une bonne réponse d'une mauvaise. Et se fier au « feeling », c'est comme goûter un plat et lâcher un simple « bof » : ça ne dit pas s'il manque du sel, si c'est trop cuit, ou si ce n'est juste pas ton goût du jour. Pour corriger, il faut des critères.
 
 
 ## 11. Juger la qualité d'une réponse IA
@@ -854,6 +878,8 @@ Analogie :
 
 > C'est comme former un nouveau correcteur de copies. Au début, on compare ses notes à celles d'un professeur expérimenté. S'ils tombent d'accord la plupart du temps, on peut lui laisser plus d'autonomie.
 
+Toutes ces idées peuvent sembler un peu théoriques. Alors regardons ce que des entreprises bien réelles fabriquent déjà avec. Ce n'est pas de la science-fiction : c'est le chatbot qui t'a répondu la dernière fois que ton train avait du retard, ou le petit résumé affiché en haut d'un long article. Tu en croises déjà sans le savoir.
+
 
 ## 12. Ce que les entreprises font déjà avec l'IA
 
@@ -908,6 +934,8 @@ C'est volontaire, et c'est même le meilleur exercice pratique de tout ce manuel
 Ces exemples sont largement repris dans la presse spécialisée et les communications d'entreprises. Ils donnent un ordre de grandeur réaliste de ce que le prompt engineering permet aujourd'hui. Mais avant de les répéter dans une présentation ou un rapport professionnel, applique la leçon de la section 7 : retrouve la source d'origine, vérifie la date, et confirme le chiffre exact.
 
 Une IA — et un livre — peuvent paraître très sûrs d'eux en énonçant un chiffre. La vraie compétence, c'est de garder ce petit réflexe : "intéressant... et la source, c'est laquelle ?" 🤔
+
+Assez regardé ce que font les autres. À ton tour de mettre la main à la pâte. Promis, on commence tout doux.
 
 
 ## 13. Programme d'entraînement simplifié
@@ -1087,6 +1115,8 @@ Donne-lui des exemples de réponses à classer "acceptable" et d'autres à class
 
 But : comprendre qu'un "juge IA" peut aussi servir à surveiller l'équité, pas seulement la qualité rédactionnelle — et qu'il doit toujours justifier son verdict, jamais juste donner une note brute.
 
+Une fois que tu as sué sur ces exercices, tu n'auras pas envie de tout réinventer à chaque nouvelle demande. D'où la petite trousse de secours qui suit.
+
 
 ## 14. Les modèles de prompts à garder
 
@@ -1200,6 +1230,8 @@ N'ajoute aucun champ qui ne figure pas dans cette liste.
 Si une information manque, mets la valeur null.
 ```
 
+Avec ces modèles en poche, tu démarres déjà avec une longueur d'avance. Reste à éviter les pièges classiques — ceux dans lesquels je suis tombé la tête la première, pour que tu puisses les contourner tranquillement.
+
 
 ## 15. Les erreurs fréquentes à éviter
 
@@ -1261,6 +1293,8 @@ Cette phrase circule beaucoup, y compris dans ce manuel (section 12). Quel est l
 
 Réponse : un chiffre qui sonne bien et qui circule beaucoup n'est pas forcément exact ni à jour. C'est la même règle que pour les hallucinations de l'IA (section 7). Avant de réutiliser un chiffre dans une présentation, un rapport ou une décision, prends deux minutes pour retrouver la source originale et vérifier qu'elle est encore valable.
 
+Maintenant que tu sais quoi faire et quoi éviter, on peut prendre un peu de hauteur. Voici l'idée unique à emporter si tu ne devais retenir qu'une seule chose de tout ce livre.
+
 
 ## 16. La grande idée à retenir
 
@@ -1290,6 +1324,8 @@ Ton prompt, c'est la main sur le volant. 😊
 Plus tu conduis clairement, plus le trajet devient utile, calme et efficace.
 
 Et si tu rates un virage, ce n'est pas la fin du monde. Tu corriges, tu reformules, tu reprends la route.
+
+Il te reste peut-être quelques mots techniques en travers de la gorge. Pas de souci : la dernière section est un pense-bête où piocher tranquillement, sans pression.
 
 
 ## 17. Boîte à outils avancée : pour aller plus loin
@@ -1347,6 +1383,8 @@ Et surtout, rappelle-toi ceci :
 Tu dois seulement apprendre à être clair, précis et humain. 😊
 
 C'est la vraie force d'un bon prompt.
+
+Mes 8 dollars perdus m'ont appris tout ça à la dure. Toi, tu viens de l'avoir pour le prix d'un livre. Plutôt une bonne affaire, non ? 😄
 
 Le meilleur moment pour maîtriser ces outils était peut-être hier.
 
