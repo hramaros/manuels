@@ -1,0 +1,150 @@
+% =====================================================================
+%  style.tex — feuille de style LaTeX (pipeline lualatex)
+%  Injectée dans le préambule par build.sh (--include-in-header).
+%  Source de vérité du rendu : cadre, quadrillage de fond, polices,
+%  titres, blocs de code, citations, sommaire.
+%  Palette : or #C8880A / brun #5C3D00 (cohérente avec l'ancien style.css).
+% =====================================================================
+
+% ---- Couleurs ----
+\definecolor{or}{HTML}{C8880A}
+\definecolor{brun}{HTML}{5C3D00}
+\definecolor{brunfonce}{HTML}{7A5200}
+\definecolor{creme}{HTML}{FDF7EE}
+\definecolor{cremecode}{HTML}{F9F5EE}
+\definecolor{bordcode}{HTML}{E0C882}
+\definecolor{grille}{HTML}{F0E9D8}   % quadrillage de fond, très pâle
+\definecolor{shadecolor}{HTML}{F9F5EE} % fond des blocs de code (pandoc Shaded)
+
+% ---- Polices (lualatex / fontspec) + repli emoji couleur ----
+% La fonction de repli rend les emoji (🙂😳…) via Noto Color Emoji.
+\usepackage{luaotfload}
+\directlua{luaotfload.add_fallback("emojirepli", {"NotoColorEmoji:mode=harf;"})}
+\setmainfont{P052}[RawFeature={fallback=emojirepli}]            % Palatino (corps)
+\setsansfont{Nimbus Sans}[RawFeature={fallback=emojirepli}]     % titres
+\setmonofont{DejaVu Sans Mono}[Scale=0.85]                      % code
+
+% ---- Interligne un peu aéré ----
+\linespread{1.12}
+
+% =====================================================================
+%  Fond de page : quadrillage léger + cadre simple + numéro de page
+%  Dessiné sur CHAQUE page via eso-pic, sauf quand \pageframefalse
+%  (utilisé pour la couverture pleine page).
+% =====================================================================
+\usepackage{eso-pic}
+\usepackage{tikz}
+
+\newif\ifpageframe \pageframetrue
+
+% Marges (doivent rester synchronisées avec celles passées à pandoc)
+\newcommand{\margeHaut}{22mm}
+\newcommand{\margeBas}{25mm}
+\newcommand{\margeGauche}{22mm}
+\newcommand{\margeDroite}{22mm}
+
+\AddToShipoutPictureBG{%
+  \ifpageframe
+    \begin{tikzpicture}[remember picture, overlay]
+      % Quadrillage très pâle, limité à la zone de texte
+      \begin{scope}
+        \clip ([shift={(\margeGauche,\margeBas)}]current page.south west)
+           rectangle ([shift={(-\margeDroite,-\margeHaut)}]current page.north east);
+        \draw[step=5mm, line width=0.15pt, grille]
+          (current page.south west) grid (current page.north east);
+      \end{scope}
+      % Cadre simple doré
+      \draw[or, line width=0.7pt, rounded corners=1pt]
+        ([shift={(14mm,14mm)}]current page.south west)
+        rectangle ([shift={(-14mm,-14mm)}]current page.north east);
+      % Numéro de page (centré, entre le cadre et le texte)
+      \node[anchor=south] at ([shift={(0,16.5mm)}]current page.south)
+        {\sffamily\small\color{brun}\thepage};
+    \end{tikzpicture}%
+  \fi
+}
+\pagestyle{empty} % pas de numéro natif : géré par le fond ci-dessus
+% Neutralise le style « plain » (utilisé par \tableofcontents) pour éviter
+% un second numéro de page superposé à celui du cadre.
+\makeatletter
+\renewcommand{\ps@plain}{\ps@empty}
+\makeatother
+
+% =====================================================================
+%  Titres
+% =====================================================================
+\usepackage{titlesec}
+
+% ## (chapitres pandoc = \subsection) : grands, sans-serif brun, filet doré,
+% chacun commençant sur une nouvelle page.
+\titleformat{\subsection}[hang]
+  {\sffamily\bfseries\LARGE\color{brun}}{}{0pt}{}
+  [{\vspace{3pt}{\color{or}\titlerule[1.4pt]}}]
+\titlespacing*{\subsection}{0pt}{4pt}{14pt}
+
+% ### (sous-parties pandoc = \subsubsection) : sans-serif or, taille moyenne.
+\titleformat{\subsubsection}[hang]
+  {\sffamily\bfseries\large\color{or}}{}{0pt}{}
+\titlespacing*{\subsubsection}{0pt}{16pt}{5pt}
+
+% Nouvelle page avant chaque chapitre (## -> \subsection)
+\let\origsubsection\subsection
+\renewcommand{\subsection}{\clearpage\origsubsection}
+
+% =====================================================================
+%  Citations (blockquote)
+% =====================================================================
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable, skins}
+\renewenvironment{quote}
+  {\begin{tcolorbox}[breakable, enhanced, colback=creme, boxrule=0pt,
+     leftrule=4pt, colframe=or, arc=0pt, left=14pt, right=10pt,
+     top=8pt, bottom=8pt, before skip=10pt, after skip=10pt]\itshape\color{black!75}}
+  {\end{tcolorbox}}
+
+% =====================================================================
+%  Blocs de code
+% =====================================================================
+% pandoc enveloppe le code coloré dans un environnement Shaded.
+% On le redéfinit en boîte crème opaque + fin cadre doré : le fond masque
+% proprement le quadrillage et le code se détache du texte.
+\usepackage{etoolbox}
+\AtBeginDocument{%
+  \renewenvironment{Shaded}
+    {\begin{tcolorbox}[breakable, enhanced, colback=cremecode,
+       colframe=bordcode, boxrule=0.5pt, arc=1.5pt,
+       left=8pt, right=8pt, top=6pt, bottom=6pt,
+       before skip=9pt, after skip=9pt]}
+    {\end{tcolorbox}}%
+}
+% Renvoi à la ligne des longues lignes de code (sinon elles débordent du cadre).
+% La flèche ↪ marque visuellement une ligne coupée.
+\usepackage{fvextra}   % fournit breaklines pour les blocs Verbatim/Highlighting
+\fvset{breaklines=true, breakanywhere=true,
+       breaksymbolleft={\raisebox{0.6ex}{\small\color{or}$\hookrightarrow$}}}
+
+% =====================================================================
+%  Tables : un peu d'air
+% =====================================================================
+\renewcommand{\arraystretch}{1.25}
+
+% =====================================================================
+%  Sommaire (\tableofcontents injecté à la place du HTML)
+% =====================================================================
+\usepackage{tocloft}
+\renewcommand{\cfttoctitlefont}{\sffamily\bfseries\LARGE\color{brun}}
+\setcounter{tocdepth}{2}          % n'affiche que les ## (chapitres)
+% Entrées de chapitre : alignées à gauche, sobres, points de conduite dorés
+\renewcommand{\cftsubsecfont}{\normalfont}
+\renewcommand{\cftsubsecpagefont}{\bfseries\color{or}}
+\renewcommand{\cftsubsecindent}{0pt}
+\renewcommand{\cftsubsecnumwidth}{0pt}
+\renewcommand{\cftsubsecleader}{\color{grille}\cftdotfill{\cftdotsep}}
+\renewcommand{\cftdotsep}{2}
+\setlength{\cftbeforesubsecskip}{6pt}
+
+% =====================================================================
+%  Listes : un peu plus compactes
+% =====================================================================
+\usepackage{enumitem}
+\setlist{itemsep=2pt, topsep=4pt, parsep=0pt}

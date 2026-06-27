@@ -1,64 +1,81 @@
 #!/usr/bin/env bash
-# Génère le PDF depuis le markdown.
-# Usage: ./build.sh
+# Génère le PDF depuis le markdown via LaTeX (lualatex).
+# Pipeline : markdown --(pandoc)--> main.tex --(lualatex ×2)--> PDF
 # Dans le markdown, [[PAGE - X]] insère un saut de page manuel.
+#
+# Prérequis : pandoc, lualatex (texlive-luatex/-latex-extra/-pictures),
+#             texlive-fonts-recommended, texlive-lang-french,
+#             fonts-noto-color-emoji.
 
 set -e
 
 REPO_DIR="$(cd "$(dirname "$0")" && pwd)"
 MD="$REPO_DIR/Devenir Dieu du Prompt Engineering - version simplifiee.md"
-WORK="/tmp/livre"
-CSS="$WORK/style.css"
-COVER_HTML="$WORK/cover.html"
+STYLE="$REPO_DIR/style.tex"
+FRONT="$REPO_DIR/frontmatter.tex"
+COVER_SRC="$REPO_DIR/couverture.png"
 OUTPUT="$REPO_DIR/Devenir Dieu du Prompt Engineering.pdf"
 
-WKHTML="/usr/local/bin/wkhtmltopdf"
-[ -x "$WKHTML" ] || WKHTML="wkhtmltopdf"
+WORK="/tmp/livre"
+mkdir -p "$WORK"
 
-echo "→ Prétraitement : [[PAGE - X]] → saut de page HTML"
-# Remplace [[PAGE - X]] (toute valeur X) par un div CSS saut-page
-sed 's/\[\[PAGE - [^]]*\]\]/<div class="saut-page"><\/div>/g' "$MD" > "$WORK/content_preprocessed.md"
+echo "→ Préparation de l'espace de travail ($WORK)"
+cp "$COVER_SRC" "$WORK/cover.png"   # nom sans espace pour \includegraphics
 
-echo "→ Conversion markdown → HTML (pandoc)"
-pandoc "$WORK/content_preprocessed.md" \
+echo "→ Prétraitement du markdown"
+# 1) Retire le titre H1 et le sous-titre (rendus par frontmatter.tex)
+# 2) Remplace le bloc HTML « ## Sommaire » par un \tableofcontents LaTeX
+PRE="$WORK/content_preprocessed.md"
+awk '
+  /^# Devenir un dieu du Prompt Engineering[[:space:]]*$/ { next }
+  /^### Édition enrichie[[:space:]]*$/                     { next }
+  /^## Sommaire[[:space:]]*$/ {
+      skip = 1
+      print "\\clearpage"
+      print "\\tableofcontents"
+      print "\\clearpage"
+      next
+  }
+  skip && /^## / { skip = 0 }   # début du chapitre suivant : on réimprime
+  skip          { next }
+  { print }
+' "$MD" > "$PRE.tmp"
+# 3) Saut de page manuel [[PAGE - X]] -> \newpage
+sed 's/\[\[PAGE - [^]]*\]\]/\\newpage/g' "$PRE.tmp" > "$PRE"
+rm -f "$PRE.tmp"
+
+echo "→ Conversion markdown → LaTeX (pandoc)"
+pandoc "$PRE" \
   --from markdown \
-  --to html5 \
+  --to latex \
   --standalone \
-  --css "$CSS" \
-  --highlight-style pygments \
-  -o "$WORK/main.html" 2>/dev/null || \
-pandoc "$WORK/content_preprocessed.md" \
-  --from markdown \
-  --to html5 \
-  --standalone \
-  --css "$CSS" \
-  --highlight-style pygments \
-  -o "$WORK/main.html"
+  --wrap=preserve \
+  -V documentclass=extarticle \
+  -V fontsize=13pt \
+  -V papersize=a4 \
+  -V geometry:top=22mm \
+  -V geometry:bottom=25mm \
+  -V geometry:left=22mm \
+  -V geometry:right=22mm \
+  -V lang=fr \
+  -V colorlinks=true \
+  -V linkcolor=brun \
+  -V urlcolor=brunfonce \
+  -V toccolor=brun \
+  --include-in-header="$STYLE" \
+  --include-before-body="$FRONT" \
+  -o "$WORK/main.tex"
 
-echo "→ Génération main.pdf (wkhtmltopdf)"
-"$WKHTML" \
-  --enable-local-file-access \
-  --page-size A4 \
-  --margin-top 22mm \
-  --margin-right 20mm \
-  --margin-bottom 25mm \
-  --margin-left 20mm \
-  --footer-right "[page]" \
-  --footer-font-size 9 \
-  --footer-font-name "DejaVu Serif" \
-  --footer-spacing 5 \
-  --page-offset 1 \
-  "$WORK/main.html" "$WORK/main.pdf"
+echo "→ Compilation LaTeX (lualatex, 2 passes pour le sommaire)"
+( cd "$WORK" && \
+  lualatex -interaction=nonstopmode -halt-on-error main.tex > lualatex.log 2>&1 && \
+  lualatex -interaction=nonstopmode -halt-on-error main.tex >> lualatex.log 2>&1 ) || {
+    echo "✗ Échec de compilation. Dernières lignes du journal :"
+    tail -40 "$WORK/lualatex.log"
+    exit 1
+  }
 
-echo "→ Génération cover.pdf"
-"$WKHTML" \
-  --enable-local-file-access \
-  --page-size A4 \
-  --margin-top 0 --margin-right 0 --margin-bottom 0 --margin-left 0 \
-  "$COVER_HTML" "$WORK/cover.pdf"
-
-echo "→ Fusion cover + contenu"
-pdfunite "$WORK/cover.pdf" "$WORK/main.pdf" "$OUTPUT"
+cp "$WORK/main.pdf" "$OUTPUT"
 
 echo "✓ PDF généré : $OUTPUT"
 echo "  Pages : $(pdfinfo "$OUTPUT" | grep '^Pages:' | awk '{print $2}')"

@@ -1,0 +1,28 @@
+% =====================================================================
+%  frontmatter.tex — inséré juste après \begin{document}
+%  (build.sh : --include-before-body)
+%  1) Couverture pleine page (cover.png), sans cadre ni quadrillage.
+%  2) Titre + sous-titre en tête de la première page de contenu,
+%     puis le texte (intro) enchaîne.
+% =====================================================================
+
+% ---- 1. Couverture pleine page ----
+{%
+  \global\pageframefalse                 % pas de cadre/quadrillage sur la couverture
+  \AddToShipoutPictureBG*{%
+    \put(0,0){\includegraphics[width=\paperwidth, height=\paperheight]{cover.png}}%
+  }%
+  \null\clearpage
+}%
+\global\pageframetrue
+\pagenumbering{arabic}\setcounter{page}{1}
+
+% ---- 2. Titre en tête de la première page de contenu ----
+\noindent{\sffamily\bfseries\color{brun}\fontsize{27}{31}\selectfont
+Devenir un dieu du Prompt Engineering\par}
+\vspace{4pt}
+{\color{or}\rule{\linewidth}{2.6pt}\par}
+\vspace{6pt}
+{\Large\itshape\color{or}Édition enrichie\par}
+\vspace{18pt}
+\noindent
